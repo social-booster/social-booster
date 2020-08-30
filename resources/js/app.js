@@ -67,7 +67,8 @@ Vue.component('HeaderMenu', require('./components/Header/Menu/Menu.vue').default
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
- 
+
+store.dispatch('recaptcha/getSiteKey')
 store.dispatch('user/getMyUserData')
 
 router.beforeEach(async (to, from, next) => {

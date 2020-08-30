@@ -72,6 +72,10 @@ Route::get('check/channel/CanUserSend', 'ChannelController@canUserSend');
 //Message
 Route::post('insert/message', 'MessageController@insert');
 Route::get('select/message', 'MessageController@select');
+//Recaptcha
+Route::get('query/recaptcha/SiteKey', function (Request $request) {
+    return response()->json(config('recaptcha.site-key'));
+});
 });
 
 Route::get('{any}', function () {
