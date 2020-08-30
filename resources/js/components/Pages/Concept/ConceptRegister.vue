@@ -202,7 +202,7 @@ export default {
             this.token = await this.$recaptcha('submit')
         },
         registration: async function() {
-            this.recaptcha()
+            await this.recaptcha()
             var user_id = this.options.anonymous ? null : this.my_user_data.id
             var new_concept = this.select === Object ? await this.conceptRegister(user_id, this.create.layer, this.create.name, this.create.content, this.token) : this.select
             if (this.cover_mode) {
@@ -213,7 +213,6 @@ export default {
                     this.token
                 )
             }
-            this.recaptcha()
             this.$bvModal.hide('concept-register')
         },
         conceptRegister: async function(user_id, layer, name, content, token) {
@@ -222,7 +221,7 @@ export default {
                 layer: layer,
                 name: name,
                 content: content,
-                token: token
+                //token: token
             }).then(function(response) {
                 return response.data
             }.bind(this)).catch(function(error) {
@@ -239,7 +238,7 @@ export default {
                 user_id: user_id,
                 upper_concept_id: upper_concept_id,
                 lower_concept_id: lower_concept_id,
-                token: token
+                //token: token
             }).then(function(response) {
                 return response.data
             }.bind(this)).catch(function(error) {
