@@ -68,14 +68,12 @@ export default {
             },
             similarity: [],
             covers: [],
-            recapcha: {
-                token: ''
-            }
+            token: ''
+
         }
     },
     async created() {
-      //await this.recaptcha()
-
+        await this.recaptcha()
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -200,49 +198,56 @@ export default {
     },
     methods: {
         async recaptcha() {
-            // (optional) Wait until recaptcha has been loaded.
             await this.$recaptchaLoaded()
-
-            // Execute reCAPTCHA with action "login".
-            const token = await this.$recaptcha('homepage')
-
-            console.log(token)
+            this.token = await this.$recaptcha('homepage')
         },
         registration: async function() {
             var user_id = this.options.anonymous ? null : this.my_user_data.id
-            var new_concept = this.select === Object ? await this.conceptRegister(user_id, this.create.layer, this.create.name, this.create.content) : this.select
+            var new_concept = this.select === Object ? await this.conceptRegister(user_id, this.create.layer, this.create.name, this.create.content, this.token) : this.select
             if (this.cover_mode) {
                 this.coverRegister(
                     user_id,
                     this.register.mode === 'upper' ? new_concept.id : this.register.base.id,
-                    this.register.mode === 'upper' ? this.register.base.id : new_concept.id
+                    this.register.mode === 'upper' ? this.register.base.id : new_concept.id,
+                    this.token
                 )
             }
+            this.recaptcha()
             this.$bvModal.hide('concept-register')
         },
-        conceptRegister: async function(user_id, layer, name, content) {
+        conceptRegister: async function(user_id, layer, name, content, token) {
             return await axios.post('/ajax/insert/concept', {
                 user_id: user_id,
                 layer: layer,
                 name: name,
-                content: content
+                content: content,
+                token: token
             }).then(function(response) {
                 return response.data
             }.bind(this)).catch(function(error) {
-                console.log(error);
-                alert('項目に問題があるか、プログラムに異常があるようです。')
+                if (error.response.data.errors.token[0] !== undefined) {
+                    console.log(error.response.data.errors.token[0]);
+                    alert(error.response.data.errors.token[0])
+                } else {
+                    alert('項目に問題があるか、プログラムに異常があるようです。')
+                }
             }.bind(this));
         },
-        coverRegister: function(user_id, upper_concept_id, lower_concept_id) {
+        coverRegister: function(user_id, upper_concept_id, lower_concept_id, token) {
             axios.post('/ajax/insert/cover', {
                 user_id: user_id,
                 upper_concept_id: upper_concept_id,
-                lower_concept_id: lower_concept_id
+                lower_concept_id: lower_concept_id,
+                token: token
             }).then(function(response) {
                 return response.data
             }.bind(this)).catch(function(error) {
-                console.log(error);
-                alert('項目に問題があるか、プログラムに異常があるようです。')
+                if (error.response.data.errors.token[0] !== undefined) {
+                    console.log(error.response.data.errors.token[0]);
+                    alert(error.response.data.errors.token[0])
+                } else {
+                    alert('項目に問題があるか、プログラムに異常があるようです。')
+                }
             }.bind(this));
         },
         isCoverd: function(concept_id) {
