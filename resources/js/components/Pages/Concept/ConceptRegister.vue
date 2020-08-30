@@ -45,9 +45,15 @@
         </div>
         <div class="text-center mt-3">
             <b-form-checkbox switch size="lg" v-model="options.anonymous" :disabled="!is_verified">匿名モード</b-form-checkbox>
-            <b-button variant="primary" class="mt-3" @click="registration()" :disabled="!validation">
-                登録する
-            </b-button>
+
+            <b-button v-b-toggle="'register-confirm'" class="mt-3 mb-3" variant="primary">登録する</b-button>
+            <b-collapse id="register-confirm">
+                <b-form-checkbox v-model="readed_notes" switch size="sm" style="letter-spacing: 1.8px;"><a target="_blank" href="/document/notes">注意事項</a>を読んだ</b-form-checkbox>
+                <b-form-checkbox v-model="agreed_terms" switch size="sm"><a target="_blank" href="/document/terms">利用規約</a>に同意する</b-form-checkbox>
+                <b-button variant="danger" class="mt-3" @click="registration()" :disabled="!validation">
+                    本当に登録する
+                </b-button>
+            </b-collapse>
         </div>
     </b-modal>
 </div>
@@ -68,7 +74,10 @@ export default {
             },
             similarity: [],
             covers: [],
-            token: ''
+            token: '',
+            readed_notes: false,
+            agreed_terms: false
+
 
         }
     },
@@ -164,11 +173,14 @@ export default {
         validation_content: function() {
             return this.create.content.length > 0 && this.create.content.length <= this.layer_meta.content.limit
         },
+        validation_checkbox: function() {
+            return this.readed_notes && this.agreed_terms
+        },
         validation: function() {
             if (this.select === Object && (this.register.mode === 'register' || this.cover_mode)) {
-                return this.validation_name && this.validation_content
+                return this.validation_name && this.validation_content && this.validation_checkbox
             }
-            return true
+            return this.validation_checkbox
         }
     },
     watch: {

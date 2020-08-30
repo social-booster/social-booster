@@ -11,6 +11,8 @@ import DocumentConcept from '../components/Pages/Document/DocumentConcept.vue'
 import DocumentCover from '../components/Pages/Document/DocumentCover.vue'
 import DocumentVote from '../components/Pages/Document/DocumentVote.vue'
 import DocumentPriority from '../components/Pages/Document/DocumentPriority.vue'
+import DocumentNotes from '../components/Pages/Document/DocumentNotes.vue'
+import DocumentTerms from '../components/Pages/Document/DocumentTerms.vue'
 
 import ConceptList from '../components/Pages/Concept/ConceptList.vue'
 import ConceptPage from '../components/Pages/Concept/ConceptPage.vue'
@@ -52,6 +54,14 @@ export default new Router({
                 {
                     path: 'priority',
                     component: DocumentPriority
+                },
+                {
+                    path: 'notes',
+                    component: DocumentNotes
+                },
+                {
+                    path: 'terms',
+                    component: DocumentTerms
                 }
             ]
         },

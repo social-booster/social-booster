@@ -18,6 +18,14 @@
             <router-link to="/document/priority" class="document-menu">
                 優先順位の算出
             </router-link>
+            <br>
+            <router-link to="/document/notes" class="document-menu">
+                注意事項
+            </router-link>
+            <br>
+            <router-link to="/document/terms" class="document-menu">
+                利用規約
+            </router-link>
         </b-col>
         <b-col xl="9" lg="9" md="9">
             <router-view />
