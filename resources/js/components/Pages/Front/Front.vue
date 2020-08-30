@@ -33,7 +33,7 @@
             <b-col xl="4" lg="4" md="4">
                 <h2 class="mt-5 mb-3 section-name"><strong>投票</strong></h2>
                 <p>ユーザーはコンセプトと紐付けに対して投票を行う事ができます。この投票を元にSBは優先順位を算出します</p>
-                <router-link to="/document/evaluation" class="box-button">
+                <router-link to="/document/vote" class="box-button">
                     <b-button variant="primary">
                         詳細を見る
                     </b-button>

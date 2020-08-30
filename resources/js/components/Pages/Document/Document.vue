@@ -11,7 +11,7 @@
                 紐付け
             </router-link>
             <br>
-            <router-link to="/document/evaluation" class="document-menu">
+            <router-link to="/document/vote" class="document-menu">
                 評価
             </router-link>
             <br>
