@@ -73,7 +73,7 @@ export default {
         }
     },
     async created() {
-        await this.recaptcha()
+        //await this.recaptcha()
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -202,6 +202,7 @@ export default {
             this.token = await this.$recaptcha('submit')
         },
         registration: async function() {
+            this.recaptcha()
             var user_id = this.options.anonymous ? null : this.my_user_data.id
             var new_concept = this.select === Object ? await this.conceptRegister(user_id, this.create.layer, this.create.name, this.create.content, this.token) : this.select
             if (this.cover_mode) {
