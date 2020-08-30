@@ -199,7 +199,7 @@ export default {
     methods: {
         async recaptcha() {
             await this.$recaptchaLoaded()
-            this.token = await this.$recaptcha('homepage')
+            this.token = await this.$recaptcha('submit')
         },
         registration: async function() {
             var user_id = this.options.anonymous ? null : this.my_user_data.id
