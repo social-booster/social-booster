@@ -6,7 +6,7 @@ import auth from "./modules/auth";
 import user from "./modules/user";
 import concept from "./modules/concept";
 import cover from "./modules/cover";
-import recapcha from "./modules/recapcha";
+import recaptcha from "./modules/recaptcha";
 
 Vue.use(Vuex);
 
@@ -16,6 +16,6 @@ export default new Vuex.Store({
         user,
         concept,
         cover,
-        recapcha
+        recaptcha
     }
 });
