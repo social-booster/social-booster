@@ -19,6 +19,10 @@
                 優先順位の算出
             </router-link>
             <br>
+            <router-link to="/document/definition" class="document-menu">
+                問題の範囲
+            </router-link>
+            <br>
             <router-link to="/document/notes" class="document-menu">
                 注意事項
             </router-link>

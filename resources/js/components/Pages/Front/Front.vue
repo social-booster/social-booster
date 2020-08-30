@@ -1,7 +1,7 @@
 <template>
 <div class="text-center">
     <h1 class="mt-3">SocialBooster</h1>
-    <p>独自の手法によって算出した優先順位を元に社会問題の解決を行う非同期協調SNSです</p>
+    <p>独自の手法によって算出した優先順位を元に問題の解決を行う非同期協調SNSです</p>
     <hr>
     <div class="text-center">
         <div style="margin-top: 3rem;">
