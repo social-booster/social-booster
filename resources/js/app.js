@@ -20,7 +20,7 @@ import store from './store/index';
 import VueRouter from 'vue-router'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
 
-Vue.use(VueReCaptcha, { siteKey: '6Lebx8QZAAAAAK-yPohQlXGQtACH8xH-Wpa98BHZ' })
+Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
