@@ -12,15 +12,11 @@
             </router-link>
             <br>
             <router-link to="/document/vote" class="document-menu">
-                評価
+                投票
             </router-link>
             <br>
             <router-link to="/document/priority" class="document-menu">
                 優先順位の算出
-            </router-link>
-            <br>
-            <router-link to="/document/definition" class="document-menu">
-                問題の範囲
             </router-link>
             <br>
             <router-link to="/document/notes" class="document-menu">
