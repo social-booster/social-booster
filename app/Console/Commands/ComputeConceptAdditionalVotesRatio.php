@@ -48,8 +48,8 @@ class ComputeConceptAdditionalVotesRatio extends Command
                 $value = (int)$con->additional_votes / (int)$total_layer_additional_votes[$con->layer] * 100 . "\n";
             }
             Concept::where('id', $con->id)->update([
-          'additional_votes_ratio' => $value
-        ]);
+              'additional_votes_ratio' => $value
+            ]);
         }
     }
 }

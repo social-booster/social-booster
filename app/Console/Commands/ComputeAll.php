@@ -50,6 +50,8 @@ class ComputeAll extends Command
         $this->call('sb:ComputeConceptVotes');
         //echo 'ComputeConceptAdditionalVotes' . "\n";
         $this->call('sb:ComputeConceptAdditionalVotes');
+        //echo 'ComputeConceptAdditionalVotesRatio' . "\n";
+        $this->call('sb:ComputeConceptAdditionalVotesRatio');
         //echo 'ComputeConceptActions' . "\n";
         $this->call('sb:ComputeConceptActions');
         //echo 'ComputeConceptActionsRatio' . "\n";
