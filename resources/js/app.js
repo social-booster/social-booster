@@ -19,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from "./router/router";
 import store from './store/index';
+import VueAnalytics from 'vue-analytics'
 
 import VueRouter from 'vue-router'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
@@ -27,6 +28,13 @@ Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
+Vue.use(VueAnalytics, {
+    id: 'UA-176850917-1',
+    router,
+    debug: {
+        sendHitTask: process.env.NODE_ENV === 'production'
+    }
+})
 
 Vue.filter('layerName', function(layer) {
     const layer_names = {
