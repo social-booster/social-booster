@@ -3,6 +3,9 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+ if (process.env.MIX_APP_ENV !== 'local' && location.protocol === 'http') {
+   location.href = location.protocol + '//' + location.hostname + location.pathname
+ }
 require('./bootstrap');
 
 
