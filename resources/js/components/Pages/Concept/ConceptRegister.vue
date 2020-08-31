@@ -233,7 +233,7 @@ export default {
                 layer: layer,
                 name: name,
                 content: content,
-                //token: token
+                token: token
             }).then(function(response) {
                 return response.data
             }.bind(this)).catch(function(error) {
@@ -250,7 +250,7 @@ export default {
                 user_id: user_id,
                 upper_concept_id: upper_concept_id,
                 lower_concept_id: lower_concept_id,
-                //token: token
+                token: token
             }).then(function(response) {
                 return response.data
             }.bind(this)).catch(function(error) {
