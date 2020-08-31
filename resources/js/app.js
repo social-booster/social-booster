@@ -3,6 +3,7 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+ console.log(process.env.MIX_APP_ENV)
  if (process.env.MIX_APP_ENV !== 'local' && location.protocol === 'http') {
    location.href = location.protocol + '//' + location.hostname + location.pathname
  }
