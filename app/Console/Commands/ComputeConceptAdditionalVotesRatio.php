@@ -44,6 +44,7 @@ class ComputeConceptAdditionalVotesRatio extends Command
             $total_layer_additional_votes[$layer->layer] = $concepts->where('layer', $layer->layer)->sum('additional_votes') . "\n";
         }
         foreach ($concepts as $con) {
+            $value = 0;
             if ($total_layer_additional_votes[$con->layer] != 0) {
                 $value = (int)$con->additional_votes / (int)$total_layer_additional_votes[$con->layer] * 100 . "\n";
             }
