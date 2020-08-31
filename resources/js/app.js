@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
  if (location.hostname !== 'localhost' && location.protocol === 'http:') {
-   location.href = location.protocol + '//' + location.hostname + location.pathname
+   location.href = 'https:' + '//' + location.hostname + location.pathname
  }
 require('./bootstrap');
 
