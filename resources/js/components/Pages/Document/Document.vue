@@ -39,9 +39,3 @@ export default {
     mounted() {}
 }
 </script>
-
-<style>
-.document-menu {
-    font-size: 0.95rem;
-}
-</style>

@@ -299,28 +299,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.similarity-name {
-    color: #7b7b7b;
-    font-size: 0.8rem;
-}
-
-.similarity-content {
-    color: #7b7b7b;
-    font-size: 0.75rem;
-}
-
-.base-concept-name {
-    font-size: 0.95rem;
-    margin-bottom: 3px;
-}
-
-.base-concept-content {
-    font-size: 0.8rem;
-}
-
-.layer-button {
-    font-size: 0.64rem
-}
-</style>

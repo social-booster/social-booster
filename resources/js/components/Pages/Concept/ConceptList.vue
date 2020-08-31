@@ -79,14 +79,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.link {
-    color: black;
-    text-decoration: none !important;
-}
-
-.link:hover {
-    color: #626262;
-}
-</style>

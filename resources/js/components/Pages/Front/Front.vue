@@ -49,9 +49,3 @@ export default {
     mounted() {}
 }
 </script>
-
-<style>
-.section-name {
-    color: #555;
-}
-</style>

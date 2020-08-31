@@ -29,17 +29,3 @@ export default {
     methods: {}
 }
 </script>
-
-<style>
-.cover-footer-stats-name {
-    font-size: 0.7rem
-}
-
-.cover-footer-stats-value {
-    font-size: 0.9rem
-}
-
-.cover-footer-stats-unit {
-    font-size: 0.8rem
-}
-</style>

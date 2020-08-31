@@ -40,19 +40,3 @@
         }
     }
 </script>
-<style>
-.channel-section {
-    color: #434444;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    padding-bottom: 10px;
-    border-bottom-color: #eaeaea;
-}
-
-.channel-link {
-	color: #5a6882;
-	text-decoration: none;
-}
-</style>

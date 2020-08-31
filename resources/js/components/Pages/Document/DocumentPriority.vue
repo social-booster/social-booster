@@ -71,21 +71,3 @@ export default {
     mounted() {}
 }
 </script>
-
-<style>
-.document-title {
-    font-size: 1.5rem;
-    margin-left: 20px;
-    margin-top: 30px;
-}
-
-.document-section {
-    font-size: 1.35rem;
-    margin: 10px 0px 10px 0px;
-}
-
-.document-shadow {
-    background: #0000000d;
-    padding: 10px;
-}
-</style>

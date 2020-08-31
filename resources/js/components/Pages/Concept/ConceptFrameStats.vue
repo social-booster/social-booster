@@ -35,15 +35,3 @@ export default {
     },
 }
 </script>
-
-<style>
-.concept-footer-stats-name {
-  font-size: 0.7em
-}
-.concept-footer-stats-value {
-  font-size: 0.9em
-}
-.concept-footer-stats-unit {
-  font-size: 0.8em
-}
-</style>

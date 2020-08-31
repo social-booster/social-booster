@@ -24,9 +24,3 @@ export default {
     mounted() {}
 }
 </script>
-
-<style>
-.mypage-menu {
-    font-size: 0.95rem;
-}
-</style>
