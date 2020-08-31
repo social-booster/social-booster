@@ -19,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from "./router/router";
 import store from './store/index';
+import "../css/custom.css";
 import VueAnalytics from 'vue-analytics'
 
 import VueRouter from 'vue-router'

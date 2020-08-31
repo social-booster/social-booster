@@ -59,44 +59,4 @@ export default {
 </script>
 
 <style>
-@import "/css/custom.css";
-
-.concept-footer-button {
-    background: none;
-    border: none;
-}
-
-.card-header {
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-.card-footer {
-    background-color: rgba(255, 255, 255, 0.03);
-    text-align: right;
-}
-
-.concept-color-5 {
-    border-bottom-width: 10px;
-    border-bottom-color: #9788ff;
-}
-
-.concept-color-4 {
-    border-bottom-width: 10px;
-    border-bottom-color: #88ffe3
-}
-
-.concept-color-3 {
-    border-bottom-width: 10px;
-    border-bottom-color: #a2ff88;
-}
-
-.concept-color-2 {
-    border-bottom-width: 10px;
-    border-bottom-color: #ffd688;
-}
-
-.concept-color-1 {
-    border-bottom-width: 10px;
-    border-bottom-color: #ff9494;
-}
 </style>
