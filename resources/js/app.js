@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
  console.log(process.env.MIX_APP_ENV)
- if (process.env.MIX_APP_ENV !== 'local' && location.protocol === 'http') {
+ if (process.env.MIX_APP_ENV !== 'local' && location.protocol === 'http:') {
    location.href = location.protocol + '//' + location.hostname + location.pathname
  }
 require('./bootstrap');
