@@ -12,7 +12,7 @@
             <ConceptFrame :concept="concept" />
         </router-link>
     </div>
-    <div class="mt-3" ref="paging_menu">
+    <div class="mt-3 mb-5" ref="paging_menu" style="height: 60px;">
         <b-button variant="light" v-show="page > 1" @click="paging(-1)">
             <b-icon icon="arrow-left" font-scale="1.2"></b-icon>
         </b-button>
