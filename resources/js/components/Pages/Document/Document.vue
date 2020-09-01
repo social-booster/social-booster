@@ -26,6 +26,11 @@
             <router-link to="/document/terms" class="document-menu">
                 利用規約
             </router-link>
+            <br>
+            <router-link to="/document/privacy-policy" class="document-menu">
+                個人情報保護方針
+            </router-link>
+            <br>
         </b-col>
         <b-col xl="9" lg="9" md="9">
             <router-view />
