@@ -79,7 +79,7 @@ class ResetPasswordNotificationJapanese extends Notification
             ->line(Lang::get('下記のボタンをクリックしてパスワードを再設定しましょう。'))
             ->action(Lang::get('パスワードの再設定'), $url)
             ->line(Lang::get('このリンクは :count 分で無効化されます。', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('もしこのメールに見に覚えがない場合はそっとメールを閉じて忘れてください。'));
+            ->line(Lang::get('このメールに見覚えがないのであればこれ以上何かをする必要はありません。メールを削除して忘れてください。'));
     }
 
     /**
