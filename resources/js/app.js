@@ -68,9 +68,9 @@ Vue.filter('layerDescription', function(layer) {
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-
 Vue.component('HeaderMenu', require('./components/Header/Menu/Menu.vue').default);
 Vue.component('VerifyEmail', require('./components/Assets/VerifyEmail/VerifyEmail.vue').default);
+Vue.component('LoginSubmit', require('./components/Assets/LoginSubmit/LoginSubmit.vue').default);
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
