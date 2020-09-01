@@ -3,7 +3,8 @@
     <b-modal id="verify-email" hide-footer hide-header no-close-on-backdrop no-close-on-esc>
         <div class="text-center">
             <p class="mt-5 mb-5"><strong>メール認証が完了していません！</strong></p>
-            <p class="mb-3">現在ではまだ非匿名モード、投票、チャットといった機能がご利用になれません。</p>
+            <p>現在ではまだ非匿名モード、投票、チャットといった機能がご利用になれません。</p>
+            <p class="mb-3">登録した時点で認証メールを送信しておりますが、再送したいという場合は下記のボタンを押して下さい。</p>
             <b-button class="mb-5" variant="primary" @click="sendMail()" :disabled="sended_mail">
                 認証メールを再送する
             </b-button>
