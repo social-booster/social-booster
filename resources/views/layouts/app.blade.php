@@ -35,11 +35,11 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-                    <header-menu />
+                    <header-menu></header-menu>
+                    <verify-email></verify-email>
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
