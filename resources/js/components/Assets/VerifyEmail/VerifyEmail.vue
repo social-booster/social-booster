@@ -21,6 +21,9 @@ export default {
         }
     },
     computed: {
+        is_login: function() {
+            return this.$store.state.auth.is_login
+        },
         is_login_loaded: function() {
             return this.$store.state.auth.is_login_loaded
         },
@@ -36,7 +39,7 @@ export default {
     },
     watch: {
         loaded: function() {
-            if (!this.is_verified) {
+            if (this.is_login && !this.is_verified) {
                 this.$bvModal.show('verify-email')
             }
         }
