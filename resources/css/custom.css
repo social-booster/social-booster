@@ -7,7 +7,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    border-left: #a5d5ff;
+    border-left-width: 7px;
+    border-left-style: solid;
+    padding-left: 10px;
+    color: #5b5b5b;
 }
 
 h3 {
@@ -140,8 +145,8 @@ h5 {
 .layer-button {
     font-size: 0.64rem
 }
-/*Cover*/
 
+/*Cover*/
 .hr-5 {
     background: #9788ff;
     height: 5px;
@@ -199,14 +204,18 @@ h5 {
     font-size: 0.95rem;
 }
 
+.document-shadow {
+    background: #f2f2f2;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
 /*MyPage*/
 .mypage-menu {
     font-size: 0.95rem;
 }
 
 /*Channel*/
-
-
 .channel-section {
     color: #434444;
     font-size: 0.9rem;
@@ -218,6 +227,6 @@ h5 {
 }
 
 .channel-link {
-	color: #5a6882;
-	text-decoration: none;
+    color: #5a6882;
+    text-decoration: none;
 }
