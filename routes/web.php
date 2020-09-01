@@ -18,6 +18,8 @@ use App\Http\Controllers\CoverVoteController;
 
 Auth::routes(['verify' => true]);
 
+Route::get('sitemap', 'SiteMapController@index');
+
 Route::prefix('ajax')->group(function () {
 //Auth
 Route::get('check/auth', function (Request $request) {
