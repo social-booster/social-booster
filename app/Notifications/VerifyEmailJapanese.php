@@ -45,7 +45,7 @@ class VerifyEmailJapanese extends Notification
 
         return (new MailMessage)
             ->subject(Lang::get('メールアドレスの認証'))
-            ->line(Lang::get('下のボタンをクリックしてメールアドレスを認証してください'))
+            ->line(Lang::get('下記のボタンをクリックしてメールアドレスを認証してください。'))
             ->action(Lang::get('メールアドレスを認証する'), $verificationUrl)
             ->line(Lang::get('このメールに見覚えがないのであればこれ以上何かをする必要はありません。メールを削除して忘れてください。'));
     }
