@@ -65,7 +65,8 @@ export default {
         meta: function() {
             return [{
                 name: 'description',
-                content: this.concept.content
+                content: this.concept.content,
+                id: 'desc' 
             }]
         }
     }
