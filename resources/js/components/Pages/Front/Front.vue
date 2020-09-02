@@ -69,17 +69,24 @@
 
 <script>
 export default {
-head: {
-  title: {
-    inner: 'SocialBooster',
-    separator: '-',
-    complement: '議論をしない問題解決SNS'
-  },
-  meta: [
-    { name: 'description', content: 'このSNSに議論をする機能はありません。独自に考案した”コンセプト””紐付け””投票”により問題の優先順位を算出、構造的な設計により、非同期的な問題解決を成し遂げます。' },
-    { name: 'viewport', content: 'width=device-width,initial-scale=1.0,user-scalable=no' },
-    { charset: 'utf-8' }
-  ]
-}
+    head: {
+        title: {
+            inner: 'SocialBooster',
+            separator: '-',
+            complement: '議論をしない問題解決SNS'
+        },
+        meta: [{
+                name: 'description',
+                content: 'このSNSに議論をする機能はありません。独自に考案した”コンセプト””紐付け””投票”により問題の優先順位を算出、構造的な設計により、非同期的な問題解決を成し遂げます。'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width,initial-scale=1.0,user-scalable=no'
+            },
+            {
+                charset: 'utf-8'
+            }
+        ]
+    }
 }
 </script>
