@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RecaptchaRequest;
 use App\Concept;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ChannelController;
 
 class ConceptController extends Controller
 {
     public function insert (RecaptchaRequest $request) {
       $response = Concept::create([
-        'user_id' => $request->input('user_id'),
+        'user_id' => $request->boolean('anonymous') ? null : Auth::id(),
         'layer' => $request->input('layer'),
         'name' => $request->input('name'),
         'content' => $request->input('content'),

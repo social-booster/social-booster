@@ -215,11 +215,10 @@ export default {
         },
         registration: async function() {
             await this.recaptcha()
-            var user_id = this.options.anonymous ? null : this.my_user_data.id
-            var new_concept = this.select === Object ? await this.conceptRegister(user_id, this.create.layer, this.create.name, this.create.content, this.token) : this.select
+            var new_concept = this.select === Object ? await this.conceptRegister(this.options.anonymous, this.create.layer, this.create.name, this.create.content, this.token) : this.select
             if (this.cover_mode) {
                 this.coverRegister(
-                    user_id,
+                    this.options.anonymous,
                     this.register.mode === 'upper' ? new_concept.id : this.register.base.id,
                     this.register.mode === 'upper' ? this.register.base.id : new_concept.id,
                     this.token
@@ -227,9 +226,9 @@ export default {
             }
             this.$bvModal.hide('concept-register')
         },
-        conceptRegister: async function(user_id, layer, name, content, token) {
+        conceptRegister: async function(anonymous, layer, name, content, token) {
             return await axios.post('/ajax/insert/concept', {
-                user_id: user_id,
+                anonymous: anonymous,
                 layer: layer,
                 name: name,
                 content: content,
@@ -245,9 +244,9 @@ export default {
                 }
             }.bind(this));
         },
-        coverRegister: function(user_id, upper_concept_id, lower_concept_id, token) {
+        coverRegister: function(anonymous, upper_concept_id, lower_concept_id, token) {
             axios.post('/ajax/insert/cover', {
-                user_id: user_id,
+                anonymous: anonymous,
                 upper_concept_id: upper_concept_id,
                 lower_concept_id: lower_concept_id,
                 //token: token

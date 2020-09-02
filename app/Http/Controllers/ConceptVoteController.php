@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ConceptVote;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 
 class ConceptVoteController extends Controller
 {
     public function insert(Request $request)
     {
-        $user_id = $request->input('user_id');
+        $user_id = Auth::id();
         $value = $request->input('value');
         $concept_id = $request->input('concept_id');
 

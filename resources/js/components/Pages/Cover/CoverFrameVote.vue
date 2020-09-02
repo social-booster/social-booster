@@ -81,7 +81,6 @@ export default {
         },
         insertCoverVote(value) {
             axios.post('/ajax/insert/cover/vote', {
-                user_id: this.my_user_data.id,
                 value: value,
                 cover_id: this.cover.id
             }).then(function(response) {

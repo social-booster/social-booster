@@ -85,7 +85,6 @@ export default {
         },
         insertConceptVote: function(value) {
             axios.post('/ajax/insert/concept/vote', {
-                user_id: this.my_user_data.id,
                 value: value,
                 concept_id: this.concept.id
             }).then(function(response) {

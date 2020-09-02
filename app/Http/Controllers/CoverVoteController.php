@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use App\CoverVote;
 use App\Cover;
 
@@ -11,7 +12,7 @@ class CoverVoteController extends Controller
 {
     public function insert(Request $request): int
     {
-        $user_id = $request->input('user_id');
+        $user_id = Auth::id();
         $value = $request->input('value');
         $cover_id = $request->input('cover_id');
 
