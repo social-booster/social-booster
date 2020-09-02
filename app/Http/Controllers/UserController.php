@@ -25,4 +25,8 @@ class UserController extends Controller
           'name' => $request->input('name')
         ]);
     }
+    public function delete()
+    {
+        return User::where('id', Auth::id())->forceDelete();
+    }
 }

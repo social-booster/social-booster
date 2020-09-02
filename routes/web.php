@@ -33,6 +33,7 @@ Route::post('logout', function (Request $request) {
 });
 //User
 Route::post('update/user', 'UserController@update');
+Route::post('delete/user', 'UserController@delete');
 Route::get('query/user/MyData', 'UserController@queryMyUserData');
 //Concept
 Route::post('insert/concept', 'ConceptController@insert');

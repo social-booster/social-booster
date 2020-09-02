@@ -5,6 +5,7 @@ import Front from '../components/Pages/Front/Front.vue'
 import MyPage from '../components/Pages/MyPage/MyPage.vue'
 import MyPageJoinedCommunity from '../components/Pages/MyPage/MyPageJoinedCommunity.vue'
 import MyPageSetting from '../components/Pages/MyPage/MyPageSetting.vue'
+import MyPageDeleteAccount from '../components/Pages/MyPage/MyPageDeleteAccount.vue'
 
 import Document from '../components/Pages/Document/Document.vue'
 import DocumentConcept from '../components/Pages/Document/DocumentConcept.vue'
@@ -89,6 +90,10 @@ export default new Router({
                 {
                     path: 'setting',
                     component: MyPageSetting
+                },
+                {
+                    path: 'delete-account',
+                    component: MyPageDeleteAccount
                 }
             ]
         },

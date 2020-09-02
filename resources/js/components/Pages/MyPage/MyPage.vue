@@ -11,6 +11,10 @@
                 設定
             </router-link>
             <br>
+            <router-link to="/mypage/delete-account" class="mypage-menu">
+                アカウント削除
+            </router-link>
+            <br>
         </b-col>
         <b-col xl="9" lg="9" md="9">
             <router-view />
