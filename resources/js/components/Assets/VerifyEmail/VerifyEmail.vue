@@ -4,7 +4,7 @@
         <div class="text-center">
             <p class="mt-5 mb-5"><strong>メール認証が完了していません！</strong></p>
             <p>現在ではまだ非匿名モード、投票、チャットといった機能がご利用になれません。</p>
-            <p class="mb-3">登録した時点で認証メールを送信しておりますが、再送したいという場合は下記のボタンを押して下さい。</p>
+            <p class="mb-3">登録した時点で認証メールを送信しておりますが、再送したいという場合は下記のボタンを押して下さい。有効時間は60分です。</p>
             <b-button class="mb-5" variant="primary" @click="sendMail()" :disabled="sended_mail">
                 認証メールを再送する
             </b-button>
