@@ -1,6 +1,7 @@
 <template>
 <div>
-    <router-link to="/concepts/1">一覧に戻る</router-link>
+    <router-link to="/concepts/1">
+        <b-icon icon="arrow-90deg-left" font-scale="1.2"></b-icon></router-link>
     <ConceptRegister />
     <div v-if="loaded">
         <ConceptFrame :concept="concept" />
@@ -66,7 +67,7 @@ export default {
             return [{
                 name: 'description',
                 content: this.concept.content,
-                id: 'desc' 
+                id: 'desc'
             }]
         }
     }
