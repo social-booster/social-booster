@@ -55,6 +55,19 @@ export default {
                     console.log(error);
                 });
         }
+    },
+    head: {
+        title: function() {
+            return {
+                inner: this.concept.layer === 5 || this.concept.layer === 4 ? this.concept.name : this.concept.content
+            }
+        },
+        meta: function() {
+            return [{
+                name: 'description',
+                content: this.concept.content
+            }]
+        }
     }
 }
 </script>

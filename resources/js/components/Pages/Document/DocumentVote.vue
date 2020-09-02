@@ -53,6 +53,24 @@
 
 <script>
 export default {
-    mounted() {}
+    head: {
+        title: {
+            inner: '投票',
+            separator: '-',
+            complement: 'SocialBooster'
+        },
+        meta: [{
+                name: 'description',
+                content: 'コンセプトと紐付けに対して行える投票は、解決するべき問題の優先順位を算出する上で重要な役割を果たします。市民の声を訴える手法としても有効です。'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width,initial-scale=1.0,user-scalable=no'
+            },
+            {
+                charset: 'utf-8'
+            }
+        ]
+    }
 }
 </script>

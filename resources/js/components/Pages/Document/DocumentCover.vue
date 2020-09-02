@@ -32,6 +32,24 @@
 
 <script>
 export default {
-    mounted() {}
+    head: {
+        title: {
+            inner: '紐付け',
+            separator: '-',
+            complement: 'SocialBooster'
+        },
+        meta: [{
+                name: 'description',
+                content: 'コンセプトとコンセプトは上下の階層においてのみ紐付ける事ができます。コンセプトが上下に紐付けられニューロンのようなネットワークを構成する事で優先順位算出の精度が向上します。'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width,initial-scale=1.0,user-scalable=no'
+            },
+            {
+                charset: 'utf-8'
+            }
+        ]
+    }
 }
 </script>
