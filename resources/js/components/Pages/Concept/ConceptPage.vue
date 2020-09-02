@@ -46,10 +46,10 @@ export default {
                     params: {
                         concept_id: concept_id
                     }
-                })
-                .then(function(response) {
+                }).then(function(response) {
                     this.concept = response.data
                     this.loaded = true
+                    this.$emit('updateHead');
                 }.bind(this))
                 .catch(function(error) {
                     console.log(error);
