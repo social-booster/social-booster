@@ -8,7 +8,6 @@
  }
 require('./bootstrap');
 
-
 window.Vue = require('vue');
 
 import {
@@ -21,6 +20,7 @@ import router from "./router/router";
 import store from './store/index';
 import "../css/custom.css";
 import VueAnalytics from 'vue-analytics'
+import VueHead from 'vue-head'
 
 import VueRouter from 'vue-router'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
@@ -29,6 +29,7 @@ Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
+Vue.use(VueHead)
 Vue.use(VueAnalytics, {
     id: 'UA-176850917-1',
     router,
