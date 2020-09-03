@@ -29,7 +29,10 @@ Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
-Vue.use(VueHead)
+Vue.use(VueHead, {
+  separator: '-',
+  complement: 'SocialBooster'
+})
 Vue.use(VueAnalytics, {
     id: 'UA-176850917-1',
     router,
