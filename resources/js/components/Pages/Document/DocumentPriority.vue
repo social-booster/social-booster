@@ -66,6 +66,22 @@
 
 <script>
 export default {
-    mounted() {}
+    head: {
+        title: {
+            inner: '優先順位'
+        },
+        meta: [{
+                name: 'description',
+                content: 'SocialBoosterのコンセプトの表示順位は優先順位と同期しています。着手率、期待率、対応率からなる優先順位がどのようなアルゴリズムで算出されるのかについてご紹介します'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width,initial-scale=1.0,user-scalable=no'
+            },
+            {
+                charset: 'utf-8'
+            }
+        ]
+    }
 }
 </script>
