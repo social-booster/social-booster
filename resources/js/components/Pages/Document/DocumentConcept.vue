@@ -52,9 +52,7 @@
 export default {
     head: {
         title: {
-            inner: 'コンセプト',
-            separator: '-',
-            complement: 'SocialBooster'
+            inner: 'コンセプト'
         },
         meta: [{
                 name: 'description',
