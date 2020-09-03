@@ -14,7 +14,7 @@
                     <img src="/images/sns-icons/icon_017850_256.png" alt="FaceBook" title="FaceBook" style="height: 70px;">
                 </b-button>
             </div>
-            <div v-clipboard:copy="share_link" style="font-size: 0.8rem;padding: 21px;background: #dfdfdf;border-radius: 5px;margin-top: 40px;cursor: pointer;">
+            <div v-clipboard:copy="share_link" style="font-size: 0.7rem;padding: 21px;background: #dfdfdf;border-radius: 5px;margin-top: 40px;cursor: pointer;">
                 <span>{{share_link}}</span><span class="float-right">コピー</span>
             </div>
         </div>
