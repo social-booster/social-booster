@@ -1,15 +1,14 @@
 <template>
-<div>
+<div v-if="loaded">
     <router-link to="/concepts/1">
-        <b-icon icon="arrow-90deg-left" font-scale="1.2"></b-icon></router-link>
+        <b-icon icon="arrow-90deg-left" font-scale="1.2"></b-icon>
+    </router-link>
     <ConceptRegister />
-    <div v-if="loaded">
-        <ConceptFrame :concept="concept" />
-        <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
-    </div>
-    <div class="text-center" v-else>
-        <b-spinner variant="secondary" style="height: 3rem;width: 3rem;" label="Loading..."></b-spinner>
-    </div>
+    <ConceptFrame :concept="concept" />
+    <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
+</div>
+<div class="text-center" v-else>
+    <b-spinner variant="secondary" style="height: 3rem;width: 3rem;" label="Loading..."></b-spinner>
 </div>
 </template>
 
