@@ -1,7 +1,7 @@
 <template>
 <span v-if="concept.layer === 4">
     <button class="concept-footer-button text-right" @click.prevent="$bvModal.show('project/' + concept.id);countEngagedCommunities()">
-        <b-icon icon="chat-dots" font-scale="1.2"></b-icon>
+        <b-icon icon="chat-dots" font-scale="1"></b-icon>
     </button>
     <b-modal :id="'project/' + concept.id" hide-footer hide-header>
         <div class="text-center">

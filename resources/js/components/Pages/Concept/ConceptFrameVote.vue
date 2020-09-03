@@ -1,7 +1,7 @@
 <template>
 <span>
     <button @click.prevent="openConceptVote(concept.id);getOneConceptVotes();getAllConceptVotes()" :id="'concept-v-' + concept.id" class="concept-footer-button" :disabled="!is_verified">
-        <b-icon icon="heart" font-scale="1.2"></b-icon>
+        <b-icon icon="heart" font-scale="1"></b-icon>
     </button>
     <b-popover :ref="'concept-v-' + concept.id" :target="'concept-v-' + concept.id" placement="top">
         <div class="text-center">

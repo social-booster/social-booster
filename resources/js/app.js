@@ -10,6 +10,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
 import {
     BootstrapVue,
     IconsPlugin
@@ -21,7 +22,8 @@ import store from './store/index';
 import "../css/custom.css";
 import VueAnalytics from 'vue-analytics'
 import VueHead from 'vue-head'
-
+import VueClipboard from 'vue-clipboard2'
+VueClipboard.config.autoSetContainer = true // add this line
 import VueRouter from 'vue-router'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
 
@@ -29,6 +31,7 @@ Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
+Vue.use(VueClipboard)
 Vue.use(VueHead, {
   separator: '-',
   complement: 'SocialBooster'

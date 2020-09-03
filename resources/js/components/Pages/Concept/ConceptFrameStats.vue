@@ -18,7 +18,7 @@
       <span class="concept-footer-stats-value">{{concept.votes}}</span>
     </span>
     <button class="concept-footer-button text-right" @click.prevent="display = !display">
-        <b-icon icon="bar-chart" font-scale="1.2"></b-icon>
+        <b-icon icon="bar-chart" font-scale="1"></b-icon>
     </button>
 </span>
 </template>

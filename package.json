@@ -29,6 +29,7 @@
         "laravel-echo": "^1.8.1",
         "pusher-js": "^7.0.0",
         "vue-analytics": "^5.22.1",
+        "vue-clipboard2": "^0.3.1",
         "vue-head": "^2.2.0",
         "vue-recaptcha-v3": "^1.9.0",
         "vue-router": "^3.4.3",

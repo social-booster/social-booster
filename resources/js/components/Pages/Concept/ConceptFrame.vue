@@ -8,7 +8,7 @@
         <hr v-show="concept.name !== null">
         <p>{{concept.content}}</p>
         <template v-slot:footer>
-            <div style="display: grid;grid-template-columns: 1fr auto auto auto auto;">
+            <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto;">
             <ConceptFrameStats :concept="concept" />
             <ConceptFrameProject :concept="concept" />
             <ConceptFrameCommunity :concept="concept" />
@@ -19,6 +19,7 @@
             <button class="concept-footer-button" @click.prevent="cover(concept,'lower')" :disabled="concept.layer <= 1">
                 <b-icon icon="arrow-down" font-scale="1.2"></b-icon>
             </button>
+            <ConceptFrameShare :concept="concept" />
           </div>
         </template>
     </b-card>
@@ -30,6 +31,7 @@ import ConceptFrameVote from "./ConceptFrameVote"
 import ConceptFrameStats from "./ConceptFrameStats"
 import ConceptFrameCommunity from "./ConceptFrameCommunity"
 import ConceptFrameProject from "./ConceptFrameProject"
+import ConceptFrameShare from "./ConceptFrameShare"
 export default {
     data() {
         return {
@@ -45,7 +47,8 @@ export default {
       ConceptFrameVote,
       ConceptFrameStats,
       ConceptFrameCommunity,
-      ConceptFrameProject
+      ConceptFrameProject,
+      ConceptFrameShare
     },
     methods: {
         cover: function(concept, mode) {
