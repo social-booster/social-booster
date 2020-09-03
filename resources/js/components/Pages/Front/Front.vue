@@ -45,7 +45,7 @@
             <b-col></b-col>
             <b-col xl="4" lg="4" md="4">
                 <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>運営協力</strong></h2>
-                <p>SBの運営は大変です。テスト作業、ドキュメント整備、スパム対策、広報での協力者を募集しています</p>
+                <p>SBの運営は大変です。テスト作業、ドキュメント整備、スパム対応、広報面での協力者を募集しています</p>
                 <a target="_blank" href="https://discord.gg/KsUyhGY" class="box-button">
                     <b-button variant="primary">
                         Discord
