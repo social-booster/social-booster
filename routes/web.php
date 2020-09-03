@@ -39,6 +39,7 @@ Route::get('query/user/MyData', 'UserController@queryMyUserData');
 Route::post('insert/concept', 'ConceptController@insert');
 Route::get('select/concept', 'ConceptController@select');
 Route::get('query/concept', 'ConceptController@query');
+Route::get('query/concept/StartRateRank', 'ConceptController@queryStartRateRank');
 Route::get('serch/concept/similarity', 'ConceptController@similaritySearch');
 //Cover
 Route::post('insert/cover', 'CoverController@insert');

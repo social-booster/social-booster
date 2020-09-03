@@ -37,4 +37,12 @@ class ConceptController extends Controller
     public function similaritySearch(Request $request) {
       return Concept::where('layer',$request->input('layer'))->freeword($request->input('content'))->limit(5)->get();
     }
+    public function queryStartRateRank(Request $request) {
+      $ranking = [];
+      $rank = 1;
+      foreach (Concept::orderBy('start_rate', 'asc')->orderBy('additional_votes_ratio', 'desc')->get() as $con) {
+        $ranking[$con->id] = $rank++;
+      }
+      return $ranking[$request->input('concept_id')];
+    }
 }

@@ -1,8 +1,8 @@
 <template>
 <div v-if="loaded">
-    <router-link to="/concepts/1">
+    <b-button variant="light" @click="backListPage(concept_id)">
         <b-icon icon="arrow-90deg-left" font-scale="1.2"></b-icon>
-    </router-link>
+    </b-button>
     <ConceptRegister />
     <ConceptFrame :concept="concept" />
     <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
@@ -41,6 +41,20 @@ export default {
         this.queryConcept(this.concept_id)
     },
     methods: {
+        backListPage: async function(concept_id) {
+            this.$router.push('/concepts/' + Math.ceil(await this.queryStartRateRank(concept_id) / 10))
+        },
+        queryStartRateRank: async function(concept_id) {
+            return await axios.get('/ajax/query/concept/StartRateRank', {
+                params: {
+                    concept_id: concept_id
+                }
+            }).then(function(response) {
+                return response.data
+            }.bind(this)).catch(function(error) {
+                console.log(error);
+            });
+        },
         queryConcept: function(concept_id) {
             axios.get('/ajax/query/concept', {
                     params: {
