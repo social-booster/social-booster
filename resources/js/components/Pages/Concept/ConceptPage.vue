@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         backListPage: async function(concept_id) {
-            this.$router.push('/concepts/' + Math.ceil(await this.queryStartRateRank(concept_id) / 10))
+            this.$router.push('/concepts/' + (Number(String(await this.queryStartRateRank(concept_id)).slice(0,-1)) + 1))
         },
         queryStartRateRank: async function(concept_id) {
             return await axios.get('/ajax/query/concept/StartRateRank', {
