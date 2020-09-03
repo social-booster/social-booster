@@ -34,9 +34,7 @@
 export default {
     head: {
         title: {
-            inner: '紐付け',
-            separator: '-',
-            complement: 'SocialBooster'
+            inner: '紐付け'
         },
         meta: [{
                 name: 'description',
