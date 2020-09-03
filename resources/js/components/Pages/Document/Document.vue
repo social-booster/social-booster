@@ -3,6 +3,10 @@
     <h1>Document</h1>
     <b-row>
         <b-col class="text-left" xl="3" lg="3" md="3">
+            <router-link to="/document/outline" class="document-menu">
+                概略
+            </router-link>
+            <br>
             <router-link to="/document/concept" class="document-menu">
                 コンセプト
             </router-link>

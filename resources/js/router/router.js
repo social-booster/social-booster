@@ -8,6 +8,7 @@ import MyPageSetting from '../components/Pages/MyPage/MyPageSetting.vue'
 import MyPageDeleteAccount from '../components/Pages/MyPage/MyPageDeleteAccount.vue'
 
 import Document from '../components/Pages/Document/Document.vue'
+import DocumentOutline from '../components/Pages/Document/DocumentOutline.vue'
 import DocumentConcept from '../components/Pages/Document/DocumentConcept.vue'
 import DocumentCover from '../components/Pages/Document/DocumentCover.vue'
 import DocumentVote from '../components/Pages/Document/DocumentVote.vue'
@@ -43,6 +44,10 @@ export default new Router({
             path: '/document',
             component: Document,
             children: [{
+                    path: 'outline',
+                    component: DocumentOutline
+                },
+              {
                     path: 'concept',
                     component: DocumentConcept
                 },
