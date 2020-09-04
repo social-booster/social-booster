@@ -72,7 +72,7 @@ class CoverController extends AdminController
 
         $form->text('user_id', __('User id'));
         $form->number('votes', __('Votes'));
-        $form->switch('ratio', __('Ratio'));
+        $form->number('ratio', __('Ratio'));
         $form->text('upper_concept_id', __('Upper concept id'));
         $form->text('lower_concept_id', __('Lower concept id'));
 

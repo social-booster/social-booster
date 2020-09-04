@@ -67,7 +67,7 @@ class ConceptVoteController extends AdminController
         $form = new Form(new ConceptVote());
 
         $form->text('user_id', __('User id'));
-        $form->switch('value', __('Value'));
+        $form->number('value', __('Value'));
         $form->text('concept_id', __('Concept id'));
 
         return $form;

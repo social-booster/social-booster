@@ -83,11 +83,11 @@ class ConceptController extends AdminController
         $form->text('user_id', __('User id'));
         $form->number('votes', __('Votes'));
         $form->number('additional_votes', __('Additional votes'));
-        $form->switch('additional_votes_ratio', __('Additional votes ratio'));
+        $form->number('additional_votes_ratio', __('Additional votes ratio'));
         $form->number('actions', __('Actions'));
-        $form->switch('actions_ratio', __('Actions ratio'));
+        $form->number('actions_ratio', __('Actions ratio'));
         $form->number('start_rate', __('Start rate'));
-        $form->switch('layer', __('Layer'));
+        $form->number('layer', __('Layer'));
         $form->text('name', __('Name'));
         $form->textarea('content', __('Content'));
 

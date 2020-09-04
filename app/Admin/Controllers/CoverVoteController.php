@@ -67,7 +67,7 @@ class CoverVoteController extends AdminController
         $form = new Form(new CoverVote());
 
         $form->text('user_id', __('User id'));
-        $form->switch('value', __('Value'));
+        $form->number('value', __('Value'));
         $form->text('cover_id', __('Cover id'));
 
         return $form;
