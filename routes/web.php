@@ -80,6 +80,10 @@ Route::get('select/message', 'MessageController@select');
 Route::get('query/recaptcha/SiteKey', function (Request $request) {
     return response()->json(config('recaptcha.site-key'));
 });
+//Watch
+Route::post('insert/watch', 'WatchController@insert');
+Route::post('delete/watch', 'WatchController@delete');
+Route::get('check/watch', 'WatchController@checkWatch');
 });
 
 Route::get('{any}', function () {

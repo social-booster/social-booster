@@ -8,10 +8,11 @@
         <hr v-show="concept.name !== null">
         <p>{{concept.content}}</p>
         <template v-slot:footer>
-            <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto;">
+            <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
             <ConceptFrameStats :concept="concept" />
             <ConceptFrameProject :concept="concept" />
             <ConceptFrameCommunity :concept="concept" />
+            <ConceptFrameWatch :concept="concept" />
             <ConceptFrameVote :concept="concept" />
             <button class="concept-footer-button" @click.prevent="cover(concept,'upper')" :disabled="concept.layer >= 5">
                 <b-icon icon="arrow-up" font-scale="1.2"></b-icon>
@@ -32,6 +33,7 @@ import ConceptFrameStats from "./ConceptFrameStats"
 import ConceptFrameCommunity from "./ConceptFrameCommunity"
 import ConceptFrameProject from "./ConceptFrameProject"
 import ConceptFrameShare from "./ConceptFrameShare"
+import ConceptFrameWatch from "./ConceptFrameWatch"
 export default {
     data() {
         return {
@@ -48,7 +50,8 @@ export default {
       ConceptFrameStats,
       ConceptFrameCommunity,
       ConceptFrameProject,
-      ConceptFrameShare
+      ConceptFrameShare,
+      ConceptFrameWatch
     },
     methods: {
         cover: function(concept, mode) {

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Rorecek\Ulid\HasUlid;
 use App\ConceptRealVote;
+use App\Http\Controllers\WatchController;
 
 class Concept extends Model
 {
@@ -29,9 +30,10 @@ class Concept extends Model
 
     protected $casts = [
         'total_votes' => 'integer',
+        'watching' => 'boolean'
     ];
 
-    protected $appends = ['total_votes'];
+    protected $appends = ['watching'];
 
 
     public function scopeFreeword($query, $freeword)
@@ -39,9 +41,9 @@ class Concept extends Model
         $query->whereRaw("match(`content`) against (? WITH QUERY EXPANSION)", [$freeword]);
     }
 
-    public function getTotalVotesAttribute()
+    public function getWatchingAttribute()
     {
-        return ConceptRealVote::where('concept_id',$this->id)->sum('value');
+        return WatchController::checkWatch($this->id);
     }
 
     public function user()
