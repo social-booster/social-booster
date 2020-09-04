@@ -16,7 +16,7 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => ['required','string',Rule::unique('users', 'name')->ignore(Auth::id()),'max:20','regex:/^[0-9a-z]+$/'],
+            'name' => ['required','string',Rule::unique('users', 'name')->ignore(Auth::id()),'max:20','regex:/^[0-9a-zA-Z]+$/'],
             'email' => ['required','string','email:filter',Rule::unique('users', 'email')->ignore(Auth::id()),'max:30'],
         ]);
 
