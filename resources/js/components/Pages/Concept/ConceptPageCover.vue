@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="mb-5">
     <b-button variant="light" href="" @click="selectCover(covers_select_mode === 'upper' ? 'lower' : 'upper')" :disabled="concept_layer === 1 || concept_layer === 5" block>
         {{ covers_select_button }}
     </b-button>
