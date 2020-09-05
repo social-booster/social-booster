@@ -6,6 +6,12 @@ const state = {
             concept_id: '',
             concept_layer: ''
         }
+    },
+    terms: {
+        my_concept_only: false,
+        voted_concepts: false,
+        joined_community: false,
+        select_layer: [1,2,3,4,5]
     }
 };
 
@@ -19,6 +25,19 @@ const mutations = {
     },
     setAllConceptVotes(state, value) {
         state.all_concept_votes = value
+    },
+    setTerms(state, {
+        my_concept_only,
+        voted_concepts,
+        joined_community,
+        select_layer
+    }) {
+        state.terms = {
+            my_concept_only: my_concept_only,
+            voted_concepts: voted_concepts,
+            joined_community: joined_community,
+            select_layer: select_layer
+        }
     }
 };
 

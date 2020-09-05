@@ -25,10 +25,25 @@ class ConceptController extends Controller
     }
     public function select (Request $request) {
       return Concept::with('user:id,name')
-                ->orderBy('start_rate', 'asc')
-                ->orderBy('additional_votes_ratio', 'desc')
+                ->whereIn('layer', $request->input('select_layer'))
+                ->when($request->boolean('my_concept_only'), function ($query) {
+                    return $query->where('concepts.user_id', Auth::id());
+                })
+                ->when($request->boolean('voted_concepts'), function ($query) {
+                    return $query->where('concept_real_votes.user_id', Auth::id())
+                                  ->rightJoin('concept_real_votes', 'concepts.id', '=', 'concept_real_votes.concept_id');
+                })
+                ->when($request->boolean('joined_community'), function ($query) {
+                    return $query->where('concept_users.user_id', Auth::id())
+                                  ->rightJoin('concept_users', 'concepts.id', '=', 'concept_users.concept_id');
+                })
+                ->orderBy('concepts.start_rate', 'asc')
+                ->orderBy('concepts.additional_votes_ratio', 'desc')
                 ->offset($request->input('page') * 10 - 10)
                 ->limit(10)
+                ->when($request->boolean('voted_concepts') OR $request->boolean('joined_community'), function ($query) {
+                    return $query->select('concepts.*');
+                })
                 ->get();
     }
     public function query(Request $request) {

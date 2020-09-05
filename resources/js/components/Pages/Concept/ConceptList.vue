@@ -1,10 +1,13 @@
 <template>
 <div>
     <ConceptRegister />
-    <div class="text-right">
-        <b-button variant="primary" @click="register">
-            投稿する
-        </b-button>
+    <div style="display: grid;grid-template-columns: 1fr auto;">
+        <ConceptListTerms v-if="is_verified" />
+        <div class="text-right">
+            <b-button variant="primary" @click="register">
+                投稿する
+            </b-button>
+        </div>
     </div>
     <hr>
     <div v-for="concept in concepts" :key="concept.id">
@@ -26,6 +29,7 @@
 <script>
 import ConceptRegister from "./ConceptRegister"
 import ConceptFrame from "./ConceptFrame"
+import ConceptListTerms from "./ConceptListTerms"
 export default {
     data() {
         return {
@@ -38,10 +42,19 @@ export default {
     },
     components: {
         ConceptRegister,
-        ConceptFrame
+        ConceptFrame,
+        ConceptListTerms
     },
     props: {
         page: String
+    },
+    computed: {
+        is_verified: function() {
+            return this.$store.state.auth.is_verified
+        },
+        terms: function() {
+            return this.$store.state.concept.terms
+        }
     },
     created() {
         this.selectConcept(this.page)
@@ -52,6 +65,17 @@ export default {
                 this.selectConcept(this.page)
             }
         })
+    },
+    watch: {
+        terms: {
+            handler: function() {
+                this.selectConcept(this.page)
+                if (this.page != 1) {
+                    this.$router.push('/concepts/' + 1)
+                }
+            },
+            deep: true
+        }
     },
     methods: {
         paging: function(value) {
@@ -67,7 +91,11 @@ export default {
         selectConcept: function(page) {
             axios.get('/ajax/select/concept', {
                 params: {
-                    page: Number(page)
+                    page: Number(page),
+                    my_concept_only: this.terms.my_concept_only,
+                    voted_concepts: this.terms.voted_concepts,
+                    joined_community: this.terms.joined_community,
+                    select_layer: this.terms.select_layer
                 }
             }).then(function(response) {
                 console.log(response.data)
