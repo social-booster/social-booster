@@ -37,11 +37,15 @@ class ConceptController extends Controller
                     return $query->where('concept_users.user_id', Auth::id())
                                   ->rightJoin('concept_users', 'concepts.id', '=', 'concept_users.concept_id');
                 })
+                ->when($request->boolean('watching_concepts'), function ($query) {
+                    return $query->where('watches.user_id', Auth::id())
+                                  ->rightJoin('watches', 'concepts.id', '=', 'watches.concept_id');
+                })
                 ->orderBy('concepts.start_rate', 'asc')
                 ->orderBy('concepts.additional_votes_ratio', 'desc')
                 ->offset($request->input('page') * 10 - 10)
                 ->limit(10)
-                ->when($request->boolean('voted_concepts') OR $request->boolean('joined_community'), function ($query) {
+                ->when($request->boolean('voted_concepts') OR $request->boolean('joined_community') OR $request->boolean('watching_concepts'), function ($query) {
                     return $query->select('concepts.*');
                 })
                 ->get();

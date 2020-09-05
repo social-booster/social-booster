@@ -11,6 +11,7 @@ const state = {
         my_concept_only: false,
         voted_concepts: false,
         joined_community: false,
+        watching_concepts: false,
         select_layer: [1,2,3,4,5]
     }
 };
@@ -30,12 +31,14 @@ const mutations = {
         my_concept_only,
         voted_concepts,
         joined_community,
+        watching_concepts,
         select_layer
     }) {
         state.terms = {
             my_concept_only: my_concept_only,
             voted_concepts: voted_concepts,
             joined_community: joined_community,
+            watching_concepts: watching_concepts,
             select_layer: select_layer
         }
     }

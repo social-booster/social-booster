@@ -14,6 +14,9 @@
         <b-form-checkbox class="mt-1" v-model="terms.joined_community">
             加入済みのコミュニティ
         </b-form-checkbox>
+        <b-form-checkbox class="mt-1" v-model="terms.watching_concepts">
+            ウォッチ中のコンセプト
+        </b-form-checkbox>
         <b-form-group class="mt-1" label="レイヤー">
             <b-form-checkbox-group stacked v-model="terms.select_layer">
                 <b-form-checkbox value="1">ストレス</b-form-checkbox>
@@ -23,7 +26,6 @@
                 <b-form-checkbox value="5">コミュニティ</b-form-checkbox>
             </b-form-checkbox-group>
         </b-form-group>
-
         <b-button class="mt-3" variant="primary" @click="search();$bvModal.hide('sliders')">
             反映する
         </b-button>
@@ -39,6 +41,7 @@ export default {
                 my_concept_only: false,
                 voted_concepts: false,
                 joined_community: false,
+                watching_concepts: false,
                 select_layer: [1,2,3,4,5]
             }
         }
@@ -49,6 +52,7 @@ export default {
                 my_concept_only: this.terms.my_concept_only,
                 voted_concepts: this.terms.voted_concepts,
                 joined_community: this.terms.joined_community,
+                watching_concepts: this.terms.watching_concepts,
                 select_layer: this.terms.select_layer
             })
         }

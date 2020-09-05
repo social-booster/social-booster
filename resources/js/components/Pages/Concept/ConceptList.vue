@@ -95,6 +95,7 @@ export default {
                     my_concept_only: this.terms.my_concept_only,
                     voted_concepts: this.terms.voted_concepts,
                     joined_community: this.terms.joined_community,
+                    watching_concepts: this.terms.watching_concepts,
                     select_layer: this.terms.select_layer
                 }
             }).then(function(response) {
