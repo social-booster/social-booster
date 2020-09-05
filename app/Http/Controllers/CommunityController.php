@@ -33,7 +33,4 @@ class CommunityController extends Controller
     public function selectMembers (Request $request) {
       return ConceptUser::with('user')->where('concept_id',$request->input('concept_id'))->get();
     }
-    public function queryJoinedCommunity (Request $request) {
-      return ConceptUser::with('concept.user:id,name')->where('user_id',Auth::id())->get();
-    }
 }

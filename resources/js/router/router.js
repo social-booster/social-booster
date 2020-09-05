@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Front from '../components/Pages/Front/Front.vue'
 
 import MyPage from '../components/Pages/MyPage/MyPage.vue'
-import MyPageJoinedCommunity from '../components/Pages/MyPage/MyPageJoinedCommunity.vue'
 import MyPageSetting from '../components/Pages/MyPage/MyPageSetting.vue'
 import MyPageDeleteAccount from '../components/Pages/MyPage/MyPageDeleteAccount.vue'
 
@@ -88,12 +87,9 @@ export default new Router({
             meta: {
                 requiresAuth: true
             },
-            children: [{
-                    path: '',
-                    component: MyPageJoinedCommunity
-                },
+            children: [
                 {
-                    path: 'setting',
+                    path: '',
                     component: MyPageSetting
                 },
                 {

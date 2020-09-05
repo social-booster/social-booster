@@ -61,7 +61,6 @@ Route::post('join/community', 'CommunityController@joinCommunity');
 Route::post('leave/community', 'CommunityController@leaveCommunity');
 Route::get('check/joined', 'CommunityController@checkJoined');
 Route::get('query/Participants', 'CommunityController@countParticipants');
-Route::get('query/JoinedCommunity', 'CommunityController@queryJoinedCommunity');
 Route::get('query/community', 'CommunityController@queryCommunity');
 Route::get('check/isCommunity', 'CommunityController@isCommunity');
 Route::get('select/community/members', 'CommunityController@selectMembers');
