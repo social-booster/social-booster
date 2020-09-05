@@ -15,7 +15,8 @@ use App\Console\Commands\{
   ComputeConceptActions,
   ComputeConceptActionsRatio,
   ComputeConceptStartRate,
-  ComputeAll
+  ComputeAll,
+  SendMailRequestForVolunteers
 };
 
 class Kernel extends ConsoleKernel
@@ -36,7 +37,8 @@ class Kernel extends ConsoleKernel
         ComputeConceptActions::class,
         ComputeConceptActionsRatio::class,
         ComputeConceptStartRate::class,
-        ComputeAll::class
+        ComputeAll::class,
+        SendMailRequestForVolunteers::class
     ];
 
     /**
@@ -48,6 +50,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
       $schedule->command('sb:ComputeAll')->daily();
+      $schedule->command('sb:SendMailRequestForVolunteers')->fridays();
     }
 
     /**
