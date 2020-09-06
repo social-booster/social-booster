@@ -6,7 +6,7 @@
     <b-modal :id="'project/' + concept.id" hide-footer hide-header>
         <div class="text-center">
             <hr style="color: bla;background: #88ffe3;height: 10px;border-radius: 10px;">
-            <h2>{{concept.name}}</h2>
+            <h2 style="border: none;padding: 0;">{{concept.name}}</h2>
             <p>{{concept.content}}</p>
             <hr>
             <p style="color: #595959;font-size: 0.8rem;">只今の参画コミュニティ数</p>
