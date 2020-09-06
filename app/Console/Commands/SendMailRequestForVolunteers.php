@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 use App\Concept;
-use App\USer;
+use App\User;
 use App\Mail\RequestForVolunteers;
 
 class SendMailRequestForVolunteers extends Command
