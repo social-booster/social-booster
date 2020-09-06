@@ -44,7 +44,8 @@ class SendMailRequestForVolunteers extends Command
       $concept = Concept::orderBy('concepts.start_rate', 'asc')
                     ->orderBy('concepts.additional_votes_ratio', 'desc')
                     ->first();
-
-      Mail::to(User::pluck('email'))->send(new RequestForVolunteers($concept));
+      foreach (User::get() as $user) {
+        Mail::to($user->email)->send(new RequestForVolunteers($concept));
+      }
     }
 }
