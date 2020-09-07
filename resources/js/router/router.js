@@ -12,6 +12,7 @@ import DocumentConcept from '../components/Pages/Document/DocumentConcept.vue'
 import DocumentCover from '../components/Pages/Document/DocumentCover.vue'
 import DocumentVote from '../components/Pages/Document/DocumentVote.vue'
 import DocumentPriority from '../components/Pages/Document/DocumentPriority.vue'
+import DocumentOpenSource from '../components/Pages/Document/DocumentOpenSource.vue'
 import DocumentNotes from '../components/Pages/Document/DocumentNotes.vue'
 import DocumentTerms from '../components/Pages/Document/DocumentTerms.vue'
 import DocumentDefinition from '../components/Pages/Document/DocumentDefinition.vue'
@@ -61,6 +62,10 @@ export default new Router({
                 {
                     path: 'priority',
                     component: DocumentPriority
+                },
+                {
+                    path: 'open-source',
+                    component: DocumentOpenSource
                 },
                 {
                     path: 'notes',

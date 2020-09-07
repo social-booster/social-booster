@@ -23,6 +23,10 @@
                 優先順位の算出
             </router-link>
             <br>
+            <router-link to="/document/open-source" class="document-menu">
+                オープンソース
+            </router-link>
+            <br>
             <router-link to="/document/notes" class="document-menu">
                 注意事項
             </router-link>

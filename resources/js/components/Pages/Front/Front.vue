@@ -55,11 +55,11 @@
             <b-col xl="4" lg="4" md="4">
                 <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>開発協力</strong></h2>
                 <p>残念ながら管理人は凡庸なアマチュアプログラマーです。SBでは開発メンバーの募集を随時行っています</p>
-                <a target="_blank" href="https://github.com/syuumu200/social-booster" class="box-button">
+                <router-link to="/document/open-source" class="box-button">
                     <b-button variant="primary">
-                        Github
+                        詳細を見る
                     </b-button>
-                </a>
+                </router-link>
             </b-col>
             <b-col></b-col>
         </b-row>
