@@ -14,12 +14,7 @@
             <ConceptFrameCommunity :concept="concept" />
             <ConceptFrameWatch :concept="concept" />
             <ConceptFrameVote :concept="concept" />
-            <button class="concept-footer-button" @click.prevent="cover(concept,'upper')" :disabled="concept.layer >= 5">
-                <b-icon icon="arrow-up" font-scale="1.2"></b-icon>
-            </button>
-            <button class="concept-footer-button" @click.prevent="cover(concept,'lower')" :disabled="concept.layer <= 1">
-                <b-icon icon="arrow-down" font-scale="1.2"></b-icon>
-            </button>
+            <ConceptFrameCover :concept="concept" />
             <ConceptFrameShare :concept="concept" />
           </div>
         </template>
@@ -34,12 +29,10 @@ import ConceptFrameCommunity from "./ConceptFrameCommunity"
 import ConceptFrameProject from "./ConceptFrameProject"
 import ConceptFrameShare from "./ConceptFrameShare"
 import ConceptFrameWatch from "./ConceptFrameWatch"
+import ConceptFrameCover from "./ConceptFrameCover"
 export default {
     data() {
         return {
-          display: {
-            stats: false
-          }
         }
     },
     props: {
@@ -51,15 +44,8 @@ export default {
       ConceptFrameCommunity,
       ConceptFrameProject,
       ConceptFrameShare,
-      ConceptFrameWatch
-    },
-    methods: {
-        cover: function(concept, mode) {
-            this.$store.dispatch('concept/conceptRegister', {
-                mode: mode,
-                concept: concept
-            })
-        }
+      ConceptFrameWatch,
+      ConceptFrameCover
     }
 }
 </script>
