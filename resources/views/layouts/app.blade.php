@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- PWA -->
-    <link rel="manifest" href="dunplab-manifest-8504.json">
+    <link rel="manifest" href="{{ asset('dunplab-manifest-8504.json') }}">
 </head>
 <body>
     <div id="app">
