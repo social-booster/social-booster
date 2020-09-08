@@ -96,7 +96,7 @@ export default {
                     voted_concepts: this.terms.voted_concepts,
                     joined_community: this.terms.joined_community,
                     watching_concepts: this.terms.watching_concepts,
-                    select_layer: this.terms.select_layer
+                    exclusion_layer: this.terms.exclusion_layer
                 }
             }).then(function(response) {
                 console.log(response.data)

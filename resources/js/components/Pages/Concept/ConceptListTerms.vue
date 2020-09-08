@@ -17,8 +17,8 @@
         <b-form-checkbox class="mt-1" v-model="terms.watching_concepts">
             ウォッチ中のコンセプト
         </b-form-checkbox>
-        <b-form-group class="mt-1" label="レイヤー">
-            <b-form-checkbox-group stacked v-model="terms.select_layer">
+        <b-form-group class="mt-1" label="除外">
+            <b-form-checkbox-group stacked v-model="terms.exclusion_layer">
                 <b-form-checkbox value="1">ストレス</b-form-checkbox>
                 <b-form-checkbox value="2">ニーズ</b-form-checkbox>
                 <b-form-checkbox value="3">アイデア</b-form-checkbox>
@@ -42,7 +42,7 @@ export default {
                 voted_concepts: false,
                 joined_community: false,
                 watching_concepts: false,
-                select_layer: [1,2,3,4,5]
+                exclusion_layer: []
             }
         }
     },
@@ -53,7 +53,7 @@ export default {
                 voted_concepts: this.terms.voted_concepts,
                 joined_community: this.terms.joined_community,
                 watching_concepts: this.terms.watching_concepts,
-                select_layer: this.terms.select_layer
+                exclusion_layer: this.terms.exclusion_layer
             })
         }
     }

@@ -25,7 +25,12 @@ class ConceptController extends Controller
     }
     public function select (Request $request) {
       return Concept::with('user:id,name')
-                ->whereIn('layer', $request->input('select_layer'))
+                ->when($request->input('exclusion_layer') !== null, function ($query) use ($request) {
+                    return $query->whereNotIn('layer', $request->input('exclusion_layer'));
+                })
+                ->when($request->boolean('my_concept_only'), function ($query) {
+                    return $query->where('concepts.user_id', Auth::id());
+                })
                 ->when($request->boolean('my_concept_only'), function ($query) {
                     return $query->where('concepts.user_id', Auth::id());
                 })
