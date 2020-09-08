@@ -11,6 +11,28 @@
                 </b-button>
             </router-link>
         </div>
+        <b-row class="text-center">
+            <b-col></b-col>
+            <b-col xl="4" lg="4" md="4">
+                <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>はじめに</strong></h2>
+                <p>SocialBoosterは問題解決における様々な課題を解決し、効率化するべく開発されました</p>
+                <router-link to="/document/Introduction" class="box-button">
+                    <b-button variant="primary">
+                        詳細を見る
+                    </b-button>
+                </router-link>
+            </b-col>
+            <b-col xl="4" lg="4" md="4">
+                <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>システム概略</strong></h2>
+                <p>SocialBoosterはコンセプト、紐付け、投票の３つの要素から優先順位を算出します</p>
+                <router-link to="/document/outline" class="box-button">
+                    <b-button variant="primary">
+                        詳細を見る
+                    </b-button>
+                </router-link>
+            </b-col>
+            <b-col></b-col>
+        </b-row>
         <b-row class="mt-4">
             <b-col xl="4" lg="4" md="4">
                 <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>コンセプト</strong></h2>
@@ -39,29 +61,6 @@
                     </b-button>
                 </router-link>
             </b-col>
-        </b-row>
-        <hr>
-        <b-row class="text-center">
-            <b-col></b-col>
-            <b-col xl="4" lg="4" md="4">
-                <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>運営協力</strong></h2>
-                <p>SBの運営は大変です。テスト作業、ドキュメント整備、スパム対応、広報面での協力者を募集しています</p>
-                <router-link to="/document/supporters" class="box-button">
-                    <b-button variant="primary">
-                        詳細を見る
-                    </b-button>
-                </router-link>
-            </b-col>
-            <b-col xl="4" lg="4" md="4">
-                <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>開発協力</strong></h2>
-                <p>残念ながら管理人は凡庸なアマチュアプログラマーです。SBでは開発メンバーの募集を随時行っています</p>
-                <router-link to="/document/open-source" class="box-button">
-                    <b-button variant="primary">
-                        詳細を見る
-                    </b-button>
-                </router-link>
-            </b-col>
-            <b-col></b-col>
         </b-row>
     </div>
 </div>
