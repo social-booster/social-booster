@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1 class="document-title">概略</h1>
+    <h1 class="document-title">システム概略</h1>
     <hr>
     <div>
         <p>SocialBooster（SB）は独自の手法によって算出した優先順位を元に問題の解決を行う非同期協調SNSです。</p>
@@ -48,11 +48,11 @@
 export default {
     head: {
         title: {
-            inner: '優先順位'
+            inner: 'システム概略'
         },
         meta: [{
                 name: 'description',
-                content: 'SocialBooster（SB）は独自の手法によって算出した優先順位を元に問題解決を非同期的に行います。'
+                content: 'SocialBooster（SB）はコンセプト、紐付け、投票の３つの要素によって優先順位を算出します。'
             },
             {
                 name: 'viewport',
