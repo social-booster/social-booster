@@ -36,8 +36,8 @@ class ConceptController extends AdminController
         $grid->column('actions_ratio', __('Actions ratio'));
         $grid->column('start_rate', __('Start rate'));
         $grid->column('layer', __('Layer'));
-        $grid->column('name', __('Name'));
-        $grid->column('content', __('Content'));
+        $grid->column('name', __('Name'))->limit(10);
+        $grid->column('content', __('Content'))->limit(30);
         $grid->column('created_at', __('Created at'))->hide();
         $grid->column('updated_at', __('Updated at'))->hide();
 
