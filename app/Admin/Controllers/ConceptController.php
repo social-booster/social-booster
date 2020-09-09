@@ -26,6 +26,7 @@ class ConceptController extends AdminController
     {
         $grid = new Grid(new Concept());
 
+        $grid->model()->orderBy('start_rate', 'asc')->orderBy('additional_votes_ratio', 'desc');
         $grid->column('id', __('Id'))->hide();
         $grid->column('user_id', __('User id'))->hide();
         $grid->column('user.name');
