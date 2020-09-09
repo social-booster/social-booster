@@ -1,8 +1,6 @@
 <template>
 <div v-if="loaded">
-    <b-button variant="light" @click="backListPage(concept_id)">
-        <b-icon icon="arrow-90deg-left" font-scale="1.2"></b-icon>
-    </b-button>
+    <ConceptPageBackButton :concept_id="concept.id" />
     <ConceptRegister />
     <ConceptFrame :concept="concept" />
     <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
@@ -16,6 +14,7 @@
 import ConceptRegister from "./ConceptRegister"
 import ConceptFrame from "./ConceptFrame"
 import ConceptPageCover from "./ConceptPageCover"
+import ConceptPageBackButton from "./ConceptPageBackButton"
 export default {
     beforeRouteUpdate(to, from, next) {
         this.queryConcept(to.params.concept_id)
@@ -35,26 +34,13 @@ export default {
     components: {
         ConceptRegister,
         ConceptFrame,
-        ConceptPageCover
+        ConceptPageCover,
+        ConceptPageBackButton
     },
     created() {
         this.queryConcept(this.concept_id)
     },
     methods: {
-        backListPage: async function(concept_id) {
-            this.$router.push('/concepts/' + (Number(String(await this.queryStartRateRank(concept_id)).slice(0,-1)) + 1))
-        },
-        queryStartRateRank: async function(concept_id) {
-            return await axios.get('/ajax/query/concept/StartRateRank', {
-                params: {
-                    concept_id: concept_id
-                }
-            }).then(function(response) {
-                return response.data
-            }.bind(this)).catch(function(error) {
-                console.log(error);
-            });
-        },
         queryConcept: function(concept_id) {
             axios.get('/ajax/query/concept', {
                     params: {
