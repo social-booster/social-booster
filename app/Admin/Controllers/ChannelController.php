@@ -26,6 +26,7 @@ class ChannelController extends AdminController
     {
         $grid = new Grid(new Channel());
 
+        $grid->model()->orderBy('created_at', 'desc');
         $grid->column('id', __('Id'));
         $grid->column('concept_id', __('Concept id'));
         $grid->column('name', __('Name'));
