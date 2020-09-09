@@ -16,7 +16,7 @@ import DocumentPriority from '../components/Pages/Document/DocumentPriority.vue'
 import DocumentSupporters from '../components/Pages/Document/DocumentSupporters.vue'
 import DocumentOpenSource from '../components/Pages/Document/DocumentOpenSource.vue'
 import DocumentNotes from '../components/Pages/Document/DocumentNotes.vue'
-import DocumentTerms from '../components/Pages/Document/DocumentTerms.vue'
+import DocumentTermsOfUse from '../components/Pages/Document/DocumentTermsOfUse.vue'
 import DocumentDefinition from '../components/Pages/Document/DocumentDefinition.vue'
 import DocumentPrivacyPolicy from '../components/Pages/Document/DocumentPrivacyPolicy.vue'
 
@@ -82,8 +82,8 @@ export default new Router({
                     component: DocumentNotes
                 },
                 {
-                    path: 'terms',
-                    component: DocumentTerms
+                    path: 'terms-of-use',
+                    component: DocumentTermsOfUse
                 },
                 {
                     path: 'definition',

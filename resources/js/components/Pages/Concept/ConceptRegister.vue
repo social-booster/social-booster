@@ -49,7 +49,7 @@
             <b-button v-b-toggle="'register-confirm'" class="mt-3 mb-3" variant="primary">登録する</b-button>
             <b-collapse id="register-confirm">
                 <b-form-checkbox v-model="readed_notes" switch size="sm" style="letter-spacing: 1.8px;"><a target="_blank" href="/document/notes">注意事項</a>を読んだ</b-form-checkbox>
-                <b-form-checkbox v-model="agreed_terms" switch size="sm"><a target="_blank" href="/document/terms">利用規約</a>に同意する</b-form-checkbox>
+                <b-form-checkbox v-model="agreed_terms" switch size="sm"><a target="_blank" href="/document/terms-of-use">利用規約</a>に同意する</b-form-checkbox>
                 <b-button variant="danger" class="mt-3" @click="registration()" :disabled="!validation">
                     本当に登録する
                 </b-button>

@@ -57,7 +57,7 @@ export default {
                     title: '注意事項'
                 },
                 {
-                    slug: 'terms',
+                    slug: 'terms-of-use',
                     title: '利用規約'
                 },
                 {
