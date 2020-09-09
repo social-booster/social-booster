@@ -26,6 +26,7 @@ class CoverController extends AdminController
     {
         $grid = new Grid(new Cover());
 
+        $grid->model()->orderBy('created_at', 'desc');
         $grid->column('id', __('Id'));
         $grid->column('user_id', __('User id'))->hide();
         $grid->column('user.name');
