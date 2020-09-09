@@ -61,7 +61,7 @@
                             </div>
                         </div>
 
-                        <login-submit></login-submit>
+                        <member-registration-button></member-registration-button>
                     </form>
                 </div>
             </div>
