@@ -26,6 +26,7 @@ class MessageController extends AdminController
     {
         $grid = new Grid(new Message());
 
+        $grid->model()->orderBy('created_at', 'desc');
         $grid->column('id', __('Id'));
         $grid->column('channel_id', __('Channel id'));
         $grid->column('user_id', __('User id'))->hide();
