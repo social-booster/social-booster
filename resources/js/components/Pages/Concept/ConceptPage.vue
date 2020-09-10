@@ -12,7 +12,7 @@
 
 <script>
 import ConceptRegister from "./ConceptRegister"
-import ConceptFrame from "./ConceptFrame"
+import ConceptFrame from "../../Assets/ConceptFrame/ConceptFrame"
 import ConceptPageCover from "./ConceptPageCover"
 import ConceptPageBackButton from "./ConceptPageBackButton"
 export default {
