@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         backListPage: async function(concept_id) {
-            this.$router.push('/concepts/' + Math.floor(await this.queryStartRateRank(concept_id) / 10 + 1))
+            this.$router.push('/concepts/' + Math.floor(await this.queryStartRateRank(concept_id) / 10 + 0.9))
         },
         queryStartRateRank: async function(concept_id) {
             return await axios.get('/ajax/query/concept/StartRateRank', {
