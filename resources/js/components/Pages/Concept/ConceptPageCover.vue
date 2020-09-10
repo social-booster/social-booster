@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import CoverFrame from "../Cover/CoverFrame"
+import CoverFrame from "../../Assets/CoverFrame/CoverFrame"
 export default {
     data() {
         return {
