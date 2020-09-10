@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import ConceptRegister from "./ConceptRegister"
+import ConceptRegister from "../../Assets/ConceptRegister/ConceptRegister"
 import ConceptFrame from "../../Assets/ConceptFrame/ConceptFrame"
 import ConceptListTerms from "./ConceptListTerms"
 export default {
