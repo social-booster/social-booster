@@ -9,14 +9,14 @@
         <p>{{concept.content}}</p>
         <template v-slot:footer>
             <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
-            <ConceptFrameStats :concept="concept" />
-            <ConceptFrameProject :concept="concept" />
-            <ConceptFrameCommunity :concept="concept" />
-            <ConceptFrameWatch :concept="concept" />
-            <ConceptFrameVote :concept="concept" />
-            <ConceptFrameCover :concept="concept" />
-            <ConceptFrameShare :concept="concept" />
-          </div>
+                <ConceptFrameStats :concept="concept" />
+                <ConceptFrameProject :concept="concept" />
+                <ConceptFrameCommunity :concept="concept" />
+                <ConceptFrameWatch :concept="concept" />
+                <ConceptFrameVote :concept="concept" />
+                <ConceptFrameCover :concept="concept" />
+                <ConceptFrameShare :concept="concept" />
+            </div>
         </template>
     </b-card>
 </div>
@@ -32,20 +32,19 @@ import ConceptFrameWatch from "./ConceptFrameWatch"
 import ConceptFrameCover from "./ConceptFrameCover"
 export default {
     data() {
-        return {
-        }
+        return {}
     },
     props: {
         concept: Object
     },
     components: {
-      ConceptFrameVote,
-      ConceptFrameStats,
-      ConceptFrameCommunity,
-      ConceptFrameProject,
-      ConceptFrameShare,
-      ConceptFrameWatch,
-      ConceptFrameCover
+        ConceptFrameVote,
+        ConceptFrameStats,
+        ConceptFrameCommunity,
+        ConceptFrameProject,
+        ConceptFrameShare,
+        ConceptFrameWatch,
+        ConceptFrameCover
     }
 }
 </script>
