@@ -16,17 +16,17 @@ export default {
             return this.$store.state.concept.register
         },
         next_layer: function() {
-            return this.$store.getters.['concept/next_layer']
+            return this.$store.getters. ['concept/next_layer']
         }
     },
     methods: {
-      chooseLayer: function(layer) {
-        this.$store.commit('concept/setCreate',{
-          layer: layer,
-          name: this.create.name,
-          content: this.create.content
-        })
-      }
+        chooseLayer: function(layer) {
+            this.$store.commit('concept/setCreate', {
+                layer: layer,
+                name: this.create.name,
+                content: this.create.content
+            })
+        }
     }
 }
 </script>
