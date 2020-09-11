@@ -93,6 +93,11 @@ export default {
                     this.token
                 )
             }
+            this.openSuccessModal(
+                this.register,
+                this.select !== Object,
+                new_concept
+            )
             this.$bvModal.hide('concept-register')
         },
         conceptRegister: async function(anonymous, layer, name, content, token) {
@@ -129,6 +134,15 @@ export default {
                     alert('項目に問題があるか、プログラムに異常があるようです。')
                 }
             }.bind(this));
+        },
+        openSuccessModal: function(register, is_select, new_concept) {
+            this.$store.commit('concept/setSuccessModal', {
+                register: {
+                    mode: register.mode
+                },
+                is_select: is_select,
+                new_concept: new_concept
+            })
         }
     }
 }

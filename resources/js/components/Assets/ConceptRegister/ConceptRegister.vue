@@ -10,6 +10,7 @@
         <ConceptRegisterSimilarity />
         <ConceptRegisterSubmit />
     </b-modal>
+    <ConceptRegisterSuccessModal />
 </div>
 </template>
 
@@ -19,6 +20,7 @@ import ConceptRegisterBase from "./ConceptRegisterBase"
 import ConceptRegisterSimilarity from "./ConceptRegisterSimilarity"
 import ConceptRegisterInput from "./ConceptRegisterInput"
 import ConceptRegisterSubmit from "./ConceptRegisterSubmit"
+import ConceptRegisterSuccessModal from "./ConceptRegisterSuccessModal"
 export default {
     components: {
         ConceptRegisterLayerSelection,
@@ -26,6 +28,7 @@ export default {
         ConceptRegisterSimilarity,
         ConceptRegisterInput,
         ConceptRegisterSubmit,
+        ConceptRegisterSuccessModal
     },
     data() {
         return {}
