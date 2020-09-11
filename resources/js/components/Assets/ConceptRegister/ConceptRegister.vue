@@ -28,8 +28,7 @@ export default {
         ConceptRegisterSubmit
     },
     data() {
-        return {
-        }
+        return {}
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -38,10 +37,10 @@ export default {
                     mode: 'hide',
                     concept: null
                 })
-                this.$store.commit('concept/setCreate',{
-                  layer: 1,
-                  name: '',
-                  content: ''
+                this.$store.commit('concept/setCreate', {
+                    layer: 1,
+                    name: '',
+                    content: ''
                 })
                 this.$store.commit('concept/setSelect', Object)
             }
@@ -71,10 +70,10 @@ export default {
                     this.$bvModal.show('concept-register')
                 }
                 if (this.is_cover_mode_enabled) {
-                    this.$store.commit('concept/setCreate',{
-                      layer: this.next_layer,
-                      name: this.create.name,
-                      content: this.create.content
+                    this.$store.commit('concept/setCreate', {
+                        layer: this.next_layer,
+                        name: this.create.name,
+                        content: this.create.content
                     })
                 }
             },
