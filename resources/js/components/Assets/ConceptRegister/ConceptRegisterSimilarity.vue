@@ -1,4 +1,4 @@
-similarity<template>
+<template>
 <div v-show="similarities.length > 0">
     <div class="text-center">
         <p class="mb-0 mt-2" style="color: #022544;">同じ内容のものはありませんか？</p>
