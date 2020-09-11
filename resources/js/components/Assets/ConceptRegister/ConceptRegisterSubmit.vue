@@ -4,10 +4,10 @@
     <b-button v-b-toggle="'register-confirm'" class="mt-3 mb-3" variant="primary">登録する</b-button>
     <b-collapse id="register-confirm">
         <b-form-checkbox v-model="has_read_notes" switch size="sm" style="letter-spacing: 1.8px;">
-          <span><a target="_blank" href="/document/notes">注意事項</a>を読んだ</span>
+            <span><a target="_blank" href="/document/notes">注意事項</a>を読んだ</span>
         </b-form-checkbox>
         <b-form-checkbox v-model="is_agreed_terms_of_use" switch size="sm">
-          <span><a target="_blank" href="/document/terms-of-use">利用規約</a>に同意する</span>
+            <span><a target="_blank" href="/document/terms-of-use">利用規約</a>に同意する</span>
         </b-form-checkbox>
         <b-button variant="danger" class="mt-3" @click="registration()" :disabled="!validation">
             本当に登録する
@@ -28,8 +28,7 @@ export default {
             is_agreed_terms_of_use: false
         }
     },
-    mounted() {
-    },
+    mounted() {},
     computed: {
         register: function() {
             return this.$store.state.concept.register
