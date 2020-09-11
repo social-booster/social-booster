@@ -25,7 +25,7 @@ export default {
         ConceptRegisterBase,
         ConceptRegisterSimilarity,
         ConceptRegisterInput,
-        ConceptRegisterSubmit
+        ConceptRegisterSubmit,
     },
     data() {
         return {}
