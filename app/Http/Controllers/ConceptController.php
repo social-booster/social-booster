@@ -58,7 +58,7 @@ class ConceptController extends Controller
     public function query(Request $request) {
       return Concept::with('user:id,name')->FindOrFail($request->input('concept_id'));
     }
-    public function similaritySearch(Request $request) {
+    public function serchSimilarities(Request $request) {
       return Concept::where('layer',$request->input('layer'))->freeword($request->input('content'))->limit(5)->get();
     }
     public function queryStartRateRank(Request $request) {

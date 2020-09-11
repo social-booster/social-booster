@@ -40,7 +40,7 @@ Route::post('insert/concept', 'ConceptController@insert');
 Route::get('select/concept', 'ConceptController@select');
 Route::get('query/concept', 'ConceptController@query');
 Route::get('query/concept/StartRateRank', 'ConceptController@queryStartRateRank');
-Route::get('serch/concept/similarity', 'ConceptController@similaritySearch');
+Route::get('serch/concept/similarities', 'ConceptController@serchSimilarities');
 //Cover
 Route::post('insert/cover', 'CoverController@insert');
 Route::get('select/cover', 'CoverController@select');
