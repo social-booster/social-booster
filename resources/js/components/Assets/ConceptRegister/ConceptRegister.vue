@@ -2,9 +2,9 @@
 <div>
     <b-modal id="concept-register" hide-footer hide-header>
         <ConceptRegisterLayerSelection />
-        <hr>
-        {{create.layer | layerDescription}}
-        <hr>
+        <div class="mb-3 mt-3">
+            {{create.layer | layerDescription}}
+        </div>
         <ConceptRegisterBase />
         <ConceptRegisterInput />
         <ConceptRegisterSimilarity />
