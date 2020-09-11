@@ -63,7 +63,7 @@ const getters = {
     is_cover_mode_enabled: state => {
         return state.register.mode === 'upper' || state.register.mode === 'lower'
     },
-    next_layer: (state,getters) => {
+    next_layer: (state, getters) => {
         if (!getters.is_cover_mode_enabled) {
             return null
         }
@@ -97,11 +97,12 @@ const mutations = {
             exclusion_layer: exclusion_layer
         }
     },
-    setCreate(state,create) {
-      state.create = create
+    setCreate(state, create) {
+        state.create = create
     },
-    setSelect(state,select) {
-      state.select = select
+    setSelect(state, select) {
+        state.select = select
+    },
     }
 };
 
