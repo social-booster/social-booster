@@ -50,7 +50,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
       $schedule->command('sb:ComputeAll')->daily();
-      $schedule->command('sb:SendMailRequestForVolunteers')->fridays();
+      $schedule->command('sb:SendMailRequestForVolunteers')->weeklyOn(5, '18:00');
     }
 
     /**
