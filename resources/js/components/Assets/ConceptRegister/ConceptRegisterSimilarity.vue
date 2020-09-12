@@ -25,6 +25,11 @@ export default {
             covers: []
         }
     },
+    created: async function() {
+        if (this.is_cover_mode_enabled) {
+            this.covers = await this.selectCover(this.register.base.id, this.register.mode)
+        }
+    },
     mounted: function() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
             if (modalId === 'concept-register') {
@@ -48,14 +53,6 @@ export default {
         }
     },
     watch: {
-        register: {
-            handler: function() {
-                if (this.is_cover_mode_enabled) {
-                    this.selectCover(this.register.base.id, this.register.mode)
-                }
-            },
-            deep: true
-        },
         create: {
             handler: function() {
                 if (this.register.mode !== 'hide') {
@@ -77,15 +74,14 @@ export default {
                 return u[this.register.mode + '_concept'].id === concept_id
             }.bind(this));
         },
-        selectCover: function(concept_id, mode) {
-            axios.get('/ajax/select/cover', {
+        selectCover: async function(concept_id, mode) {
+            return await axios.get('/ajax/select/cover', {
                 params: {
                     concept_id: concept_id,
                     mode: mode
                 }
             }).then(function(response) {
-                //console.log(response.data)
-                this.covers = response.data
+                return response.data
             }.bind(this)).catch(function(error) {
                 console.log(error);
             });
