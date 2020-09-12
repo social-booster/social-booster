@@ -71,10 +71,10 @@ export default {
         },
         isCoverd: function(concept_id) {
             return this.covers.find(function(u) {
-                if (u[(this.register.mode === 'upper' ? 'upper' : 'lower') + '_concept'] === undefined) {
+                if (u[this.register.mode + '_concept'] === undefined) {
                     return true
                 }
-                return u[(this.register.mode === 'upper' ? 'upper' : 'lower') + '_concept'].id === concept_id
+                return u[this.register.mode + '_concept'].id === concept_id
             }.bind(this));
         },
         selectCover: function(concept_id, mode) {
