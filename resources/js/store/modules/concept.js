@@ -77,8 +77,10 @@ const mutations = {
         mode,
         concept
     }) {
-        state.register.mode = mode
-        state.register.base = concept
+        state.register = {
+            mode: mode,
+            base: concept
+        }
     },
     setAllConceptVotes(state, value) {
         state.all_concept_votes = value
