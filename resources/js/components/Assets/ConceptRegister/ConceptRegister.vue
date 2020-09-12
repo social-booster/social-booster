@@ -2,9 +2,7 @@
 <div>
     <b-modal id="concept-register" hide-footer hide-header>
         <ConceptRegisterLayerSelection />
-        <div class="mb-3 mt-3">
-            {{create.layer | layerDescription}}
-        </div>
+        <ConceptRegisterLayerDescription />
         <ConceptRegisterBase />
         <ConceptRegisterInput />
         <ConceptRegisterSimilarity />
@@ -16,6 +14,7 @@
 
 <script>
 import ConceptRegisterLayerSelection from "./ConceptRegisterLayerSelection"
+import ConceptRegisterLayerDescription from "./ConceptRegisterLayerDescription"
 import ConceptRegisterBase from "./ConceptRegisterBase"
 import ConceptRegisterSimilarity from "./ConceptRegisterSimilarity"
 import ConceptRegisterInput from "./ConceptRegisterInput"
@@ -24,6 +23,7 @@ import ConceptRegisterSuccessModal from "./ConceptRegisterSuccessModal"
 export default {
     components: {
         ConceptRegisterLayerSelection,
+        ConceptRegisterLayerDescription,
         ConceptRegisterBase,
         ConceptRegisterSimilarity,
         ConceptRegisterInput,
