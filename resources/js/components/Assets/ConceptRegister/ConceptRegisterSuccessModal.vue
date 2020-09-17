@@ -21,17 +21,18 @@
 </template>
 
 <script>
+import mitt from "../../../mitt.js"
 export default {
-    mounted: function() {},
-    computed: {
-        success_modal: function() {
-            return this.$store.state.concept.success_modal
+    data() {
+        return {
+            success_modal: Object
         }
     },
-    watch: {
-        success_modal: function() {
+    mounted: function() {
+        mitt.on('openSuccessModal', function(e) {
             this.$bvModal.show('successful-modal')
-        }
-    }
+            this.success_modal = e
+        }.bind(this));
+    },
 }
 </script>

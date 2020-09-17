@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import mitt from "../../../mitt.js"
 export default {
     data() {
         return {
@@ -136,10 +137,8 @@ export default {
             }.bind(this));
         },
         openSuccessModal: function(register, is_select, new_concept) {
-            this.$store.commit('concept/setSuccessModal', {
-                register: {
-                    mode: register.mode
-                },
+            mitt.emit('openSuccessModal', {
+                register: register,
                 is_select: is_select,
                 new_concept: new_concept
             })

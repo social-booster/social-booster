@@ -17,7 +17,6 @@ const state = {
         watching_concepts: false,
         exclusion_layer: []
     },
-    success_modal: Object,
     layer_metas: {
         1: {
             content: {
@@ -105,9 +104,6 @@ const mutations = {
     },
     setSelect(state, select) {
         state.select = select
-    },
-    setSuccessModal(state, value) {
-        state.success_modal = value
     }
 };
 
