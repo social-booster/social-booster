@@ -54,7 +54,7 @@ class ComputeConceptActions extends Command
                 $actions = $concept_user->where('concept_id', $con->id)->count();
             }
             Concept::where('id', $con->id)->update([
-              'actions' => $actions ?? 0
+              'actions' => ($actions ?? 0) * config('concept_action_factor',1)
             ]);
         }
     }
