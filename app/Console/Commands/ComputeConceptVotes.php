@@ -40,9 +40,9 @@ class ComputeConceptVotes extends Command
     public function handle()
     {
         foreach (Concept::get() as $con) {
-            Concept::where('id', $con->id)->update([
-          'votes' => ConceptRealVote::where('concept_id', $con->id)->sum('value')
-        ]);
+          Concept::where('id', $con->id)->update([
+            'votes' => ConceptRealVote::where('concept_id', $con->id)->sum('value') * config('concept_vote_factor',1)
+          ]);
         }
     }
 }
