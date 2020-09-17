@@ -41,7 +41,7 @@ class ComputeCoverVotes extends Command
     {
         foreach (Cover::get() as $cov) {
             $result = Cover::where('id', $cov->id)->update([
-            'votes' => CoverRealVote::where('cover_id', $cov->id)->sum('value')
+            'votes' => CoverRealVote::where('cover_id', $cov->id)->sum('value') * config('cover_vote_factor',1)
             ]);
         }
     }
