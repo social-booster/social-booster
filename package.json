@@ -27,6 +27,7 @@
         "bootstrap-vue": "^2.16.0",
         "es6-promise": "^4.2.8",
         "laravel-echo": "^1.8.1",
+        "mitt": "^2.1.0",
         "pusher-js": "^7.0.0",
         "vue-analytics": "^5.22.1",
         "vue-clipboard2": "^0.3.1",
