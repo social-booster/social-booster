@@ -5,12 +5,11 @@
 /application/public/css/app.css
 /application/storage/*.key
 /application/vendor
-#.env
-.env.backup
 /application/.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+/application/Homestead.json
+/application/Homestead.yaml
+/application/npm-debug.log
+/application/yarn-error.log
+/infrastructure/.env
 
 .idea
