@@ -19,7 +19,7 @@ services:
       - DB_USERNAME=${DB_USER}
       - DB_PASSWORD=${DB_PASS}
       - APP_NAME=${APP_NAME}
-      - APP_ENV=${APP_NAME}
+      - APP_ENV=${APP_ENV}
       - APP_DEBUG=${APP_DEBUG}
       - APP_URL=${APP_URL}
       - WEB_PORT=${WEB_PORT}
@@ -37,6 +37,9 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ../application:/work/application
+    environment:
+      - MIX_PUSHER_APP_KEY=${PUSHER_APP_KEY}
+      - MIX_PUSHER_APP_CLUSTER=${PUSHER_APP_CLUSTER}
 
   db:
     build:
