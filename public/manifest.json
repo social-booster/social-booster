@@ -10,6 +10,7 @@
     "dir": "auto",
     "display": "standalone",
     "orientation": "any",
+    "categories": ["social"],
     "icons": [{
             "src": "images/pwa-icons/icon-512x512.png",
             "type": "image/png",
