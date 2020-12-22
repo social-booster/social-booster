@@ -10,7 +10,6 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-
 import {
     BootstrapVue,
     IconsPlugin
@@ -54,8 +53,6 @@ Vue.filter('layerName', function(layer) {
     }
     return layer_names[layer]
 })
-
-
 
 /**
  * The following block of code may be used to automatically register your
