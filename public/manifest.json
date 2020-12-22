@@ -1,5 +1,5 @@
 {
-    "short_name": "SB",
+    "short_name": "SocialBooster",
     "name": "SocialBooster",
     "lang": "ja",
     "description": "SocialBooster（SB）は独自の手法によって算出した優先順位を元に問題の解決を行う非同期協調SNSです。",
@@ -11,82 +11,100 @@
     "display": "standalone",
     "orientation": "any",
     "icons": [{
+            "src": "images/pwa-icons/icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/pwa-icons/icon-384x384.png",
+            "type": "image/png",
+            "sizes": "384x384",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/pwa-icons/icon-256x256.png",
+            "type": "image/png",
+            "sizes": "256x256",
+            "purpose": "any maskable"
+        },
+        {
             "src": "images/pwa-icons/android-icon-192x192-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "192x192",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-180x180-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "180x180",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-152x152-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "152x152",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-144x144-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "144x144",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-120x120-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "120x120",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-114x114-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "114x114",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/favicon-96x96-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "96x96",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-76x76-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "76x76",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-72x72-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "72x72",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-60x60-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "60x60",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/apple-icon-57x57-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "57x57",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/favicon-32x32-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "32x32",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "images/pwa-icons/favicon-16x16-dunplab-manifest-7604.png",
             "type": "image/png",
             "sizes": "16x16",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         }
     ]
 }
