@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "tech.socialbooster.twa",
+                   "sha256_cert_fingerprints": ["75:C7:3D:8C:B5:B3:12:CF:CB:21:CC:33:36:24:45:EE:D6:7C:C2:64:D1:E2:90:34:C4:60:75:8A:3A:57:F4:03"] }
+    }]
