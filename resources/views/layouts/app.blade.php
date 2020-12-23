@@ -23,7 +23,19 @@
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 
     <!-- ServiceWorker -->
-    <script src="{{ asset('pwabuilder-sw.js') }}"></script>
+    <script>
+      window.addEventListener('load', () => {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').
+            then(() => {
+              console.log('ServiceWorker registered')
+            }).
+            catch((error) => {
+              console.warn('ServiceWorker error', error)
+            })
+        }
+      })
+    </script>
 </head>
 <body>
     <div id="app">
