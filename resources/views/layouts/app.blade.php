@@ -26,8 +26,8 @@
     <script>
     if ('serviceWorker' in navigator) {
       console.log('Service Worker and Push is supported');
-      
-      navigator.serviceWorker.register('sw.js')
+
+      navigator.serviceWorker.register('pwabuilder-sw.js')
       .then(function (swReg) {
         console.log('Service Worker is registered', swReg)
         initialiseServiceWorker()
