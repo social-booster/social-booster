@@ -30,8 +30,10 @@ class AppServiceProvider extends ServiceProvider
         if (Schema::hasTable($table)) {
             Config::load();
         }
+        /*
         if (config('app.env') !== 'local') {
             $url->forceScheme('https');
         }
+        */
     }
 }
