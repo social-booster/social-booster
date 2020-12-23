@@ -26,12 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url)
     {
+        if (config('app.env') !== 'local') {
+            $url->forceScheme('https');
+        }
         $table = config('admin.extensions.config.table', 'admin_config');
         if (Schema::hasTable($table)) {
             Config::load();
-        }
-        if (config('app.env') !== 'local') {
-            $url->forceScheme('https');
         }
     }
 }
