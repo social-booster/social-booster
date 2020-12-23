@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(UrlGenerator $url)
+    public function boot(/*UrlGenerator $url*/)
     {
         $table = config('admin.extensions.config.table', 'admin_config');
         if (Schema::hasTable($table)) {
