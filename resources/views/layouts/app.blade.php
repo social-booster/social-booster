@@ -24,17 +24,18 @@
 
     <!-- ServiceWorker -->
     <script>
-      window.addEventListener('load', () => {
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js').
-            then(() => {
-              console.log('ServiceWorker registered')
-            }).
-            catch((error) => {
-              console.warn('ServiceWorker error', error)
-            })
-        }
+    if ('serviceWorker' in navigator) {
+      console.log('Service Worker and Push is supported');
+      
+      navigator.serviceWorker.register('sw.js')
+      .then(function (swReg) {
+        console.log('Service Worker is registered', swReg)
+        initialiseServiceWorker()
       })
+      .catch(function(error) {
+        console.error('Service Worker Error', error)
+      })
+    }
     </script>
 </head>
 <body>
