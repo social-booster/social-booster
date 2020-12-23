@@ -3,6 +3,7 @@
     "name": "SocialBooster",
     "lang": "Japanese",
     "description": "SocialBooster（SB）は独自の手法によって算出した優先順位を元に問題の解決を行う非同期協調SNSです。",
+    "url": "https://socialbooster.tech",
     "start_url": "https://socialbooster.tech/concepts/1",
     "scope": "/",
     "background_color": "#ffffff",
