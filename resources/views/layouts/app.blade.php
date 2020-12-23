@@ -21,6 +21,9 @@
 
     <!-- PWA -->
     <link rel="manifest" href="{{ asset('manifest.json') }}">
+
+    <!-- ServiceWorker -->
+    <script src="{{ asset('sw.js') }}"></script>
 </head>
 <body>
     <div id="app">
