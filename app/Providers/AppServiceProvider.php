@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Encore\Admin\Config\Config;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Routing\UrlGenerator;
+//use Illuminate\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
