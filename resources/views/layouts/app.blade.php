@@ -21,6 +21,7 @@
 
     <!-- PWA -->
     <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/pwa-icons/android-icon-192x192-dunplab-manifest-7604.png') }}">
 
     <!-- ServiceWorker -->
     <script>
