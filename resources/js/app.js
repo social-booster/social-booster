@@ -9,7 +9,7 @@
  }
  */
 
-
+/*
  if ('serviceWorker' in navigator) {
    console.log('Service Worker and Push is supported');
 
@@ -22,7 +22,7 @@
      console.error('Service Worker Error', error)
    })
  }
-
+*/
 require('./bootstrap');
 
 window.Vue = require('vue');
