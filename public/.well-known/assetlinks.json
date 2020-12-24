@@ -1,5 +1,8 @@
 [{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target" : { "namespace": "android_app", "package_name": "tech.socialbooster.twa",
-                   "sha256_cert_fingerprints": ["75:C7:3D:8C:B5:B3:12:CF:CB:21:CC:33:36:24:45:EE:D6:7C:C2:64:D1:E2:90:34:C4:60:75:8A:3A:57:F4:03"] }
-    }]
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "tech.socialbooster.twa",
+        "sha256_cert_fingerprints": ["AF:75:3B:6D:0F:9C:34:9C:CB:63:E1:8A:FA:DD:CF:22:DB:88:14:AE:41:BF:B5:E2:45:40:77:28:6A:C7:60:43"]
+    }
+}]
