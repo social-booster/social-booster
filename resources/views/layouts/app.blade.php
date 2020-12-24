@@ -27,7 +27,7 @@
     <!-- ServiceWorker -->
     <script src="{{ asset('sw.js') }}"></script>
     <script>
-
+    /*
     if ('serviceWorker' in navigator) {
       console.log('Service Worker and Push is supported');
 
@@ -40,7 +40,7 @@
         console.error('Service Worker Error', error)
       })
     }
-
+    */
     </script>
 </head>
 <body>
