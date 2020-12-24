@@ -25,22 +25,8 @@
     <link rel="apple-touch-icon" href="{{ asset('images/pwa-icons/android-icon-192x192-dunplab-manifest-7604.png') }}">
 
     <!-- ServiceWorker -->
-    <script>
-
-    if ('serviceWorker' in navigator) {
-      console.log('Service Worker and Push is supported');
-
-      navigator.serviceWorker.register('pwabuilder-sw.js')
-      .then(function (swReg) {
-        console.log('Service Worker is registered', swReg)
-        initialiseServiceWorker()
-      })
-      .catch(function(error) {
-        console.error('Service Worker Error', error)
-      })
-    }
-
-    </script>
+    <script src="{{ asset('sw-register.js') }}"></script>
+    
 </head>
 <body>
     <div id="app">
