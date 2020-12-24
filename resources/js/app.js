@@ -3,26 +3,6 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
- /*
- if (location.hostname !== 'localhost' && location.protocol === 'http:') {
-   location.href = 'https:' + '//' + location.hostname + location.pathname
- }
- */
-
-/*
- if ('serviceWorker' in navigator) {
-   console.log('Service Worker and Push is supported');
-
-   navigator.serviceWorker.register('pwabuilder-sw.js')
-   .then(function (swReg) {
-     console.log('Service Worker is registered', swReg)
-     initialiseServiceWorker()
-   })
-   .catch(function(error) {
-     console.error('Service Worker Error', error)
-   })
- }
-*/
 require('./bootstrap');
 
 window.Vue = require('vue');
