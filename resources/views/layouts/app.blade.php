@@ -26,7 +26,7 @@
 
     <!-- ServiceWorker -->
     <script>
-
+    /*
     if ('serviceWorker' in navigator) {
       console.log('Service Worker and Push is supported');
 
@@ -39,7 +39,11 @@
         console.error('Service Worker Error', error)
       })
     }
-    
+    */
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
     </script>
 </head>
 <body>
