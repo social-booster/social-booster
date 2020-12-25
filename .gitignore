@@ -3,9 +3,16 @@
 /public/storage
 /public/js/app.js
 /public/css/app.css
+/bootstrap/cache
 /storage/*.key
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
 /vendor
-.env
+/infrastructure/.env
+#.env
 .env.backup
 .phpunit.result.cache
 Homestead.json
