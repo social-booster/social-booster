@@ -32,8 +32,8 @@ docker-compose exec app bash
 (In container)
 
 ```
-chmod 666 -R storage           # コンテナ構築後の１回のみでOK
-chmod 666 -R bootstrap/cache   # コンテナ構築後の１回のみでOK
+chmod 777 -R storage           # コンテナ構築後の１回のみでOK
+chmod 777 -R bootstrap/cache   # コンテナ構築後の１回のみでOK
 
 make vendor   # composer install ほか を実行
 
