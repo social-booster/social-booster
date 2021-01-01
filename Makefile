@@ -26,7 +26,6 @@ opt: clear
 
 clr: opt dump
 
-
 test:
 		vendor/bin/phpunit --configuration=phpunit.xml
 
