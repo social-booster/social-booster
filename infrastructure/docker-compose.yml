@@ -14,7 +14,6 @@ services:
       - ../:/work
     environment:
       - DB_HOST_C=${DB_HOST_C}
-      - DB_PORT_C=${DB_PORT_C}
       - DB_DATABASE_C=${DB_NAME_C}
       - DB_USERNAME_C=${DB_USER_C}
       - DB_PASSWORD_C=${DB_PASS_C}
@@ -28,6 +27,8 @@ services:
       - PUSHER_APP_KEY_C=${PUSHER_APP_KEY_C}
       - PUSHER_APP_SECRET_C=${PUSHER_APP_SECRET_C}
       - PUSHER_APP_CLUSTER_C=${PUSHER_APP_CLUSTER_C}
+      - RECAPTCHA_SITE_KEY_C=${RECAPTCHA_SITE_KEY_C}
+      - RECAPTCHA_SECRET_KEY_C=${RECAPTCHA_SECRET_KEY_C}
 
   web:
     build:
