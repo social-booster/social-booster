@@ -9,6 +9,10 @@ help:
 env:
 		cp -p .env.docker .env
 
+chmod:
+		chmod 777 -R storage
+		chmod 777 -R bootstrap/cache
+
 
 # Node.js
 npmi:
