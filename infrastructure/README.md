@@ -17,8 +17,10 @@ SocialBooster の環境整備コード一式
 #### 起動
 
 ```
-cd /path/to/social-booster/infrastructure
+cd /path/to/social-booster
+cp -p .env.docker .env
 
+cd /path/to/social-booster/infrastructure
 cp -p .env.local .env
 
 docker-compose up -d  

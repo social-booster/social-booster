@@ -5,6 +5,23 @@ help:
 		cat Makefile
 
 
+# environment
+env:
+		cp -p .env.docker .env
+
+
+# Node.js
+npmi:
+		npm install
+npmd:
+		npm run dev
+npmw:
+		npm run watch
+npmrb:
+		npm rebuild node-sass
+
+
+# Laravel
 vendor: composer.json composer.lock
 		composer self-update
 		composer validate
