@@ -5,6 +5,27 @@ help:
 		cat Makefile
 
 
+# environment
+env:
+		cp -p .env.docker .env
+
+chmod:
+		chmod 777 -R storage
+		chmod 777 -R bootstrap/cache
+
+
+# Node.js
+#npmi:
+#		npm install
+#npmd:
+#		npm run dev
+#npmw:
+#		npm run watch
+#npmrb:
+#		npm rebuild node-sass
+
+
+# Laravel
 vendor: composer.json composer.lock
 		composer self-update
 		composer validate

@@ -12,7 +12,7 @@
 /storage/logs
 /vendor
 /infrastructure/.env
-#.env
+.env
 .env.backup
 .phpunit.result.cache
 Homestead.json
