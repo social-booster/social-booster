@@ -15,14 +15,14 @@ chmod:
 
 
 # Node.js
-npmi:
-		npm install
-npmd:
-		npm run dev
-npmw:
-		npm run watch
-npmrb:
-		npm rebuild node-sass
+#npmi:
+#		npm install
+#npmd:
+#		npm run dev
+#npmw:
+#		npm run watch
+#npmrb:
+#		npm rebuild node-sass
 
 
 # Laravel
