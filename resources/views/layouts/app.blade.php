@@ -26,7 +26,7 @@
 
     <!-- ServiceWorker -->
     <script src="{{ asset('sw-register.js') }}"></script>
-    
+
 </head>
 <body>
     <div id="app">
@@ -52,6 +52,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer-menu></footer-menu>
     </div>
 </body>
 </html>

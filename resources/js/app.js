@@ -62,6 +62,7 @@ Vue.filter('layerName', function(layer) {
 Vue.component('HeaderMenu', require('./components/Header/Menu/Menu.vue').default);
 Vue.component('VerifyEmail', require('./components/Assets/VerifyEmail/VerifyEmail.vue').default);
 Vue.component('MemberRegistrationButton', require('./components/Assets/MemberRegistrationButton/MemberRegistrationButton.vue').default);
+Vue.component('FooterMenu', require('./components/Assets/FooterMenu/FooterMenu.vue').default);
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
