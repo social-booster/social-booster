@@ -9,7 +9,6 @@
             </b-button>
         </div>
     </div>
-    <hr>
     <div v-for="concept in concepts" :key="concept.id">
         <router-link :to="'/concept/' + concept.id" class="link">
             <ConceptFrame :concept="concept" />
