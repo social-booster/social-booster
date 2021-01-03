@@ -4,8 +4,8 @@
     <div style="display: grid;grid-template-columns: 1fr auto;">
         <ConceptListTerms v-if="is_verified" />
         <div class="text-right">
-            <b-button variant="primary" @click="register">
-                投稿する
+            <b-button variant="light" @click="register()">
+                <b-icon icon="plus"></b-icon>
             </b-button>
         </div>
     </div>
