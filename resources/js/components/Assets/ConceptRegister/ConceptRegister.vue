@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-modal id="concept-register" hide-footer hide-header>
+    <b-modal id="concept-register" hide-footer header-class="modal-header p-1 pr-2 border-bottom-0">
         <ConceptRegisterLayerSelection />
         <ConceptRegisterLayerDescription />
         <ConceptRegisterBase />
