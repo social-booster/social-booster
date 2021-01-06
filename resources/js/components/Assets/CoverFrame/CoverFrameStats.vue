@@ -4,7 +4,7 @@
         <span class="cover-footer-stats-name">紐付け比率</span>
         <span class="cover-footer-stats-value">{{cover.ratio}}</span>
         <span class="cover-footer-stats-unit">%</span>
-        <span class="cover-footer-stats-name">紐付け投票数</span>
+        <span class="cover-footer-stats-name">紐付け得票数</span>
         <span class="cover-footer-stats-value">{{cover.votes}}</span>
     </span>
     <button class="concept-footer-button" @click.prevent="display = !display">

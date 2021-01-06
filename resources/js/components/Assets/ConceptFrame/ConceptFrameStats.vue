@@ -12,9 +12,9 @@
       <span class="concept-footer-stats-name">期待率</span>
       <span class="concept-footer-stats-value">{{concept.additional_votes_ratio}}</span>
       <span class="concept-footer-stats-unit">%</span>
-      <span class="concept-footer-stats-name">加算投票数</span>
+      <span class="concept-footer-stats-name">加算得票数</span>
       <span class="concept-footer-stats-value">{{concept.additional_votes}}</span>
-      <span class="concept-footer-stats-name">投票数</span>
+      <span class="concept-footer-stats-name">得票数</span>
       <span class="concept-footer-stats-value">{{concept.votes}}</span>
     </span>
     <button class="concept-footer-button text-right" @click.prevent="display = !display">
