@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Document</h1>
+    <h1>ドキュメント</h1>
     <b-row>
         <b-col class="text-left" xl="3" lg="3" md="3">
             <div v-for="docu in documents">
