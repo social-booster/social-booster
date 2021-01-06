@@ -15,7 +15,7 @@ class SiteMapController extends Controller
         $sitemap = App::make("sitemap");
         $now = Carbon::now();
         $sitemap->add(URL::to('/'), $now, '1.0', 'monthly');
-        foreach (['concept','cover','vote','priority'] as $value) {
+        foreach (['outline','intention','concept','cover','vote','priority'] as $value) {
           $sitemap->add(URL::to('/document/'.$value), $now, '0.9', 'monthly');
         }
         foreach (Concept::orderBy('start_rate', 'asc')->get() as $con) {
