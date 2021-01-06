@@ -25,8 +25,8 @@ export default {
                     title: '概略'
                 },
                 {
-                    slug: 'outline',
-                    title: 'システム概略'
+                    slug: 'intention',
+                    title: '意図'
                 },
                 {
                     slug: 'concept',
