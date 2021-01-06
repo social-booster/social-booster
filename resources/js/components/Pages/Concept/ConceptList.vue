@@ -1,7 +1,7 @@
 <template>
 <div>
     <ConceptRegister />
-    <div style="display: grid;grid-template-columns: 1fr auto;">
+    <div style="display: grid; grid-template-columns: 1fr auto;position: sticky;top: 0;z-index: 1000;background: white;padding-bottom: 5px;padding-top: 5px;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #dfdfdf;">
         <ConceptListTerms v-if="is_verified" />
         <div class="text-right">
             <b-button variant="light" @click="register()">
