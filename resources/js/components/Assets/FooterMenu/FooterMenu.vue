@@ -3,7 +3,7 @@
     <router-link to="/concepts/1">
         <b-icon icon="house" class="global-footer-menu-item"></b-icon>
     </router-link>
-    <router-link to="/document">
+    <router-link to="/document/outline">
         <b-icon icon="file-earmark-text" class="global-footer-menu-item"></b-icon>
     </router-link>
     <router-link to="/mypage" v-if="is_verified">
@@ -30,7 +30,7 @@ export default {
     position: fixed;
     bottom: 0px;
     background: white;
-    border-top-color: #bbb;
+    border-top-color: #dfdfdf;
     border-top-width: 1px;
     border-top-style: solid;
     padding-top: 5px;
@@ -42,6 +42,6 @@ export default {
 .global-footer-menu-item {
     width: 25px;
     height: 25px;
-    color: #6c75ff;
+    color: #4d4d4d;
 }
 </style>
