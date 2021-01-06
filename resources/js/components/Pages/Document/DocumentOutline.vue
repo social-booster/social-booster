@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1 class="document-title">システム概略</h1>
+    <h1 class="document-title">概略</h1>
     <hr>
     <div>
         <p>SocialBoosterは問題解決 SNS です。地域、政治、環境、社会、人権、ビジネス上のあらゆる問題に応用出来ます。問題解決とありますが、SocialBoosterが問題を直接解決するわけではありません。</p>
@@ -98,7 +98,7 @@ export default {
     },
     head: {
         title: {
-            inner: 'システム概略'
+            inner: '概略'
         },
         meta: [{
                 name: 'description',

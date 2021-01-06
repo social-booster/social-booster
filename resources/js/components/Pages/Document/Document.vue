@@ -21,8 +21,8 @@ export default {
     data() {
         return {
             documents: [{
-                    slug: 'introduction',
-                    title: 'はじめに'
+                    slug: 'outline',
+                    title: '概略'
                 },
                 {
                     slug: 'outline',

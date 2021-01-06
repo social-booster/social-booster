@@ -23,7 +23,7 @@
                 </router-link>
             </b-col>
             <b-col xl="4" lg="4" md="4">
-                <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>システム概略</strong></h2>
+                <h2 class="mt-5 mb-3 section-name" style="border: none;"><strong>概略</strong></h2>
                 <p>SocialBoosterはコンセプト、紐付け、投票の３つの要素から優先順位を算出します</p>
                 <router-link to="/document/outline" class="box-button">
                     <b-button variant="primary">
