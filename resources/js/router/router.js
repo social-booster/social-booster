@@ -17,7 +17,6 @@ import DocumentSupporters from '../components/Pages/Document/DocumentSupporters.
 import DocumentOpenSource from '../components/Pages/Document/DocumentOpenSource.vue'
 import DocumentNotes from '../components/Pages/Document/DocumentNotes.vue'
 import DocumentTermsOfUse from '../components/Pages/Document/DocumentTermsOfUse.vue'
-import DocumentDefinition from '../components/Pages/Document/DocumentDefinition.vue'
 import DocumentPrivacyPolicy from '../components/Pages/Document/DocumentPrivacyPolicy.vue'
 
 import ConceptList from '../components/Pages/Concept/ConceptList.vue'
@@ -84,10 +83,6 @@ export default new Router({
                 {
                     path: 'terms-of-use',
                     component: DocumentTermsOfUse
-                },
-                {
-                    path: 'definition',
-                    component: DocumentDefinition
                 },
                 {
                     path: 'privacy-policy',
