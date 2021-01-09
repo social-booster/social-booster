@@ -25,10 +25,6 @@ export default {
                     title: '概略'
                 },
                 {
-                    slug: 'intention',
-                    title: '意図'
-                },
-                {
                     slug: 'concept',
                     title: 'コンセプト'
                 },
@@ -43,6 +39,10 @@ export default {
                 {
                     slug: 'priority',
                     title: '優先順位の算出'
+                },
+                {
+                    slug: 'intention',
+                    title: '意図'
                 },
                 {
                     slug: 'supporters',
@@ -66,7 +66,6 @@ export default {
                 }
             ]
         }
-    },
-    mounted() {}
+    }
 }
 </script>
