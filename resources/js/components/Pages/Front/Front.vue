@@ -16,7 +16,7 @@
                 </b-button>
             </router-link>
         </div>
-
+        <FrontTopic />
         <b-row class="mt-4 text-center">
             <b-col xl="4" lg="4" md="4">
                 <div class="front-card">
@@ -65,7 +65,11 @@
 </template>
 
 <script>
+import FrontTopic from "./FrontTopic"
 export default {
+    components: {
+      FrontTopic
+    },
     head: {
         title: {
             inner: 'SocialBooster',
