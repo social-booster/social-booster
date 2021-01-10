@@ -16,7 +16,6 @@
                 </b-button>
             </router-link>
         </div>
-        <FrontTopic />
         <b-row class="mt-4 text-center">
             <b-col xl="4" lg="4" md="4">
                 <div class="front-card">
@@ -40,6 +39,7 @@
                 </div>
             </b-col>
         </b-row>
+        <FrontTopic />
         <b-row class="mt-5">
             <b-col xl="4" lg="4" md="4">
                 <a href='https://play.google.com/store/apps/details?id=tech.socialbooster.twa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
