@@ -51,7 +51,7 @@
                     <img class="microsoft-store-badge" src='https://developer.microsoft.com/store/badges/images/Japanese_-get-it-from-MS.png' alt='Japanese badge' />
                 </a>
             </b-col>
-            <b-col xl="4" lg="4" md="4">
+            <b-col xl="4" lg="4" md="4" class="mb-5">
                 <a href="https://github.com/syuumu200/social-booster" style="color: black;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="95" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                         <path
