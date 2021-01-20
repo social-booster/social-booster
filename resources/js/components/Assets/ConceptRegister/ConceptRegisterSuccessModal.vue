@@ -10,11 +10,9 @@
         </div>
         <p>ユーザーによってコンセプトと紐付けが評価されると、網の目状に接続されているコンセプトの中から最善策が浮かび上がってくるようになります…。</p>
         <div v-if="!success_modal.is_select">
-            <router-link :to="'/concept/' + success_modal.new_concept.id">
-                <b-button variant="primary" href="">
-                    投稿したコンセプトを見る
-                </b-button>
-            </router-link>
+            <b-button variant="primary" @click="link();closeModal()">
+                登録したコンセプトを見る
+            </b-button>
         </div>
     </div>
 </b-modal>
@@ -34,5 +32,13 @@ export default {
             this.success_modal = e
         }.bind(this));
     },
+    methods: {
+        link: function() {
+            this.$router.push('/concept/' + this.success_modal.new_concept.id)
+        },
+        closeModal: function() {
+            this.$bvModal.hide('successful-modal')
+        }
+    }
 }
 </script>
