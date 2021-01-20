@@ -5,6 +5,10 @@
     <ConceptFrame :concept="concept" />
     <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
 </div>
+<div v-else-if="is_not_found" class="text-center">
+    <h1>404 Not Found</h1>
+    <p>コンセプトが見つかりません。</p>
+</div>
 <div class="text-center" v-else>
     <b-spinner variant="secondary" style="height: 3rem;width: 3rem;" label="Loading..."></b-spinner>
 </div>
@@ -23,6 +27,7 @@ export default {
     data() {
         return {
             loaded: false,
+            is_not_found: false,
             concept: Object,
             covers: Array,
             covers_select_mode: 'upper'
@@ -52,8 +57,8 @@ export default {
                     this.$emit('updateHead');
                 }.bind(this))
                 .catch(function(error) {
-                    console.log(error);
-                });
+                    this.is_not_found = true
+                }.bind(this));
         }
     },
     head: {
