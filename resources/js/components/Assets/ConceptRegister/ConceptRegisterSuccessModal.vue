@@ -1,5 +1,5 @@
 <template>
-<b-modal id="successful-modal" hide-footer centered>
+<b-modal id="successful-modal" hide-footer centered header-class="border-bottom-0">
     <div v-if="success_modal !== Object" class="text-center">
         <strong>ご協力感謝します！</strong>
         <div v-if="success_modal.register.mode === 'register'">
