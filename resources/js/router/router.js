@@ -12,6 +12,7 @@ import DocumentOutline from '../components/Pages/Document/DocumentOutline.vue'
 import DocumentConcept from '../components/Pages/Document/DocumentConcept.vue'
 import DocumentCover from '../components/Pages/Document/DocumentCover.vue'
 import DocumentVote from '../components/Pages/Document/DocumentVote.vue'
+import DocumentWatch from '../components/Pages/Document/DocumentWatch.vue'
 import DocumentPriority from '../components/Pages/Document/DocumentPriority.vue'
 import DocumentSupporters from '../components/Pages/Document/DocumentSupporters.vue'
 import DocumentOpenSource from '../components/Pages/Document/DocumentOpenSource.vue'
@@ -67,6 +68,10 @@ export default new Router({
                 {
                     path: 'priority',
                     component: DocumentPriority
+                },
+                {
+                    path: 'watch',
+                    component: DocumentWatch
                 },
                 {
                     path: 'supporters',

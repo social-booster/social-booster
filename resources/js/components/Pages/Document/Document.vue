@@ -43,6 +43,10 @@ export default {
                     title: '優先順位の算出'
                 },
                 {
+                    slug: 'watch',
+                    title: 'ウォッチ'
+                },
+                {
                     slug: 'intention',
                     title: '意図'
                 },
