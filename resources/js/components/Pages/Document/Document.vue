@@ -43,6 +43,10 @@ export default {
                     title: '優先順位の算出'
                 },
                 {
+                    slug: 'communities-and-projects',
+                    title: 'コミュニティとプロジェクト'
+                },
+                {
                     slug: 'watch',
                     title: 'ウォッチ'
                 },
