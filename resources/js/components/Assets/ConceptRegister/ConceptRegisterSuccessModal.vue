@@ -3,7 +3,7 @@
     <div v-if="success_modal !== Object" class="text-center">
         <strong>ご協力感謝します！</strong>
         <div v-if="success_modal.register.mode === 'register'">
-            <p class="mt-3">SocialBoosterが一つの脳だとするなら、いま投稿したコンセプトは記憶や体験を保管する細胞のようなものです。</p>
+            <p class="mt-3">SocialBoosterが一つの脳だとするなら、いま登録したコンセプトは記憶や体験を保管する細胞のようなものです。</p>
         </div>
         <div v-else>
             <p class="mt-3">SocialBoosterが一つの脳だとするなら、コンセプトは記憶や体験を保管する細胞であり、紐付けはそれらを結びつけるシナプスのようなものです。</p>

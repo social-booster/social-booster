@@ -6,7 +6,7 @@
 
     <b-modal id="sliders" hide-footer hide-header>
         <b-form-checkbox class="mt-1" v-model="terms.my_concept_only">
-            自分で投稿したコンセプト
+            自分で登録したコンセプト
         </b-form-checkbox>
         <b-form-checkbox class="mt-1" v-model="terms.voted_concepts">
             投票済みのコンセプト
