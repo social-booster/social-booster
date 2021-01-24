@@ -34,8 +34,8 @@ class CoverController extends AdminController
         $grid->column('ratio', __('Ratio'));
         $grid->column('upper_concept_id', __('Upper concept id'));
         $grid->column('lower_concept_id', __('Lower concept id'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->sortable()->hide();
+        $grid->column('updated_at', __('Updated at'))->sortable()->hide();
 
         return $grid;
     }
