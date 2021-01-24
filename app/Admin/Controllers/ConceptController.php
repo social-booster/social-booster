@@ -39,8 +39,8 @@ class ConceptController extends AdminController
         $grid->column('layer', __('Layer'))->sortable();
         $grid->column('name', __('Name'))->limit(10);
         $grid->column('content', __('Content'))->limit(30);
-        $grid->column('created_at', __('Created at'))->hide();
-        $grid->column('updated_at', __('Updated at'))->hide();
+        $grid->column('created_at', __('Created at'))->sortable()->hide();
+        $grid->column('updated_at', __('Updated at'))->sortable()->hide();
 
         return $grid;
     }
