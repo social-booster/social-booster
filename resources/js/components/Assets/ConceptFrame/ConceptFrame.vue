@@ -6,7 +6,6 @@
         </template>
         <h1 v-if="concept.name !== null && is_individual_page">{{concept.name}}</h1>
         <h3 v-if="concept.name !== null && !is_individual_page">{{concept.name}}</h3>
-        <hr v-if="concept.name !== null">
         <p>{{concept.content}}</p>
         <template v-slot:footer>
             <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
