@@ -5,8 +5,7 @@
             <hr :class="'hr-' + concept.layer">
             <span>{{concept.layer | layerName}}</span><span class="float-right">{{concept.user !== null ? concept.user.name : 'Anonymous'}}</span>
             <hr>
-            <h6 v-show="concept.name !== null">{{concept.name}}</h6>
-            <br v-show="concept.name !== null">
+            <h2 v-show="concept.name !== null" class="cover-name">{{concept.name}}</h2>
             <p>{{concept.content}}</p>
             <div class="text-right">
                 <CoverFrameStats v-show="mode === 'upper'" :cover="cover" />
