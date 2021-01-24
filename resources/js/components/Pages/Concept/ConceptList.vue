@@ -11,7 +11,7 @@
     </div>
     <div v-for="concept in concepts" :key="concept.id">
         <router-link :to="'/concept/' + concept.id" class="link">
-            <ConceptFrame :concept="concept" />
+            <ConceptFrame :concept="concept" :is_individual_page="false" />
         </router-link>
     </div>
     <div class="mt-3 mb-5" ref="paging_menu" style="height: 60px;">

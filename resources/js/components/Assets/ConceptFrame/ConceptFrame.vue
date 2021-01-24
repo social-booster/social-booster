@@ -4,7 +4,8 @@
         <template v-slot:header>
             <span>{{concept.layer | layerName}}</span><span class="float-right">{{concept.user !== null ? concept.user.name : 'Anonymous'}}</span>
         </template>
-        <h5 v-show="concept.name !== null">{{concept.name}}</h5>
+        <h1 v-if="concept.name !== null && is_individual_page">{{concept.name}}</h1>
+        <h3 v-if="concept.name !== null && !is_individual_page">{{concept.name}}</h3>
         <hr v-if="concept.name !== null">
         <p>{{concept.content}}</p>
         <template v-slot:footer>
@@ -35,7 +36,8 @@ export default {
         return {}
     },
     props: {
-        concept: Object
+        concept: Object,
+        is_individual_page: Boolean
     },
     components: {
         ConceptFrameVote,

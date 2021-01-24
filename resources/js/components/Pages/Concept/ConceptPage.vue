@@ -2,7 +2,7 @@
 <div v-if="loaded">
     <ConceptPageBackButton :concept_id="concept.id" />
     <ConceptRegister />
-    <ConceptFrame :concept="concept" />
+    <ConceptFrame :concept="concept"  :is_individual_page="true" />
     <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
 </div>
 <div v-else-if="is_not_found" class="text-center">
