@@ -206,11 +206,10 @@ h5 {
 }
 
 .cover-name {
- border: none;
- color: black;
- padding-left: 0px;
+    border: none;
+    color: black;
+    padding-left: 0px;
 }
-
 
 .cover-footer-stats-name {
     font-size: 0.7rem
@@ -236,7 +235,7 @@ h5 {
 }
 
 .document-table {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 /*MyPage*/
