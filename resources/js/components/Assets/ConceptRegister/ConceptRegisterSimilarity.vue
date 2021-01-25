@@ -4,7 +4,7 @@
         <p class="mb-0 mt-2" style="color: #022544;">同じ内容のものはありませんか？</p>
         <p style="color: #022544;font-size: x-small;">殆ど同じ内容での紐付け、登録はおやめください。</p>
     </div>
-    <router-link :to="'/concept/' + similarity.id" class="p-2" v-for="(similarity,id) in similarities " :key="id">
+    <router-link :to="'/concept/' + similarity.id" class="p-2" style="text-decoration: none;" v-for="(similarity,id) in similarities " :key="id">
         <p class="similarity-name">{{similarity.name}}</p>
         <p class="similarity-content">{{similarity.content}}</p>
         <div class="text-right" v-show="!(register.mode === 'register')">
