@@ -135,12 +135,20 @@ h5 {
 /*ConceptRegister*/
 .similarity-name {
     color: #7b7b7b;
-    font-size: 0.8rem;
+    font-size: .8rem;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .similarity-content {
     color: #7b7b7b;
     font-size: 0.75rem;
+    margin-bottom: 5px;
+}
+
+.similarity-hr {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .base-concept-name {
