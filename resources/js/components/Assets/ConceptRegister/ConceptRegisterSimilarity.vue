@@ -8,7 +8,7 @@
         <p class="similarity-name">{{similarity.name}}</p>
         <p class="similarity-content">{{similarity.content}}</p>
         <div class="text-right" v-show="!(register.mode === 'register')">
-            <b-button :variant="select === similarity ? 'dark' : 'light'" size="sm" @click.prevent="setSelect(select === similarity ? Object : similarity)" :disabled="Boolean(isCoverd(similarity.id))">
+            <b-button :variant="select === similarity ? 'dark' : 'light'" size="sm" @click.stop.prevent="setSelect(select === similarity ? Object : similarity)" :disabled="Boolean(isCoverd(similarity.id))">
                 {{select === similarity ? '選択を解除する' : isCoverd(similarity.id) ? '既に紐付けられています' : '紐付ける'}}
             </b-button>
         </div>
