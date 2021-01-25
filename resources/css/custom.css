@@ -52,6 +52,16 @@ h5 {
     border-color: #005cbf;
 }
 
+/*DropdownMenu*/
+.dropdown-menu {
+    z-index: 2000;
+    position: absolute;
+    transform: translate3d(-76px, 40px, 0px);
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+}
+
 /*Front*/
 .section-name {
     color: #555;
