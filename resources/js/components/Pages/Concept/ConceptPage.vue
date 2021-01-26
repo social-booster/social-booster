@@ -80,6 +80,11 @@ export default {
                     id: 'description'
                 },
                 {
+                    name: 'twitter:card',
+                    content: 'summary',
+                    id: 'twitter:card'
+                },
+                {
                     name: 'twitter:title',
                     content: this.metaTitle(),
                     id: 'twitter:title'
