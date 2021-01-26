@@ -2,7 +2,7 @@
 <div v-if="loaded">
     <ConceptPageBackButton :concept_id="concept.id" />
     <ConceptRegister />
-    <ConceptFrame :concept="concept"  :is_individual_page="true" />
+    <ConceptFrame :concept="concept" :is_individual_page="true" />
     <ConceptPageCover :concept_id="concept.id" :concept_layer="concept.layer" />
 </div>
 <div v-else-if="is_not_found" class="text-center">
@@ -59,20 +59,57 @@ export default {
                 .catch(function(error) {
                     this.is_not_found = true
                 }.bind(this));
+        },
+        metaTitle: function() {
+            return this.concept.layer === 5 || this.concept.layer === 4 ? this.concept.name : this.concept.content
+        },
+        metaDescription: function() {
+            return this.concept.content
         }
     },
     head: {
         title: function() {
             return {
-                inner: this.concept.layer === 5 || this.concept.layer === 4 ? this.concept.name : this.concept.content
+                inner: this.metaTitle()
             }
         },
         meta: function() {
             return [{
-                name: 'description',
-                content: this.concept.content,
-                id: 'desc'
-            }]
+                    name: 'description',
+                    content: this.metaDescription(),
+                    id: 'description'
+                },
+                {
+                    name: 'twitter:title',
+                    content: this.metaTitle(),
+                    id: 'twitter:title'
+                },
+                {
+                    name: 'twitter:description',
+                    content: this.metaDescription(),
+                    id: 'twitter:description'
+                },
+                {
+                    property: 'og:title',
+                    content: this.metaTitle(),
+                    id: 'og:title'
+                },
+                {
+                    property: 'og:description',
+                    content: this.metaDescription(),
+                    id: 'og:description'
+                },
+                {
+                    name: 'robots',
+                    content: this.is_not_found ? 'noindex,nofollow' : '',
+                    id: 'robots'
+                },
+                {
+                    name: 'author',
+                    content: this.concept.user,
+                    id: 'author'
+                }
+            ]
         }
     }
 }
