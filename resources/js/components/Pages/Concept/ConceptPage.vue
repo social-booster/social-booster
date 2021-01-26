@@ -95,6 +95,11 @@ export default {
                     id: 'twitter:description'
                 },
                 {
+                    property: 'og:type',
+                    content: 'article',
+                    id: 'og:type'
+                },
+                {
                     property: 'og:title',
                     content: this.metaTitle(),
                     id: 'og:title'
