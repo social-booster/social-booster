@@ -111,7 +111,7 @@ export default {
                 },
                 {
                     name: 'robots',
-                    content: this.is_not_found ? 'noindex,nofollow' : '',
+                    content: this.is_not_found ? 'noindex,nofollow' : 'all',
                     id: 'robots'
                 },
                 {
