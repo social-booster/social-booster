@@ -1,16 +1,14 @@
 <template>
-<div class="mb-5">
+<aside class="mb-5">
     <b-button variant="light" href="" @click="selectCover(covers_select_mode === 'upper' ? 'lower' : 'upper')" :disabled="concept_layer === 1 || concept_layer === 5" block>
         {{ covers_select_button }}
     </b-button>
-    <div v-for="cover in covers" :key="cover.id">
-        <CoverFrame :cover="cover" :mode="covers_select_mode" />
-    </div>
+    <CoverFrame v-for="cover in covers" :key="cover.id" :cover="cover" :mode="covers_select_mode" />
     <div v-show="covers.length === 0">
         <p class="text-center mt-4" style="font-size: 1.2rem;color: #717171;">紐付けがまだ無いようです</p>
         <p class="text-center mt-1" style="font-size: 0.8rem;color: #717171;">矢印ボタンから紐付けを行ってみましょう</p>
     </div>
-</div>
+</aside>
 </template>
 
 <script>
