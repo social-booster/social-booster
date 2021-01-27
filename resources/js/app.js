@@ -54,7 +54,7 @@ Vue.filter('layerName', function(layer) {
 Vue.mixin({
   methods: {
     strLimit: function(value,limit) {
-        if (value.length < limit) {
+        if (value.length <= limit) {
             return value
         } else {
             return value.substr(0, limit) + '…'
