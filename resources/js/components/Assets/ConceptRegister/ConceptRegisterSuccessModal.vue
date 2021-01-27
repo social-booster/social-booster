@@ -2,18 +2,11 @@
 <b-modal id="successful-modal" hide-footer centered header-class="border-bottom-0">
     <div v-if="success_modal !== Object" class="text-center">
         <strong>ご協力感謝します！</strong>
-        <div v-if="success_modal.register.mode === 'register'">
-            <p class="mt-3">SocialBoosterが一つの脳だとするなら、いま登録したコンセプトは記憶や体験を保管する細胞のようなものです。</p>
-        </div>
-        <div v-else>
-            <p class="mt-3">SocialBoosterが一つの脳だとするなら、コンセプトは記憶や体験を保管する細胞であり、紐付けはそれらを結びつけるシナプスのようなものです。</p>
-        </div>
-        <p>ユーザーによってコンセプトと紐付けが評価されると、網の目状に接続されているコンセプトの中から最善策が浮かび上がってくるようになります…。</p>
-        <div v-if="!success_modal.is_select">
-            <b-button variant="primary" @click="link();closeModal()">
-                登録したコンセプトを見る
-            </b-button>
-        </div>
+        <p class="mt-3">{{message}}</p>
+        <p><a href="/document/concept" target="_blank">コンセプト</a>と<a href="/document/cover" target="_blank">紐付け</a>がユーザーによって評価されると複雑に接続されていたコンセプトが体系的に整理され、<a href="/document/priority" target="_blank">着手率</a>に沿って並べられます。</p>
+        <b-button v-if="!success_modal.is_select" variant="primary" @click="link();closeModal()">
+            登録したコンセプトを見る
+        </b-button>
     </div>
 </b-modal>
 </template>
@@ -31,6 +24,14 @@ export default {
             this.$bvModal.show('successful-modal')
             this.success_modal = e
         }.bind(this));
+    },
+    computed: {
+        message: function() {
+            if (this.success_modal.register.mode === 'register') {
+                return 'SocialBoosterが一つの脳だとするなら、いま登録したコンセプトは記憶や体験を保管するニューロンのようなものです。'
+            }
+            return 'SocialBoosterが一つの脳だとすると、コンセプトは記憶や体験を保管するニューロンであり、紐付けはそれらを結びつけるシナプスのようなものです。'
+        }
     },
     methods: {
         link: function() {
