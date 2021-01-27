@@ -3,16 +3,20 @@
     <h1>ドキュメント</h1>
     <b-row>
         <b-col class="text-left" xl="3" lg="3" md="3">
-            <div style="position: sticky;top: 0;">
-                <div v-for="docu in documents">
-                    <router-link :to="'/document/' + docu.slug" class="document-menu">
-                        {{docu.title}}
-                    </router-link>
-                </div>
-            </div>
+            <nav style="position: sticky;top: 0;">
+                <ul class="p-0">
+                    <li v-for="docu in documents" style="list-style: none;">
+                        <router-link :to="'/document/' + docu.slug" class="document-menu">
+                            {{docu.title}}
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
         </b-col>
         <b-col xl="9" lg="9" md="9">
-            <router-view />
+            <article>
+                <router-view />
+            </article>
         </b-col>
     </b-row>
 </div>
