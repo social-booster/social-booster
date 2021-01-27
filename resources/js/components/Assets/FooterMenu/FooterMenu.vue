@@ -1,5 +1,5 @@
 <template>
-<div class="container-sm global-footer-menu">
+<footer class="container-sm global-footer-menu">
     <router-link to="/concepts/1">
         <b-icon icon="house" class="global-footer-menu-item"></b-icon>
     </router-link>
@@ -9,7 +9,7 @@
     <router-link to="/mypage" v-if="is_verified">
         <b-icon icon="gear" class="global-footer-menu-item"></b-icon>
     </router-link>
-</div>
+</footer>
 </template>
 
 <script>
