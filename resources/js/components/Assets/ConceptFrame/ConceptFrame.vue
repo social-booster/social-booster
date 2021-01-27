@@ -1,25 +1,23 @@
 <template>
-<div>
-    <b-card class="mt-2" footer-class="pt-1 pb-1" :header-class="'concept-color-' + concept.layer">
-        <template v-slot:header>
-            <span>{{concept.layer | layerName}}</span><span class="float-right">{{concept.user !== null ? concept.user.name : 'Anonymous'}}</span>
-        </template>
-        <h1 v-if="concept.name !== null && is_individual_page">{{concept.name}}</h1>
-        <h3 v-if="concept.name !== null && !is_individual_page">{{concept.name}}</h3>
         <p>{{concept.content}}</p>
-        <template v-slot:footer>
-            <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
-                <ConceptFrameStats :concept="concept" />
-                <ConceptFrameProject :concept="concept" />
-                <ConceptFrameCommunity :concept="concept" />
-                <ConceptFrameWatch :concept="concept" />
-                <ConceptFrameVote :concept="concept" />
-                <ConceptFrameCover :concept="concept" />
-                <ConceptFrameShare :concept="concept" />
-            </div>
-        </template>
-    </b-card>
-</div>
+<b-card tag="article" class="mt-2" footer-class="pt-1 pb-1" :header-class="'concept-color-' + concept.layer">
+    <template v-slot:header>
+        <span>{{concept.layer | layerName}}</span>
+        <span class="float-right">{{concept.user !== null ? concept.user.name : 'Anonymous'}}</span>
+    </template>
+    <h1 v-if="concept.name !== null" :class="is_individual_page ? 'h1' : 'h3'">{{concept.name}}</h1>
+    <template v-slot:footer>
+        <aside style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
+            <ConceptFrameStats :concept="concept" />
+            <ConceptFrameProject :concept="concept" />
+            <ConceptFrameCommunity :concept="concept" />
+            <ConceptFrameWatch :concept="concept" />
+            <ConceptFrameVote :concept="concept" />
+            <ConceptFrameCover :concept="concept" />
+            <ConceptFrameShare :concept="concept" />
+        </aside>
+    </template>
+</b-card>
 </template>
 
 <script>
