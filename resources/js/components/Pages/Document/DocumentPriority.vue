@@ -47,7 +47,7 @@
 
         <h2 class="document-section">コンセプト仮投票数</h2>
         <p>※ユーザーとコンセプトの組み合わせごとに算出されます。</p>
-        <p class="document-shadow">コンセプト仮投票数 = ＋投票 + －投票</p>
+        <p class="document-shadow">コンセプト仮投票数 = +投票 + -投票</p>
         <p>※一定の期間が経過したコンセプト仮投票は集計されなくなります。</p>
 
         <h2 class="document-section">紐付け比率</h2>
