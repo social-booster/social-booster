@@ -6,7 +6,7 @@
         <span class="float-right">{{concept.user !== null ? concept.user.name : 'Anonymous'}}</span>
         <hr>
         <h2 v-show="concept.name !== null" class="cover-name">{{concept.name}}</h2>
-        <p>{{concept.content}}</p>
+        <p>{{strLimit(concept.content,140)}}</p>
         <aside class="text-right">
             <CoverFrameStats v-show="mode === 'upper'" :cover="cover" />
             <CoverFrameVote v-show="mode === 'upper'" :cover="cover" />
