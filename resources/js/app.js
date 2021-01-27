@@ -51,6 +51,18 @@ Vue.filter('layerName', function(layer) {
     return layer_names[layer]
 })
 
+Vue.mixin({
+  methods: {
+    strLimit: function(value,limit) {
+        if (value.length < limit) {
+            return value
+        } else {
+            return value.substr(0, limit) + '…'
+        }
+    }
+  }
+})
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
