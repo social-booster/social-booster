@@ -34,8 +34,6 @@ export default {
     },
     created() {
         this.concept = this.cover[this.mode + '_concept']
-    },
-    mounted() {},
-    methods: {}
+    }
 }
 </script>
