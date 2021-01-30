@@ -1,6 +1,6 @@
 <template>
 <router-link :to="'/concept/' + concept.id" class="link">
-    <b-card tag="article" class="mt-2" footer-class="pt-1 pb-1" header-class="">
+    <b-card tag="section" class="mt-2">
         <hr :class="'hr-' + concept.layer">
         <span>{{concept.layer | layerName}}</span>
         <span class="float-right">{{concept.user !== null ? concept.user.name : 'Anonymous'}}</span>
