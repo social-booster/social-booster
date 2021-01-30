@@ -1,6 +1,6 @@
 <template>
 <footer class="container-sm">
-    <nav class="global-footer-menu">
+    <nav class="container-sm global-footer-menu">
         <router-link to="/concepts/1">
             <b-icon icon="house" class="global-footer-menu-item"></b-icon>
         </router-link>
