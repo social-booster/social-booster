@@ -7,7 +7,7 @@
     <h1 v-if="concept.name !== null" :class="is_individual_page ? 'h4' : 'h5'">{{concept.name}}</h1>
     <p :style="is_individual_page ? 'white-space: break-spaces;' : ''">{{strLimit(concept.content,is_individual_page ? concept.content.length : 140)}}</p>
     <template v-slot:footer>
-        <aside style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
+        <div style="display: grid;grid-template-columns: 1fr auto auto auto auto auto auto;">
             <ConceptFrameStats :concept="concept" />
             <ConceptFrameProject :concept="concept" />
             <ConceptFrameCommunity :concept="concept" />
@@ -15,7 +15,7 @@
             <ConceptFrameVote :concept="concept" />
             <ConceptFrameCover :concept="concept" />
             <ConceptFrameShare :concept="concept" />
-        </aside>
+        </div>
     </template>
 </b-card>
 </template>
