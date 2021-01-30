@@ -1,8 +1,5 @@
 <template>
-<div>
-    <h1 class="document-title">意図</h1>
-    <hr>
-    <div>
+<DocumentFrame title="意図">
         <h2>非同期的問題解決</h2>
         <p>Wikipedia、Github、ヒトゲノム計画、惑星探索などは非同期的な協調が主であり、各々の成果を集約するシステムが機能しています。</p>
         <p>現状でも社会問題の解決に向けたインターネットを介した取り組みがみられますが、こうした分野の成果を集約して調整するシステムは未だありません。</p>
@@ -25,12 +22,15 @@
         <p>TwitterやFacebookを活用した周到なSNSマーケティングを行ってはじめて支援が集まるのです。</p>
         <p>資金が集まっていざ事を起こすにも、集団を率いるにはLINEやDiscord,Slackといった別のツールを利用しなくてはなりません。</p>
         <p>SocialBoosterはそれらのプラットフォームやツールにあるような機能をあらかた内包しており、SocialBoosterのみで社会問題に立ち向かえる環境を目指しています。</p>
-    </div>
-</div>
+</DocumentFrame>
 </template>
 
 <script>
+import DocumentFrame from "../../Assets/DocumentFrame/DocumentFrame"
 export default {
+    components: {
+      DocumentFrame
+    },
     head: {
         title: {
             inner: '意図'

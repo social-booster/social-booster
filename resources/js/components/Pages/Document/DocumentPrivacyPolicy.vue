@@ -1,8 +1,5 @@
 <template>
-<div>
-    <h1 class="document-title">個人情報保護方針</h1>
-    <hr>
-    <div>
+<DocumentFrame title="個人情報保護方針">
         <p>SocialBooster運営団体（以下，「当団体」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおり個人情報保護方針（以下，「本方針」といいます。）を定めます。</p>
 
         <h2>第1条（個人情報）</h2>
@@ -91,13 +88,14 @@
         </ol>
 
         <p>以上</p>
-
-    </div>
-</div>
+</DocumentFrame>
 </template>
 
 <script>
+import DocumentFrame from "../../Assets/DocumentFrame/DocumentFrame"
 export default {
-    mounted() {}
+    components: {
+      DocumentFrame
+    }
 }
 </script>

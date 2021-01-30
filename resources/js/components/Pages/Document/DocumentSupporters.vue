@@ -1,8 +1,5 @@
 <template>
-<div>
-    <h1 class="document-title">運営協力者の募集</h1>
-    <hr>
-    <div>
+<DocumentFrame title="運営協力者の募集">
         <h2>ドキュメント改善</h2>
         <p>ドキュメントの改善を日々行っておりますが、管理者に文才がないのか一向にわかりやすくなる気配がありません。</p>
         <p>ドキュメントの改善と拡充を継続的に行って頂ける方を募集しております。</p>
@@ -15,12 +12,15 @@
         <p>SocialBoosterの仕組みと思想の全てを理解した上で機能の提案をしてくださる方を募集しております。</p>
         <h2>Discord</h2>
         <a target="_blank" href="https://discord.gg/KsUyhGY" class="box-button">こちらのDiscord</a>にて質問、応募受け付けておりますのでお気軽にお越しください。
-    </div>
-</div>
+</DocumentFrame>
 </template>
 
 <script>
+import DocumentFrame from "../../Assets/DocumentFrame/DocumentFrame"
 export default {
+    components: {
+      DocumentFrame
+    },
     head: {
         title: {
             inner: '運営協力者の募集'

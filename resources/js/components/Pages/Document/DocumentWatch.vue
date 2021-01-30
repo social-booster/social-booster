@@ -1,8 +1,5 @@
 <template>
-<div>
-    <h1 class="document-title">ウォッチ</h1>
-    <hr>
-    <div>
+    <DocumentFrame title="ウォッチ">
         <h2>ウォッチとは</h2>
         <p>ウォッチはブックマークと通知の２つを兼ねた機能です。</p>
 
@@ -15,12 +12,15 @@
         <h2>通知機能</h2>
         <p>ウォッチ機能を使用したコンセプトに紐付けなどの新しいアクションが加わるとメールを送付します。</p>
         <p>※通知機能は開発中です。</p>
-    </div>
-</div>
+    </DocumentFrame>
 </template>
 
 <script>
+import DocumentFrame from "../../Assets/DocumentFrame/DocumentFrame"
 export default {
+    components: {
+      DocumentFrame
+    },
     head: {
         title: {
             inner: 'ウォッチ'

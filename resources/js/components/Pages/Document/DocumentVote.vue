@@ -1,8 +1,5 @@
 <template>
-<div>
-    <h1 class="document-title">投票</h1>
-    <hr>
-    <div>
+    <DocumentFrame title="投票">
         <h2>コンセプトへの投票</h2>
         <p>ホーム画面にあるコンセプトであなたが進展を期待するものがあればコンセプトの右下にある<b-icon icon="heart" font-scale="1"></b-icon>をクリックすると表示されるポップアップから投票してください。</p>
         <b-table :items="concepts" small class="document-table"></b-table>
@@ -25,13 +22,15 @@
         <h2>コンセプトの自動削除</h2>
         <p>（加算得票数）得票数が一定の水準を下回った状況が一定期間続いたコンセプトと紐付けは削除される機能の実装を予定しています。</p>
         <p>丁度、どうでも良い記憶が思い出せなくなる脳の機能と似ています。</p>
-
-    </div>
-</div>
+    </DocumentFrame>
 </template>
 
 <script>
+import DocumentFrame from "../../Assets/DocumentFrame/DocumentFrame"
 export default {
+    components: {
+      DocumentFrame
+    },
     data() {
         return {
             concepts: [{
