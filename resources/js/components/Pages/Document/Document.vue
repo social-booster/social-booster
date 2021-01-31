@@ -6,7 +6,7 @@
             <nav style="position: sticky;top: 0;">
                 <ul class="p-0">
                     <li v-for="docu in docs" style="list-style: none;">
-                        <router-link :to="'/document/' + docu.slug" class="document-menu">
+                        <router-link :to="'/document/' + docu.slug" :class="'document-menu ' + (docu.slug === doc_now.slug ? 'text-dark' : '')">
                             {{docu.title}}
                         </router-link>
                     </li>
