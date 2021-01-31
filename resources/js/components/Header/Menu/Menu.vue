@@ -20,10 +20,6 @@
 
 <script>
 export default {
-    data() {
-        return {
-        }
-    },
     computed: {
         my_user_data: function() {
             return this.$store.state.user.my_user_data
