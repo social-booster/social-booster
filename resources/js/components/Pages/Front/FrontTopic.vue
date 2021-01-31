@@ -1,6 +1,6 @@
 <template>
-<div class="front-card text-left mt-4">
-    <div v-for="(concept,id) in concepts" :key="id">
+<section class="front-card text-left mt-4">
+    <section v-for="(concept,id) in concepts" :key="id">
         <router-link :to="'/concept/' + concept.id" style="color: #000000c9;text-decoration: none;">
             <div style="display: grid;grid-template-columns: auto 10fr;">
                 <b-icon icon="chat-fill" font-scale="2"></b-icon>
@@ -8,8 +8,8 @@
             </div>
         </router-link>
         <hr v-if="concept.id !== final_concept">
-    </div>
-</div>
+    </section>
+</section>
 </template>
 
 <script>
