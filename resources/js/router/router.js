@@ -46,6 +46,7 @@ export default new Router({
         {
             path: '/document',
             component: Document,
+            redirect: '/document/outline',
             children: [{
                     path: 'outline',
                     component: DocumentOutline
