@@ -1,5 +1,5 @@
 <template>
-<footer class="container-sm">
+<footer >
     <nav class="container-sm global-footer-menu">
         <router-link to="/concepts/1">
             <b-icon icon="house" class="global-footer-menu-item"></b-icon>
