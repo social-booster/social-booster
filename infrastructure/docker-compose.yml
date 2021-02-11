@@ -12,6 +12,7 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ../:/work
+    command: "composer install"
     environment:
       - DB_HOST_C=${DB_HOST_C}
       - DB_DATABASE_C=${DB_NAME_C}
