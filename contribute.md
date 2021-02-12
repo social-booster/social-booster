@@ -53,16 +53,6 @@ sudo usermod -aG docker username
 #### 起動
 
 ```[bash]
-cd /path/to/social-booster
-cp -p .env.docker .env
-
-cd /path/to/social-booster/infrastructure
-cp -p .env.local .env
-
-docker-compose up -d  
-
-(・・・)
-
 docker-compose exec app bash
 ```
 
@@ -71,16 +61,12 @@ docker-compose exec app bash
 (起動: docker-compose up -d されている前提)
 
 ```[bash]
-cd /path/to/social-booster/infrastructure
-
 docker-compose exec web ash
 ```
 
 (In container)
 
 ```[bash]
-npm i    # コンテナ作成直後の１回だけでOK
-
 npm run dev
 
 # npm rebuild node-sass  # npm run dev が失敗した場合に試してみてください
@@ -88,24 +74,21 @@ npm run dev
 
 #### 画面表示
 
-(Use your web browser)
+[開発画面](http://localhost:3080/)
 
-```[bash]
-open http://localhost:3080/
-```
 
 ## Note
 
 - Laravel のキャッシュ類をクリアする際は、appコンテナ内で  
   （docker-compose exec app bash）  
-  `make clr` を行ってください
+  `opt dump` を行ってください
 
 - `No application encryption key has been specified.` が発生した場合の処置例  
   (localhost:3080 を起動できない場合)
   - コンテナを出て .env.local の APP_KEY_C= の右辺に  
     `base64:0s0V2Bu2AYo6MMRoyLcZlAw+5D6ZtzLOyvAgvFmqg5Q=` を設定
   - `docker-compose down; docker-compose up -d` を実行して環境一式を再起動
-  - コンテナ内に入り `make clr` を実行してキャッシュをクリア
+  - コンテナ内に入り `opt dump` を実行してキャッシュをクリア
   - 再度、 ブラウザで localhost:3080 をリクエスト
 
 - メール認証ができなくて困る場合は @syuumu200 さんに SMTP 設定を聞くなどしたうえで .env の MAIL_* を正しく設定して対処してください
