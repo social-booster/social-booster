@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 volumes:
   php-fpm-socket:
@@ -9,18 +9,17 @@ services:
     build:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
-    env_file:
-      - .env
-    ports:
-      - 3316:3306
     volumes:
       - db-store:/var/lib/mysql
       - ./logs:/var/log/mysql
+    ports:
+      - 3316:3306
     environment:
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+
   app:
     build:
       context: .
@@ -28,35 +27,33 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./:/work
-    env_file:
-      - .env
     environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - DB_HOST=${DB_HOST}
-      - DB_CONNECTION=${DB_CONNECTION}
-      - DB_DATABASE=${DB_NAME}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_PORT=${DB_PORT}
-      - APP_NAME_C=${APP_NAME_C}
-      - APP_ENV_C=${APP_ENV_C}
-      - APP_KEY_C=${APP_KEY_C}
-      - APP_DEBUG_C=${APP_DEBUG_C}
-      - APP_URL_C=${APP_URL_C}
-      - WEB_PORT_C=${WEB_PORT_C}
-      - MAIL_HOST_C=${MAIL_HOST_C}
-      - MAIL_PORT_C=${MAIL_PORT_C}
-      - MAIL_USERNAME_C=${MAIL_USERNAME_C}
-      - MAIL_PASSWORD_C=${MAIL_PASSWORD_C}
-      - MAIL_ENCRYPTION_C=${MAIL_ENCRYPTION_C}
-      - MAIL_FROM_ADDRESS_C=${MAIL_FROM_ADDRESS_C}
-      - PUSHER_APP_ID_C=${PUSHER_APP_ID_C}
-      - PUSHER_APP_KEY_C=${PUSHER_APP_KEY_C}
-      - PUSHER_APP_SECRET_C=${PUSHER_APP_SECRET_C}
-      - PUSHER_APP_CLUSTER_C=${PUSHER_APP_CLUSTER_C}
-      - RECAPTCHA_SITE_KEY_C=${RECAPTCHA_SITE_KEY_C}
-      - RECAPTCHA_SECRET_KEY_C=${RECAPTCHA_SECRET_KEY_C}
-      - ADMIN_HTTPS_C=${ADMIN_HTTPS_C}
+      DATABASE_URL: ${DATABASE_URL}
+      DB_HOST: ${DB_HOST}
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_PORT: ${DB_PORT}
+      APP_NAME: ${APP_NAME}
+      APP_ENV: ${APP_ENV}
+      APP_KEY: ${APP_KEY}
+      APP_DEBUG: ${APP_DEBUG}
+      APP_URL: ${APP_URL}
+      WEB_PORT: ${WEB_PORT}
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_ENCRYPTION: ${MAIL_ENCRYPTION}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS}
+      PUSHER_APP_ID: ${PUSHER_APP_ID}
+      PUSHER_APP_KEY: ${PUSHER_APP_KEY}
+      PUSHER_APP_SECRET: ${PUSHER_APP_SECRET}
+      PUSHER_APPLUSTER: ${PUSHER_APPLUSTER}
+      RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY}
+      ADMIN_HTTPS: ${ADMIN_HTTPS}
     depends_on:
       - db
 
@@ -64,10 +61,8 @@ services:
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
-    ports:
-      - 3080:80
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./:/work
-    env_file:
-      - .env
+    ports:
+      - 3080:80
