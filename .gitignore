@@ -1,4 +1,3 @@
-/node_modules
 /public/hot
 /public/storage
 /public/js/app.js
@@ -10,9 +9,8 @@
 /storage/framework/testing
 /storage/framework/views
 /storage/logs
-/vendor
-/infrastructure/.env
 .env
+.env.local
 .env.backup
 .phpunit.result.cache
 Homestead.json

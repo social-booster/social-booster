@@ -2,13 +2,11 @@
 
 SocialBooster の環境整備コード一式
 
-
 ## PreRequirements
 
 - `Docker` installed.
 - `Docker Compose` installed.
 - [social-booster](https://github.com/syuumu200/social-booster) cloned.
-
 
 ## 操作方法
 
@@ -16,7 +14,7 @@ SocialBooster の環境整備コード一式
 
 #### 起動
 
-```
+```[bash]
 cd /path/to/social-booster
 cp -p .env.docker .env
 
@@ -30,21 +28,19 @@ docker-compose up -d
 docker-compose exec app bash
 ```
 
-
 #### Vue.js ビルド
 
 (起動: docker-compose up -d されている前提)
 
-``` 
+```[bash]
 cd /path/to/social-booster/infrastructure
 
 docker-compose exec web ash
 ```
 
-
 (In container)
 
-```
+```[bash]
 npm i    # コンテナ作成直後の１回だけでOK
 
 npm run dev
@@ -52,17 +48,16 @@ npm run dev
 # npm rebuild node-sass  # npm run dev が失敗した場合に試してみてください
 ```
 
-
 #### 画面表示
 
 (Use your web browser)
 
-``` 
+```[bash]
 open http://localhost:3080/
 ```
 
-
 ## Note
+
 - Laravel のキャッシュ類をクリアする際は、appコンテナ内で  
   （docker-compose exec app bash）  
   `make clr` を行ってください
@@ -78,4 +73,4 @@ open http://localhost:3080/
 - メール認証ができなくて困る場合は @syuumu200 さんに SMTP 設定を聞くなどしたうえで .env の MAIL_* を正しく設定して対処してください
 
 - この環境整備コード一式は、[最強のLaravel開発環境をDockerを使って構築する【新編集版】 - Qiita](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4) を参考に整備しています
-    - https://github.com/ucan-lab/docker-laravel
+  - [参考URL](https://github.com/ucan-lab/docker-laravel)

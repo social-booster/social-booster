@@ -18,4 +18,6 @@ COPY --from=node /opt /opt
 # nginx config file
 COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
+RUN npm install
+
 WORKDIR /work

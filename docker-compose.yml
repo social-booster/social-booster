@@ -48,7 +48,7 @@ services:
       - php-fpm-socket:/var/run/php-fpm
       - ../:/work
     env_file:
-      - ../.env
+      - ../.env.local
   db:
     build:
       context: .
