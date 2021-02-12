@@ -1,23 +1,43 @@
-version: "3"
+version: '3.8'
 
 volumes:
   php-fpm-socket:
   db-store:
 
 services:
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    env_file:
+      - ./.env
+    ports:
+      - 3316:3306
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./logs:/var/log/mysql
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS}
   app:
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ../:/work
-    command: "composer self-update && composer validate && composer install && php artisan migrate"
+      - ./:/work
+    env_file:
+      - ./.env
     environment:
-      - DB_HOST_C=${DB_HOST_C}
-      - DB_DATABASE_C=${DB_NAME_C}
-      - DB_USERNAME_C=${DB_USER_C}
-      - DB_PASSWORD_C=${DB_PASS_C}
+      - DATABASE_URL=${DATABASE_URL}
+      - DB_HOST=${DB_HOST}
+      - DB_CONNECTION=${DB_CONNECTION}
+      - DB_DATABASE=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
       - APP_NAME_C=${APP_NAME_C}
       - APP_ENV_C=${APP_ENV_C}
       - APP_KEY_C=${APP_KEY_C}
@@ -37,28 +57,17 @@ services:
       - RECAPTCHA_SITE_KEY_C=${RECAPTCHA_SITE_KEY_C}
       - RECAPTCHA_SECRET_KEY_C=${RECAPTCHA_SECRET_KEY_C}
       - ADMIN_HTTPS_C=${ADMIN_HTTPS_C}
+    depends_on:
+      - db
 
   web:
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
     ports:
-      - ${WEB_PORT_C:-80}:80
+      - 3080:80
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ../:/work
+      - ./:/work
     env_file:
-      - ../.env.local
-  db:
-    build:
-      context: .
-      dockerfile: ./docker/mysql/Dockerfile
-    ports:
-      - ${DB_PORT_C}:3306
-    volumes:
-      - db-store:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=${DB_NAME_C}
-      - MYSQL_USER=${DB_USER_C}
-      - MYSQL_PASSWORD=${DB_PASS_C}
-      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS_C}
+      - ./.env

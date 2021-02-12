@@ -28,6 +28,11 @@ RUN apt-get update && \
 COPY ./docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
-CMD bash -c "chmod -R 777 ./../../../../bootstrap/cache" && "chmod -R 777 ./../../../../storage"
+WORKDIR /work/public/
 
-WORKDIR /work
+ADD . .
+
+RUN composer self-update && composer validate && composer install && php artisan migrate
+
+CMD bash -c "chmod -R 777 ./bootstrap/cache" && "chmod -R 777 ./storage"
+
