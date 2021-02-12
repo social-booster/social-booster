@@ -18,12 +18,41 @@ https://note.com/sorube/n/n3a92fa0dbcd9
 将来的に”コミュニティ”、”プロジェクト”の内容を変更出来るようにします。
 変更出来る権限を持つ者を限定させるために、Discordのような役職/権限の機能を導入する予定です。
 
+
+---
+
 ## Info
 
 Laravel 7
 vue.js
 vue-router
 vuex
+
+## php周りについて
+
+### phpの設定クリアコマンド(bash内にて実行)
+
+```[bash]
+composer clear-cache
+php artisan view:clear
+php artisan route:clear
+php artisan clear-compiled
+php artisan config:cache
+```
+
+### phpのキャッシュクリアコマンド(bash内にて実行)
+
+```[bash]
+php artisan cache:clear
+```
+
+### phpのテストコマンド(bash内にて実行)
+
+```[bash]
+vendor/bin/phpunit --configuration=phpunit.xml
+```
+
+---
 
 ## License
 
