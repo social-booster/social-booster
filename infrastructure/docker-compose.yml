@@ -12,7 +12,7 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ../:/work
-    command: "composer install && php artisan migrate"
+    command: "composer self-update && composer validate && composer install && php artisan migrate"
     environment:
       - DB_HOST_C=${DB_HOST_C}
       - DB_DATABASE_C=${DB_NAME_C}
