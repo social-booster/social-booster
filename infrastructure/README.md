@@ -31,15 +31,6 @@ docker-compose exec app bash
 ```
 
 
-(In container)
-
-```
-make vendor   # composer install ほか を実行
-
-php artisan migrate
-```
-
-
 #### Vue.js ビルド
 
 (起動: docker-compose up -d されている前提)
