@@ -1,7 +1,5 @@
 FROM php:7.4-fpm-buster
 
-SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
-
 # timezone environment
 ENV TZ=UTC \
   # locale
@@ -32,7 +30,11 @@ WORKDIR /work/public/
 
 ADD . .
 
-RUN composer self-update && composer validate && composer install && php artisan migrate
+RUN composer self-update
+RUN composer validate
+RUN composer install
+RUN composer dump-autoload
+RUN php artisan migrate
 
 CMD bash -c "chmod -R 777 ./bootstrap/cache" && "chmod -R 777 ./storage"
 

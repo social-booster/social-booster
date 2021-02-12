@@ -1,8 +1,6 @@
-#FROM node:14.2-alpine as node
-FROM node:12.3.1-alpine as node
+FROM node:14.2-alpine as node
+#FROM node:12.3.1-alpine as node
 FROM nginx:1.18-alpine
-
-SHELL ["/bin/ash", "-oeux", "pipefail", "-c"]
 
 ENV TZ=UTC
 
@@ -18,6 +16,8 @@ COPY --from=node /opt /opt
 # nginx config file
 COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
-RUN npm install
+WORKDIR /work/public/
 
-WORKDIR /work
+ADD . .
+
+RUN npm install
