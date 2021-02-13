@@ -1,4 +1,3 @@
-FROM node:15.8.0-alpine3.10 as node
 FROM nginx:1.19.6
 
 ENV TZ=Asia/Tokyo
@@ -16,7 +15,3 @@ COPY --from=node /opt /opt
 COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /work/public/
-
-ADD . .
-
-RUN npm install

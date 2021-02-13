@@ -26,6 +26,8 @@ RUN apt-get update && \
 COPY ./docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
+RUN mkdir /work/public -p
+
 WORKDIR /work/public/
 
 ADD . .
@@ -33,8 +35,9 @@ ADD . .
 RUN composer self-update
 RUN composer validate
 RUN composer install
+
+RUN bash -c "chmod -R 777 ./bootstrap/cache" && "chmod -R 777 ./storage"
+
 RUN composer dump-autoload
 RUN php artisan migrate
-
-CMD bash -c "chmod -R 777 ./bootstrap/cache" && "chmod -R 777 ./storage"
 
