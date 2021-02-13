@@ -76,7 +76,6 @@ npm run dev
 
 [開発画面](http://localhost:3080/)
 
-
 ## Note
 
 - Laravel のキャッシュ類をクリアする際は、appコンテナ内で  

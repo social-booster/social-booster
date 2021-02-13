@@ -14,6 +14,8 @@ services:
       - ./logs:/var/log/mysql
     ports:
       - 3316:3306
+    env_file:
+      - ./.env
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
@@ -27,6 +29,8 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./:/work
+    env_file:
+      - ./.env
     environment:
       DATABASE_URL: ${DATABASE_URL}
       DB_HOST: ${DB_HOST}
@@ -34,6 +38,7 @@ services:
       DB_DATABASE: ${DB_DATABASE}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
+      DB_SOCKET: ${DB_SOCKET}
       DB_PORT: ${DB_PORT}
       APP_NAME: ${APP_NAME}
       APP_ENV: ${APP_ENV}
@@ -56,11 +61,15 @@ services:
       ADMIN_HTTPS: ${ADMIN_HTTPS}
     depends_on:
       - db
+    links:
+      - db
 
   web:
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
+    env_file:
+      - ./.env
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./:/work

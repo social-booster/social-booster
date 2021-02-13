@@ -1,8 +1,7 @@
-FROM node:14.2-alpine as node
-#FROM node:12.3.1-alpine as node
-FROM nginx:1.18-alpine
+FROM node:15.8.0-alpine3.10 as node
+FROM nginx:1.19.6
 
-ENV TZ=UTC
+ENV TZ=Asia/Tokyo
 
 RUN apk update && \
   apk add --update --no-cache --virtual=.build-dependencies g++

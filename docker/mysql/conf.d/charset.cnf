@@ -1,0 +1,6 @@
+[mysqld]
+character_set_server = utf8mb4
+collation-server     = utf8mb4_bin
+
+[client]
+loose-default-character-set = utf8mb4
