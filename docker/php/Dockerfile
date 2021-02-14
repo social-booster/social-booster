@@ -21,9 +21,7 @@ RUN apt-get update && \
 COPY ./docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
-RUN mkdir /work/public -p
-
-WORKDIR /work/public/
+WORKDIR /var/www/html
 
 ADD . .
 

@@ -2,7 +2,7 @@ FROM node:15.8.0-alpine3.10 as node
 
 RUN apt update
 
-WORKDIR /work/public/
+WORKDIR /var/www/html
 
 ADD . .
 
