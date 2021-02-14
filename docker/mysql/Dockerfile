@@ -10,5 +10,3 @@ ENV LC_ALL ja_JP.UTF-8
 COPY ./docker/mysql/my.cnf /etc/mysql/my.cnf
 
 COPY ./docker/mysql/charset.cnf /etc/mysql/conf.d/charset.cnf
-
-CMD ["mysqld"]

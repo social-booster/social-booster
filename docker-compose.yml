@@ -1,63 +1,58 @@
 version: "3.8"
 
-volumes:
-  php-fpm-socket:
-  db:
-  logs:
-
 services:
   db:
     container_name: db
     build:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
-    env_file:
-      - ./.env
     environment:
-      TZ: 'Asia/Tokyo'
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_INITDB_SKIP_TZINFO: 'Asia/Tokyo'
+      MYSQL_DATABASE: social_booster_local
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
-      - db:/var/lib/mysql
-      - logs:/var/log/mysql/mysqld.log
-      - ./docker/mysql/mysql.sock:/var/lib/mysql/mysql.sock
+      - ./docker/mysql/tmp/db_data:/var/lib/mysql
+      - ./docker/mysql/tmp/logs:/var/log/mysql/mysqld.log
+      - ./mysql.sock:/var/lib/mysql/mysql.sock
     ports:
       - 3306:3306
 
-  app:
-    env_file:
-      - ./.env
+  laravel:
+    container_name: laravel
+    env_file: ./.env
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
     volumes:
-      - php-fpm-socket:/var/run/php-fpm
-      - ./:/work/public/
-      - ./docker/mysql/mysql.sock:/var/lib/mysql/mysql.sock
+      - ./php-fpm-socket:/var/run/php-fpm
+      - ./:/work/public
+      - ./mysql.sock:./docker/mysql/mysql.sock
     depends_on:
       - db
     links:
       - db
 
   nginx:
+    container_name: nginx
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
-    env_file:
-      - ./.env
     volumes:
-      - php-fpm-socket:/var/run/php-fpm
-      - ./:/work/public/
+      - ./php-fpm-socket:/var/run/php-fpm
+      - ./:/work/public
     ports:
       - 3080:80
+    links:
+      - laravel
 
   nodejs:
     build:
       context: .
       dockerfile: ./docker/nodejs/Dockerfile
     volumes:
-      - ./:/work/public/
+      - ./:/work/public
     links:
       - nginx
