@@ -4,6 +4,7 @@ RUN apt update
 
 WORKDIR /var/www/html
 
-ADD . .
+ADD /package.json ./
+ADD /package-lock.json ./
 
 RUN npm install

@@ -7,30 +7,30 @@ volumes:
 services:
   db:
     container_name: db
-    env_file: ./.env
-    build:
-      context: .
-      dockerfile: ./docker/mysql/Dockerfile
+    env_file: .env
+    image: mysql:5.7
     environment:
+      TZ: "Asia/Tokyo"
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - ./docker/mysql/tmp/logs:/var/log/mysql/mysqld.log
       - mysql-data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
-      - 3306:3306
+      - "3306:3306"
 
   laravel:
     container_name: laravel
-    env_file: ./.env
+    env_file: .env
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
     environment:
-      TZ: 'Asia/Tokyo'
+      TZ: "Asia/Tokyo"
       DB_CONNECTION: ${DB_CONNECTION}
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
@@ -39,7 +39,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ./:/var/www/html
+      - .:/var/www/html
     depends_on:
       - db
     links:
@@ -51,7 +51,7 @@ services:
       context: .
       dockerfile: ./docker/nodejs/Dockerfile
     volumes:
-      - ./:/var/www/html
+      - .:/var/www/html
 
   nginx:
     container_name: nginx
@@ -60,7 +60,7 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ./:/work/public
+      - .:/work/public
     ports:
-      - 3080:80
+      - "3080:80"
 
