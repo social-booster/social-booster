@@ -8,18 +8,11 @@ services:
   db:
     container_name: db
     env_file: .env
-    image: mysql:5.7
-    environment:
-      TZ: "Asia/Tokyo"
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    build: docker/mysql
     volumes:
-      - ./docker/mysql/tmp/logs:/var/log/mysql/mysqld.log
+      - ./docker/mysql/logs:/var/log/mysql/mysqld.log
+      - ./docker/mysql/logs:/var/log/mysql/mysql-error.log
       - mysql-data:/var/lib/mysql
-      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - "3306:3306"
 
@@ -29,16 +22,9 @@ services:
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
-    environment:
-      TZ: "Asia/Tokyo"
-      DB_CONNECTION: ${DB_CONNECTION}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_DATABASE: ${DB_DATABASE}
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - php-fpm-socket:/var/run/php-fpm
+      - ./docker/php/logs:/dev/stderr
       - .:/var/www/html
     depends_on:
       - db
