@@ -1,12 +1,10 @@
-FROM mysql:5.7
+FROM mysql:5.7.27
 
-# RUN apt-get update && \
-#     apt-get install -y locales && \
-#     rm -rf /var/lib/apt/lists/* && \
-#     echo "ja_JP.UTF-8 UTF-8" > /etc/locale.gen && \
-#     locale-gen ja_JP.UTF-8
-# ENV LC_ALL ja_JP.UTF-8
+ADD my.cnf /etc/my.cnf
 
-#COPY ./docker/mysql/my.cnf /etc/mysql/my.cnf
+RUN apt-get update
+RUN apt-get install -y tzdata
 
-#COPY ./docker/mysql/charset.cnf /etc/mysql/conf.d/charset.cnf
+RUN rm /etc/localtime && \
+    echo Asia/Tokyo > /etc/timezone \
+    dpkg-reconfigure -f noninteractive tzdata
