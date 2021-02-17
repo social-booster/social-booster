@@ -6,18 +6,18 @@ volumes:
 
 services:
   db:
-    container_name: db
     env_file: .env
     build: docker/mysql
     volumes:
-      - ./docker/mysql/logs:/var/log/mysql/mysqld.log
-      - ./docker/mysql/logs:/var/log/mysql/mysql-error.log
+      - ./docker/mysql/logs/mysqld.log:/var/log/mysql/mysqld.log
+      - ./docker/mysql/logs/mysql-error.log:/var/log/mysql/mysql-error.log
       - mysql-data:/var/lib/mysql
+      - ./docker/mysql/init_sql:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+    restart: always
 
   laravel:
-    container_name: laravel
     env_file: .env
     build:
       context: .
@@ -30,9 +30,12 @@ services:
       - db
     links:
       - db
+      - nginx
+    ports:
+      - 6379:6379
+      - 9000:9000
 
   nodejs:
-    container_name: nodejs
     build:
       context: .
       dockerfile: ./docker/nodejs/Dockerfile
@@ -40,13 +43,19 @@ services:
       - .:/var/www/html
 
   nginx:
-    container_name: nginx
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
     volumes:
       - php-fpm-socket:/var/run/php-fpm
+      - ./docker/nginx/logs:/var/www/log
       - .:/work/public
     ports:
       - "3080:80"
+    links:
+      - nodejs
+      - laravel
+      - db
 
+  redis:
+    build: ./docker/redis
