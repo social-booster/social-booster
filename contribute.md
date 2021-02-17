@@ -19,7 +19,7 @@ WSL2の有効化
 
 macの場合
 
-Homebrewがインストール去れている前提です。
+Homebrewがインストールされている前提です。
 
 ```[bash]
 brew install docker
@@ -84,7 +84,7 @@ npm run dev
 
 - `No application encryption key has been specified.` が発生した場合の処置例  
   (localhost:3080 を起動できない場合)
-  - コンテナを出て .env.local の APP_KEY_C= の右辺に  
+  - コンテナを出て .env の APP_KEY_C= の右辺に  
     `base64:0s0V2Bu2AYo6MMRoyLcZlAw+5D6ZtzLOyvAgvFmqg5Q=` を設定
   - `docker-compose down; docker-compose up -d` を実行して環境一式を再起動
   - コンテナ内に入り `opt dump` を実行してキャッシュをクリア
