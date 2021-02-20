@@ -1,5 +1,6 @@
 FROM nginx:1.19.6
 
+# logフォルダとファイルを生成
 RUN mkdir -p /var/www/log && \
     touch /var/www/log/access.log && \
     touch /var/www/log/error.log
