@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:7.4.15-fpm-buster
 
   # locale
 ENV LANG=ja_JP.UTF-8 \
@@ -18,14 +18,20 @@ RUN apt-get update && \
   localedef -f UTF-8 -i ja_JP ja_JP.utf8 && \
   docker-php-ext-install intl pdo_mysql zip bcmath mysqli
 
-ADD ./php.ini /etc/php/php.ini
+ADD ./php.ini /usr/local/etc/php/php.ini
 
-ADD ./conf/php-fpm.conf /usr/local/etc/php-fpm.conf
-ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
+#log作成
+RUN touch /usr/local/etc/php-fpm.d/fpm-php.www.log
 
-RUN useradd -m "nginx"
+# nginxアカウント作成
+# RUN useradd -m nginx && gpasswd -a nginx sudo
+# nginxアカウントを/etc/passwdに保存
+# RUN sed -i.bak "s#/home/nginx:#/home/nginx:/bin/bash#" /etc/passwd
+# # nginxに所有権を変更
+# RUN chown nginx:nginx /usr/local/etc/php-fpm.d/fpm-php.www.log
 
-RUN gpasswd -a "nginx" sudo
+# ADD ./conf/docker.conf /usr/local/etc/php-fpm.d/docker.conf
+# ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 WORKDIR /var/www/html
 
