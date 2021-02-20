@@ -7,3 +7,5 @@ RUN mkdir -p /var/www/log && \
 # nginx conf file deploy
 RUN rm /etc/nginx/conf.d/default.conf
 ADD ./social_booster.conf /etc/nginx/conf.d/social_booster.conf
+
+WORKDIR /var/www/html/
