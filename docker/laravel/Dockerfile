@@ -24,17 +24,18 @@ ADD ./php.ini /usr/local/etc/php/php.ini
 RUN touch /usr/local/etc/php-fpm.d/fpm-php.www.log
 
 # nginxアカウント作成
-# RUN useradd -m nginx && gpasswd -a nginx sudo
+RUN useradd -m nginx && gpasswd -a nginx sudo
 # nginxアカウントを/etc/passwdに保存
-# RUN sed -i.bak "s#/home/nginx:#/home/nginx:/bin/bash#" /etc/passwd
+RUN sed -i.bak "s#/home/nginx:#/home/nginx:/bin/bash#" /etc/passwd
 # # nginxに所有権を変更
-# RUN chown nginx:nginx /usr/local/etc/php-fpm.d/fpm-php.www.log
+RUN chown nginx:nginx /usr/local/etc/php-fpm.d/fpm-php.www.log
 
 # ADD ./conf/docker.conf /usr/local/etc/php-fpm.d/docker.conf
-# ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
+ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 WORKDIR /var/www/html
 
+EXPOSE 9000
 ADD ./docker-entrypoint.sh /tmp
 ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
 CMD [ "/sbin/init" ]
