@@ -50,22 +50,39 @@ sudo usermod -aG docker username
 
 ### local
 
-#### 起動(ビルド)
+#### mountしてあるlogファイル等をlocalで生成する
+
+- mysqlのファイル
+  - docker/mysqlの下に `db` という空のフォルダを作成する
+  - docker/mysqlの下に `logs` というフォルダを作成し、 `mysqld.log` `mysql-error.log` という空のファイルを作成
+- nginxのファイル
+  - docker/nginxの下に `logs` というフォルダを作成し、 `access.log` `error.log` という空のファイルを作成
+
+#### .envファイルの変更
+
+`.env copy` を `.env` に変更する
+
+#### ビルド
 
 ```[bash]
 docker-compose up -d --build
 ```
 
+初回起動時、npmとcomposerをbuild完了後実行されるので、localhost:3080にアクセスするのはlaravelがmigrateが終了し、php-fpmが実行されるまでは全く動けないので、
+
+気長にビルドはお待ちください。
+
 #### Vue.js ビルド
 
-ビルド後
+ビルド後、vue関連のファイルの変更を加える場合にはこちらの通りに行ってください。
 
-docker-compose exec nodejs bash
+`docker-compose exec nodejs bash`
 
 ```[bash]
 npm run dev
 
-# npm rebuild node-sass  # npm run dev が失敗した場合に試してみてください
+# npm run dev が失敗した場合に試してみてください
+npm rebuild node-sass
 ```
 
 #### 画面表示
@@ -75,7 +92,7 @@ npm run dev
 ## Note
 
 - Laravel のキャッシュ類をクリアする際は、appコンテナ内で  
-  ex: `docker-compose exec social_booster_laravel_1 bash`
+  ex: `docker-compose exec laravel bash`
 
   `php artisan cache:clear` `composer dump-autoload` を行ってください
 
