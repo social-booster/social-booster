@@ -53,7 +53,7 @@ sudo usermod -aG docker username
 #### 起動(ビルド)
 
 ```[bash]
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 #### Vue.js ビルド
@@ -75,7 +75,7 @@ npm run dev
 ## Note
 
 - Laravel のキャッシュ類をクリアする際は、appコンテナ内で  
-  docker-compose exec laravel bash
+  ex: `docker-compose exec social_booster_laravel_1 bash`
 
   `php artisan cache:clear` `composer dump-autoload` を行ってください
 
@@ -85,7 +85,7 @@ npm run dev
 
 - コンテナを出て .env の APP_KEY_C= の右辺に `base64:0s0V2Bu2AYo6MMRoyLcZlAw+5D6ZtzLOyvAgvFmqg5Q=` を設定
   - `docker-compose down`
-  - `docker-compose up -d` を実行して環境一式を再起動
+  - `docker-compose up -d --buld` を実行して環境一式を再起動
   - コンテナ内に入り `php artisan cache:clear` `composer dump-autoload` を実行してキャッシュをクリア
   - 再度、ブラウザで [開発画面](http://localhost:3080/) をリクエスト
 
@@ -109,6 +109,7 @@ APP_NAME=SocialBooster
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
+LOG_CHANNEL=stderr
 APP_URL=http://localhost:3080
 
 WEB_PORT=3080
