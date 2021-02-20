@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   db:
+    container_name: db
     env_file: .env
     build: docker/mysql
     volumes:
@@ -13,6 +14,7 @@ services:
     restart: always
 
   laravel:
+    container_name: laravel
     env_file: .env
     build: ./docker/laravel
     volumes:
@@ -26,6 +28,7 @@ services:
       - 9000
 
   nginx:
+    container_name: nginx
     env_file: .env
     build: ./docker/nginx
     volumes:
@@ -39,11 +42,13 @@ services:
       - nodejs
 
   nodejs:
+    container_name: nodejs
     build: ./docker/nodejs
     volumes:
       - .:/var/www/html
 
   redis:
+    container_name: redis
     build: ./docker/redis
     ports:
       - 6379:6379
