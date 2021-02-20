@@ -18,15 +18,22 @@ https://note.com/sorube/n/n3a92fa0dbcd9
 将来的に”コミュニティ”、”プロジェクト”の内容を変更出来るようにします。
 変更出来る権限を持つ者を限定させるために、Discordのような役職/権限の機能を導入する予定です。
 
-
 ---
 
 ## Info
 
-Laravel 7
-vue.js
-vue-router
-vuex
+- Laravel 7
+- vue.js
+- vue-router
+- vuex
+
+---
+
+## 開発について
+
+詳細は、[contribute](contribute.md) を参照してください。
+
+---
 
 ## php周りについて
 
