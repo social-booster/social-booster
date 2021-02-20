@@ -10,12 +10,11 @@
 /storage/framework/views
 /storage/logs
 .env
-.env.local
-.env.backup
-.env.docker
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
+
+# node's log
 npm-debug.log
 yarn-error.log
 
