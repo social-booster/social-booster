@@ -10,4 +10,4 @@ chmod -R 777 ./storage
 composer dump-autoload
 php artisan migrate
 
-php artisan serve
+php-fpm
