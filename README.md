@@ -28,3 +28,16 @@ vuex
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Testing
+
+phpのコンテナに入った後
+
+受け入れテスト
+`php vendor/bin/codecept init acceptance`
+
+APIテスト
+`php vendor/bin/codecept init api`
+
+単体テスト
+`php vendor/bin/codecept init unit`
