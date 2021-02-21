@@ -52,6 +52,24 @@ sudo usermod -aG docker username
 
 #### mountしてあるlogファイル等をlocalで生成する
 
+##### windowsの方
+
+docker_init.batを実行してください
+
+文字化け及び改行コードエラーが発生する場合
+
+- UTF-8 → shift-jis
+- LF → CRLF
+
+##### mac、linuxの方
+
+```[bash]
+chmod 771 docker_init.sh
+sh docker_init.sh
+```
+
+##### 手動で作る場合
+
 - mysqlのファイル
   - docker/mysqlの下に `db` という空のフォルダを作成する
   - docker/mysqlの下に `logs` というフォルダを作成し、 `mysqld.log` `mysql-error.log` という空のファイルを作成
