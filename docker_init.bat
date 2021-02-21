@@ -1,5 +1,4 @@
 @echo on
-chcp 65001
 rem mysqlのログフォルダ作成
 cd docker\mysql
 mkdir db
@@ -15,6 +14,7 @@ cd ..\..\nginx
 mkdir logs
 
 rem nginxのログファイル作成
+cd logs
 echo "">access.log
 echo "">error.log
 
