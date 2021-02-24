@@ -1,5 +1,8 @@
 FROM php:7.4.15-fpm-buster
 
+LABEL maintainer="Satake Ryota <satake00157@gmail.com>"
+LABEL description="Laravel用のDockerfile"
+
   # locale
 ENV LANG=ja_JP.UTF-8 \
   LC_CTYPE=ja_JP.UTF-8 \
@@ -35,7 +38,6 @@ ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 WORKDIR /var/www/html
 
-EXPOSE 9000
 ADD ./docker-entrypoint.sh /tmp
 ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
 CMD [ "/sbin/init" ]

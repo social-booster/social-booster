@@ -1,5 +1,8 @@
 FROM mysql:5
 
+LABEL maintainer="Satake Ryota <satake00157@gmail.com>"
+LABEL description="MySQL5.7のDockerfile"
+
 # confファイルを転送
 ADD my.cnf /etc/my.cnf
 
@@ -15,7 +18,3 @@ RUN rm /etc/localtime && \
 # logフォルダとファイルを生成
 RUN mkdir -p /var/log/mysql
 RUN touch /var/log/mysql/mysql-error.log && touch /var/log/mysql/mysqld.log
-
-CMD ["mysqld"]
-
-EXPOSE 3306
