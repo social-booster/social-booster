@@ -52,6 +52,8 @@ sudo usermod -aG docker username
 
 #### mountしてあるlogファイル等をlocalで生成する
 
+---
+
 ##### windowsの方
 
 docker_init.batを実行してください
@@ -61,12 +63,16 @@ docker_init.batを実行してください
 - UTF-8 → shift-jis
 - LF → CRLF
 
+---
+
 ##### mac、linuxの方
 
 ```[bash]
 chmod 771 docker_init.sh
 sh docker_init.sh
 ```
+
+---
 
 ##### 手動で作る場合
 
@@ -75,6 +81,8 @@ sh docker_init.sh
   - docker/mysqlの下に `logs` というフォルダを作成し、 `mysqld.log` `mysql-error.log` という空のファイルを作成
 - nginxのファイル
   - docker/nginxの下に `logs` というフォルダを作成し、 `access.log` `error.log` という空のファイルを作成
+
+---
 
 #### .envファイルの変更
 
@@ -89,6 +97,8 @@ docker-compose up -d --build
 初回起動時、npmとcomposerをbuild完了後実行されるので、localhost:3080にアクセスするのはlaravelがmigrateが終了し、php-fpmが実行されるまでは全く動けないので、
 
 気長にビルドはお待ちください。
+
+----
 
 #### Vue.js ビルド
 
@@ -107,6 +117,8 @@ npm rebuild node-sass
 
 [開発画面](http://localhost:3080/)
 
+---
+
 ## Note
 
 - Laravel のキャッシュ類をクリアする際は、appコンテナ内で  
@@ -114,15 +126,7 @@ npm rebuild node-sass
 
   `php artisan cache:clear` `composer dump-autoload` を行ってください
 
-### No application encryption key has been specified. が発生した場合の処置例  
-
-(localhost:3080 を起動できない場合)
-
-- コンテナを出て .env の APP_KEY_C= の右辺に `base64:0s0V2Bu2AYo6MMRoyLcZlAw+5D6ZtzLOyvAgvFmqg5Q=` を設定
-  - `docker-compose down`
-  - `docker-compose up -d --buld` を実行して環境一式を再起動
-  - コンテナ内に入り `php artisan cache:clear` `composer dump-autoload` を実行してキャッシュをクリア
-  - 再度、ブラウザで [開発画面](http://localhost:3080/) をリクエスト
+## メール認証について
 
 - メール認証ができなくて困る場合は [syuumu200](https://github.com/syuumu200) さんに SMTP 設定を聞くなどしたうえで .env の MAIL_* を正しく設定して対処してください
 
@@ -131,6 +135,8 @@ npm rebuild node-sass
 この環境整備コード一式は、[最強のLaravel開発環境をDockerを使って構築する【新編集版】 - Qiita](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4) を参考に整備しています
 
 [参考URL](https://github.com/ucan-lab/docker-laravel)
+
+このリポジトリを大幅に改造してます。
 
 ---
 
