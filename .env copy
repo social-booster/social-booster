@@ -1,6 +1,6 @@
 APP_NAME=SocialBooster
 APP_ENV=local
-APP_KEY=
+APP_KEY=base64:0s0V2Bu2AYo6MMRoyLcZlAw+5D6ZtzLOyvAgvFmqg5Q=
 APP_DEBUG=true
 LOG_CHANNEL=stderr
 APP_URL=http://localhost:3080
