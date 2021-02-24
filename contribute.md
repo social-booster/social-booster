@@ -98,7 +98,7 @@ docker-compose up -d --build
 
 気長にビルドはお待ちください。
 
-----
+---
 
 #### Vue.js ビルド
 
