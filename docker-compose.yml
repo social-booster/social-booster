@@ -11,6 +11,7 @@ services:
       - ./docker/mysql/db:/var/lib/mysql
     ports:
       - 3306:3306
+      - 33060:33060
     restart: always
 
   laravel:
@@ -24,8 +25,7 @@ services:
       - redis
     ports:
       - 8000:8000
-    expose:
-      - 9000
+      - 9000:9000
 
   nginx:
     container_name: nginx
@@ -40,6 +40,9 @@ services:
       - laravel
       - db
       - nodejs
+    links:
+      - laravel
+      - db
 
   nodejs:
     container_name: nodejs
@@ -50,5 +53,7 @@ services:
   redis:
     container_name: redis
     build: ./docker/redis
+    volumes:
+      - ./docker/redis/redis:/etc/redis
     ports:
       - 6379:6379
