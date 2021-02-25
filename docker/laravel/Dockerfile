@@ -4,9 +4,6 @@ LABEL maintainer="Satake Ryota=<satake00157@gmail.com> \
     Hisashi SOGA=<sogaoh@ant-in-giant.work>" \
     description="Laravel用のDockerfile"
 
-# phpファイルを転送
-ADD ./php.ini /usr/local/etc/php/php.ini
-
 # locale
 ENV LANG=ja_JP.UTF-8 \
     LC_CTYPE=ja_JP.UTF-8 \
@@ -24,6 +21,9 @@ RUN apt-get update && \
     locale-gen ja_JP.UTF-8 && \
     localedef -f UTF-8 -i ja_JP ja_JP.utf8 && \
     docker-php-ext-install intl pdo_mysql zip bcmath mysqli
+
+# phpファイルを転送
+ADD ./php.ini /usr/local/etc/php/php.ini
 
 #log作成
 RUN touch /usr/local/etc/php-fpm.d/fpm-php.www.log

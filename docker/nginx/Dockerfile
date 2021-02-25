@@ -9,4 +9,4 @@ RUN mkdir -p /var/www/log && \
     touch /var/www/log/access.log && \
     touch /var/www/log/error.log
 
-WORKDIR /var/www/html/
+WORKDIR /var/www/html
