@@ -121,14 +121,25 @@ npm rebuild node-sass
 
 ## Note
 
-- Laravel のキャッシュ類をクリアする際は、appコンテナ内で  
+### Laravel のキャッシュ類をクリアする際は、appコンテナ内で
+
   ex: `docker-compose exec laravel bash`
 
   `php artisan cache:clear` `composer dump-autoload` を行ってください
 
+---
+
+### Laravelがmigrate出来なくなったとき
+
+bootstrap/cacheの中のphpファイルを全て消してもう一回ビルドする
+
+---
+
 ## メール認証について
 
 - メール認証ができなくて困る場合は [syuumu200](https://github.com/syuumu200) さんに SMTP 設定を聞くなどしたうえで .env の MAIL_* を正しく設定して対処してください
+
+---
 
 ### 参考文献
 
