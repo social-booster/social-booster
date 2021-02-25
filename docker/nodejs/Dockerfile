@@ -1,7 +1,8 @@
 FROM node:15.9.0-buster as node
 
-LABEL maintainer="Satake Ryota <satake00157@gmail.com>"
-LABEL description="vueをビルドするためnodejsのDockerfile"
+LABEL maintainer="Satake Ryota <satake00157@gmail.com> \
+    Hisashi SOGA=<sogaoh@ant-in-giant.work>" \
+    description="vueをビルドするためnodejsのDockerfile"
 
 WORKDIR /var/www/html
 
