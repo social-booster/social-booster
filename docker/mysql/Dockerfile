@@ -1,7 +1,8 @@
 FROM mysql:5
 
-LABEL maintainer="Satake Ryota <satake00157@gmail.com>"
-LABEL description="MySQL5.7のDockerfile"
+LABEL maintainer="Satake Ryota <satake00157@gmail.com> \
+    Hisashi SOGA=<sogaoh@ant-in-giant.work>" \
+    description="MySQL5.7のDockerfile"
 
 # confファイルを転送
 ADD my.cnf /etc/my.cnf
