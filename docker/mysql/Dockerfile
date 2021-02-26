@@ -4,9 +4,6 @@ LABEL maintainer="Satake Ryota <satake00157@gmail.com> \
     Hisashi SOGA=<sogaoh@ant-in-giant.work>" \
     description="MySQL5.7のDockerfile"
 
-# confファイルを転送
-ADD my.cnf /etc/my.cnf
-
 # timezoneに関するリポジトリを取得
 RUN apt-get update
 RUN apt-get install -y tzdata

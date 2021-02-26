@@ -1,11 +1,14 @@
-version: "3.8"
+version: "3.9"
 
 services:
+
+  # mysql
   db:
     container_name: db
     env_file: .env
     build: docker/mysql
     volumes:
+      - ./docker/mysql/conf/my.cnf:/etc/my.cnf
       - ./docker/mysql/logs/mysqld.log:/var/log/mysql/mysqld.log
       - ./docker/mysql/logs/mysql-error.log:/var/log/mysql/mysql-error.log
       - ./docker/mysql/db:/var/lib/mysql
@@ -13,11 +16,13 @@ services:
       - 3306:3306
       - 33060:33060
 
+  # php-fpm(Laravel)
   laravel:
     container_name: laravel
     env_file: .env
     build: ./docker/laravel
     volumes:
+      - ./docker/laravel/php/php.ini:/usr/local/etc/php/php.ini
       - .:/var/www/html
     depends_on:
       - db
@@ -25,6 +30,7 @@ services:
       - 8000:8000
       - 9000:9000
 
+  # NginX
   nginx:
     container_name: nginx
     env_file: .env
@@ -39,12 +45,14 @@ services:
       - nodejs
       - redis
 
+  # Nodde.js(Vue.js用)
   nodejs:
     container_name: nodejs
     build: ./docker/nodejs
     volumes:
       - .:/var/www/html
 
+  # Redis(将来pusherから変更予定)
   redis:
     container_name: redis
     build: ./docker/redis
