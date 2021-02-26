@@ -119,19 +119,53 @@ npm rebuild node-sass
 
 ---
 
-## Note
+## php周りについて
 
 ### Laravel のキャッシュ類をクリアする際は、appコンテナ内で
 
-  ex: `docker-compose exec laravel bash`
+- `docker-compose exec laravel bash`
 
-  `php artisan cache:clear` `composer dump-autoload` を行ってください
+- `php artisan cache:clear` `composer dump-autoload` を行ってください
 
 ---
 
 ### Laravelがmigrate出来なくなったとき
 
 bootstrap/cacheの中のphpファイルを全て消してもう一回ビルドする
+
+---
+
+### phpの設定クリアコマンド(bash内にて実行)
+
+`docker-compose exec laravel bash`
+
+```[bash]
+composer clear-cache
+php artisan view:clear
+php artisan route:clear
+php artisan clear-compiled
+php artisan config:cache
+```
+
+---
+
+### phpのキャッシュクリアコマンド(bash内にて実行)
+
+`docker-compose exec laravel bash`
+
+```[bash]
+php artisan cache:clear
+```
+
+---
+
+### phpのテストコマンド(bash内にて実行)
+
+`docker-compose exec laravel bash`
+
+```[bash]
+vendor/bin/phpunit --configuration=phpunit.xml
+```
 
 ---
 
@@ -150,79 +184,3 @@ bootstrap/cacheの中のphpファイルを全て消してもう一回ビルド�
 このリポジトリを大幅に改造してます。
 
 ---
-
-## 設定ファイルについて
-
-### .envファイル(.env copyをコピーしてリネームしてください)
-
-```[bash]
-
-APP_NAME=SocialBooster
-APP_ENV=local
-APP_KEY=base64:0s0V2Bu2AYo6MMRoyLcZlAw+5D6ZtzLOyvAgvFmqg5Q=
-APP_DEBUG=true
-LOG_CHANNEL=stderr
-APP_URL=http://localhost:3080
-
-WEB_PORT=3080
-
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_USERNAME=user
-DB_PASSWORD=pass
-DB_DATABASE=social_booster_local
-
-TZ=Asia/Tokyo
-MYSQL_DATABASE=${DB_DATABASE}
-MYSQL_USER=${DB_USERNAME}
-MYSQL_PASSWORD=${DB_PASSWORD}
-MYSQL_ROOT_PASSWORD=P@ssw0rd
-
-BROADCAST_DRIVER=log
-CACHE_DRIVER=file
-QUEUEONNECTION=sync
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
-
-TELESCOPE_ENABLED=true
-LOG_CHANNEL=stack
-
-MAIL_MAILER=smtp
-MAIL_HOST=
-MAIL_PORT=
-MAIL_USERNAME=
-MAIL_PASSWORD=
-MAIL_ENCRYPTION=
-MAIL_FROM_ADDRESS=
-MAIL_FROM_NAME=
-
-REDIS_HOST=redis
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=ap-northeast-1
-AWS_BUCKET=
-
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=
-PUSHER_APP_CLUSTER=
-
-RECAPTCHA_SITE_KEY=
-RECAPTCHA_SECRET_KEY=
-
-ADMIN_HTTPS=false
-
-MIX_PUSHER_APP_KEY=${PUSHER_APP_KEY}
-MIX_PUSHER_APP_CLUSTER=${PUSHER_APP_CLUSTER}
-
-MIX_RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
-
-MIX_APP_ENV=${APP_ENV}
-
-JWT_SECRET=
-
-```
