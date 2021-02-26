@@ -5,6 +5,8 @@ https://socialbooster.tech
 SocialBoosterは独自の手法によって算出した優先順位を元に問題の解決を行う非同期協調SNSです。
 企業、自治体の問題解決やオープンイノベーションなどに活用できます！
 
+---
+
 ## Usage
 
 基本的な説明、使い方
@@ -12,6 +14,8 @@ https://note.com/sorube/n/n5077f085076b
 
 応用的な説明、使い方
 https://note.com/sorube/n/n3a92fa0dbcd9
+
+---
 
 ## Future
 
@@ -32,32 +36,6 @@ https://note.com/sorube/n/n3a92fa0dbcd9
 ## 開発について
 
 詳細は、[contribute](contribute.md) を参照してください。
-
----
-
-## php周りについて
-
-### phpの設定クリアコマンド(bash内にて実行)
-
-```[bash]
-composer clear-cache
-php artisan view:clear
-php artisan route:clear
-php artisan clear-compiled
-php artisan config:cache
-```
-
-### phpのキャッシュクリアコマンド(bash内にて実行)
-
-```[bash]
-php artisan cache:clear
-```
-
-### phpのテストコマンド(bash内にて実行)
-
-```[bash]
-vendor/bin/phpunit --configuration=phpunit.xml
-```
 
 ---
 
