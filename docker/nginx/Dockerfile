@@ -1,7 +1,7 @@
 FROM nginx:1.19.6
 
 LABEL maintainer="Satake Ryota <satake00157@gmail.com> \
-    Hisashi SOGA=<sogaoh@ant-in-giant.work>" \
+    Hisashi SOGA <sogaoh@ant-in-giant.work>" \
     description="htmlを閲覧するためのnginxのDockerfile"
 
 # logフォルダとファイルを生成

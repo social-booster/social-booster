@@ -1,7 +1,7 @@
 FROM php:7.4.15-fpm-buster
 
-LABEL maintainer="Satake Ryota=<satake00157@gmail.com> \
-    Hisashi SOGA=<sogaoh@ant-in-giant.work>" \
+LABEL maintainer="Satake Ryota <satake00157@gmail.com> \
+    Hisashi SOGA <sogaoh@ant-in-giant.work>" \
     description="Laravel用のDockerfile"
 
 # locale
