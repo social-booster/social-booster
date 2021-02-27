@@ -37,7 +37,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['single', 'stderr', 'syslog', 'errorlog', 'emergency'],
             'ignore_exceptions' => false,
         ],
 
@@ -75,7 +75,8 @@ return [
         'stderr' => [
             'driver' => 'monolog',
             'handler' => StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'path' => storage_path('logs/laravel.log'),
+            // 'formatter' => env('LOG_STDERR_FORMATTER'),
             'with' => [
                 'stream' => 'php://stderr',
             ],
@@ -84,22 +85,24 @@ return [
 
         'syslog' => [
             'driver' => 'syslog',
+            'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
         ],
 
         'errorlog' => [
             'driver' => 'errorlog',
+            'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
         ],
 
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
+            'path' => storage_path('logs/laravel.log'),
         ],
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
     ],
-
 ];
