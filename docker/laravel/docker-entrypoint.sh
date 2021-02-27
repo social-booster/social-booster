@@ -9,9 +9,6 @@ composer install
 chmod -R 777 bootstrap/cache
 chmod -R 777 storage
 
-# logファイルの書き込み権限を付与
-chmod -R 777 /work/storage
-
 # DBのマイグレート
 composer dump-autoload
 php artisan migrate
