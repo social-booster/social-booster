@@ -6,13 +6,7 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: php:7.4.15-fpm-buster
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # Using the RAM variation mitigates I/O contention
-      # for database intensive operations.
-      - image: circleci/mysql:5
+      - image: mysql:5
       - image: redis:6
 
     steps:
