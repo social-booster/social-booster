@@ -13,5 +13,8 @@ chmod -R 777 storage
 composer dump-autoload
 php artisan migrate
 
+# Laravelをバックグラウンドで処理させる
+nohup php artisan serve &
+
 # php-fpmをずっとフォアグラウンドで実行させる
 php-fpm
