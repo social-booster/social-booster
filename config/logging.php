@@ -37,19 +37,19 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single', 'stderr', 'syslog', 'errorlog', 'emergency'],
+            'channels' => ['single', 'stderr', 'syslog', 'errorlog', 'null', 'emergency'],
             'ignore_exceptions' => false,
         ],
 
         'single' => [
             'driver' => 'single',
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_access.log'),
             'level' => 'debug',
         ],
 
         'daily' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_daily.log'),
             'level' => 'debug',
             'days' => 14,
         ],
@@ -75,7 +75,7 @@ return [
         'stderr' => [
             'driver' => 'monolog',
             'handler' => StreamHandler::class,
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_error.log'),
             // 'formatter' => env('LOG_STDERR_FORMATTER'),
             'with' => [
                 'stream' => 'php://stderr',
@@ -85,24 +85,24 @@ return [
 
         'syslog' => [
             'driver' => 'syslog',
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_syslog.log'),
             'level' => 'debug',
         ],
 
         'errorlog' => [
             'driver' => 'errorlog',
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_error_log.log'),
             'level' => 'debug',
         ],
 
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_null.log'),
         ],
 
         'emergency' => [
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel_emergency.log'),
         ],
     ],
 ];
