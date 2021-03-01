@@ -18,6 +18,8 @@ jobs:
         php-version: '7.4'
     - name: リポジトリをチェックアウト
       uses: actions/checkout@v2
+      with:
+        persist-credentials: false
     - name: envファイルをコピー
       run: php -r "file_exists('.env') || copy('.env copy', '.env');"
     - name: composerでインストール
