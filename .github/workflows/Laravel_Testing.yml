@@ -23,8 +23,6 @@ jobs:
         run: php -r "file_exists('.env') || copy('.env copy', '.env');"
       - name: composerでインストール
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: keyを作成
-        run: php artisan key:generate
       - name: logやその他のディレクトリの権限を改変
         run: chmod -R 777 storage bootstrap/cache
       - name: データベース(テスト用)を作成
