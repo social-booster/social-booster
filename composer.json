@@ -20,7 +20,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
         "pusher/pusher-php-server": "^4.1",
-        "rorecek/laravel-ulid": "^2.0"
+        "rorecek/laravel-ulid": "^2.0",
+        "spatie/laravel-sitemap": "^6.2"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
